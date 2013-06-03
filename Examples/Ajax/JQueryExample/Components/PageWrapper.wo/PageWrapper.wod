@@ -1,0 +1,47 @@
+AUCLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/PeriodicalUpdaterPage";
+}
+
+AULLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxUpdateLinkPage";
+}
+
+Content : WOComponentContent {
+	
+}
+
+HomePageLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/HomePage";
+}
+
+IEConditional : ERXIEConditionalComment {
+	
+}
+
+IEStylesheet : ERXStyleSheet {
+	filename = "stylesheets/ie.css";
+	media="screen, projection";
+}
+
+MetaDescription : WOGenericElement {
+	content = ^content;
+	elementName = "meta";
+	name = "description";
+}
+
+PageTitle : WOString {
+	value = ^pageTitle;
+}
+
+PrintStylesheet : ERXStyleSheet {
+	filename = "stylesheets/print.css";
+	media = "print";
+}
+
+ScreenStylesheet : ERXStyleSheet {
+	filename = "stylesheets/screen.css";
+	media = "screen, projection";
+}

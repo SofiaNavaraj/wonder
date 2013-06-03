@@ -1,0 +1,152 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 13, ../sass/screen.scss */
+body {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 100%;
+  line-height: 1.125em;
+}
+
+/* line 19, ../sass/screen.scss */
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 1.0em;
+}
+
+/* line 26, ../sass/screen.scss */
+#wrapper > div {
+  bottom: 0;
+  display: block;
+  overflow: auto;
+  top: 0;
+  position: absolute;
+}
+/* line 34, ../sass/screen.scss */
+#wrapper > div:first-child {
+  background-color: #dcdcdc;
+  left: 0;
+  width: 250px;
+}
+/* line 41, ../sass/screen.scss */
+#wrapper > div:first-child nav > label:first-child {
+  background-color: darkgray;
+  color: white;
+  display: block;
+  padding: 10px;
+}
+/* line 48, ../sass/screen.scss */
+#wrapper > div:first-child nav > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 54, ../sass/screen.scss */
+#wrapper > div:first-child nav > ul li {
+  border-bottom: darkgray 1px solid;
+}
+/* line 58, ../sass/screen.scss */
+#wrapper > div:first-child nav > ul li a {
+  -webkit-transition-property: backgroundColor;
+  -moz-transition-property: backgroundColor;
+  -o-transition-property: backgroundColor;
+  transition-property: backgroundColor;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  background-color: #dcdcdc;
+  color: black;
+  display: block;
+  font-size: 0.875em;
+  padding: 10px;
+  text-decoration: none;
+  width: 230px;
+}
+/* line 71, ../sass/screen.scss */
+#wrapper > div:first-child nav > ul li a:hover, #wrapper > div:first-child nav > ul li a.selected {
+  background-color: white;
+}
+/* line 81, ../sass/screen.scss */
+#wrapper > div:nth-child(2) {
+  left: 250px;
+  right: 0px;
+}
+/* line 84, ../sass/screen.scss */
+#wrapper > div:nth-child(2) > * {
+  padding: 0px 20px;
+}
+/* line 87, ../sass/screen.scss */
+#wrapper > div:nth-child(2) h1:first-of-type {
+  padding-top: 1.0em;
+}

@@ -1,0 +1,36 @@
+Date : DateComponent {	
+	dateformat = "%H:%M:%S";	
+}
+
+Display : WOConditional {
+	condition = display;
+}
+
+LimitedCountPeriodicalUpdater : JQAjaxUpdateContainer {
+	maxCalls = 3;
+	minTimeout = 3000;
+}
+
+Now : WOString {
+	dateformat = "%H:%M:%S";
+	value = now;
+}
+
+OneTimePeriodicalUpdater : JQAjaxUpdateContainer {
+	minTimeout = 5000;
+	maxCalls = 1;
+}
+
+OutsidePeriodicalUpdater : JQAjaxUpdateContainer {
+	delegate = "slide";
+	minTimeout = 2000;
+}
+
+PageWrapper : PageWrapper {
+	index = 1;
+	pageTitle = "Periodical Updater";
+}
+
+PeriodicalUpdater : JQAjaxUpdateContainer {
+	minTimeout = 4000;
+}
