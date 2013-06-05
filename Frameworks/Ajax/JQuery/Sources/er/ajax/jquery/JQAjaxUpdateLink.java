@@ -160,5 +160,4 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 		return results;
 	}
 	
-	
 }
