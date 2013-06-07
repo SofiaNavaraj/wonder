@@ -1,4 +1,22 @@
 <webobject name = "PageWrapper">
 	<h1>Project Wonder jQuery Components</h1>
-	<p></p>
+	<h3>Introduction</h3>
+	<p>
+		This framework is based upon the original Ajax framework for Project Wonder.  
+		There are some major differences besides the obvious one (we are using the JQuery JavaScript framework in place of the Prototype.js framework).  
+		Unlike the original framwork we are going to use the "data" attribute in place of putting JavaScript on the page.
+		This presents some different opportunities and challenges.
+	</p>
+	<h3>Object Initialization</h3>
+	<p>
+		When the page loads or when a page fragment gets returned from an Ajax request a JavaScript function is called.  
+		The function will use a "selector" to find all the HTML elements within the document or page fragment that has an attribute named "data-wonder-id".
+		The function will use the value of the attribute to decide how to initialize the element.
+		This works like a factory method.
+		If the object needs to respond to a user interaction like a "click" it will need to register the event handler.
+	</p>
+	<h3>Object Caching</h3>
+	<p>More information to come.</p>
+	<h3>Delegates</h3>
+	<p>More information to come.</p>
 </webobject>

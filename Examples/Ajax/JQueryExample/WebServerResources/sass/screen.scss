@@ -5,6 +5,9 @@
 
 @import "compass/reset";
 @import "compass/css3";
+@import "blueprint";
+
+@include blueprint-typography();
 
 $large: 0.875em;
 $small: 0.75em;
@@ -16,9 +19,12 @@ body {
   line-height: 1.125em;
 }
 
-h1 {
-  font-size: 1.5em;
-  margin-bottom: 1.0em;
+p {
+	line-height: 1.4rem;
+}
+
+hr {
+	margin-bottom: 1.0rem;
 }
 
 #wrapper {

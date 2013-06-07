@@ -17,7 +17,17 @@ UpdateContainer : JQAjaxUpdateContainer {
 	id = "UpdateContainer";
 }
 
+UpdateContainer2 : JQAjaxUpdateContainer {
+	delegate = "fade";
+	id = "UpdateContainer2";
+}
+
 UpdateLink : JQAjaxUpdateLink {
 	action = updateTime;
 	updateContainerID = "UpdateContainer";
+}
+
+UpdateLink2 : JQAjaxUpdateLink {
+	action = updateTime;
+	updateContainerID = "UpdateContainer2";
 }

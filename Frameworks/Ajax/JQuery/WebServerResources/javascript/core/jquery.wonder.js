@@ -1,12 +1,5 @@
 var Wonder = Wonder || {};
 
-String.addQueryParameters = function(additionalParameters) {
-    if(additionalParameters) {
-        return this + (this.match(/\?/) ? '&' : '?') + additionalParameters;
-    }
-    return this;
-};
-
 /* Simple JavaScript Inheritance
  * By John Resig http://ejohn.org/
  * MIT Licensed.
@@ -74,6 +67,13 @@ String.addQueryParameters = function(additionalParameters) {
 
 (function($) {
 
+    String.prototype.addQueryParameters = function(additionalParameters) {
+        if(additionalParameters) {
+            return this + (this.match(/\?/) ? '&' : '?') + additionalParameters;
+        }
+        return this;
+    };
+
     Wonder.settings = {
         verbose: 0
     };
@@ -83,6 +83,7 @@ String.addQueryParameters = function(additionalParameters) {
     Wonder.expando = "data-" + (new Date).getTime();
     Wonder.handlers = {};
     Wonder.components = [];
+    Wonder.cache = {};
 
     Wonder.log = function(msg, lvl) {
         lvl = lvl || 1;
@@ -93,7 +94,7 @@ String.addQueryParameters = function(additionalParameters) {
         }
     };
 
-    Wonder.Application = {
+    Wonder.Page = {
 
         initialize: function(ctx) {
             $(ctx).find("[data-wonder-id]").each(function(index, element) {
@@ -103,7 +104,24 @@ String.addQueryParameters = function(additionalParameters) {
         },
 
         registerComponent: function(element, obj) {
+            element.attr(Wonder.expando, Wonder.guid++);
+            var guid = element.attr(Wonder.expando);
+            Wonder.cache[guid] = obj;
+        },
 
+        getComponent: function(element) {
+            var guid = element.attr(Wonder.expando);
+            if(!guid) {
+                return;
+            }
+            return Wonder.cache[guid];
+        },
+
+        removeComponent: function(element) {
+            var guid = element[Wonder.expando];
+            if(!guid) return;
+            delete Wonder.cache[guid];
+            element.removeAttr(Wonder.expando);
         },
 
         registerEvent: function(element, type, fn) {
@@ -112,20 +130,16 @@ String.addQueryParameters = function(additionalParameters) {
                 Wonder.handlers = {};
             }
 
-            var wonderId = element.attr('data-wonder-id');
+            var componentType = element.attr('data-wonder-id');
 
-            if(! Wonder.handlers[wonderId]) {
-                Wonder.handlers[wonderId] = [];
-                var selector = '[data-wonder-id="' + wonderId + '"]';
+            if(! Wonder.handlers[componentType]) {
+                Wonder.handlers[componentType] = [];
+                var selector = '[data-wonder-id="' + componentType + '"]';
                 $(selector).on(type, fn);
             }
 
-            if(! fn.guid) {
-                fn.guid = Wonder.guid;
-                Wonder.guid++;
-            }
+            Wonder.handlers[componentType].push(fn);
 
-            Wonder.handlers[wonderId].push(fn);
         }
 
     };
@@ -142,18 +156,22 @@ String.addQueryParameters = function(additionalParameters) {
 
         init: function(element) {
             this._super(element);
-            Wonder.Application.registerComponent(element, this);
+            var options = $.parseJSON(element.attr('data-wonder-options'));
+            if(options.delegate) {
+                this.delegate = Wonder.delegates[eval(options.delegate)];
+            }
+            Wonder.Page.registerComponent(element, this);
         },
 
         mightUpdate: function(target, caller) {
-            if(this.delegate && Wonder.delegates[this.delegate] && Wonder.delegates[this.delegate].mightUpdate) {
-                return Wonder.delegates[this.delegate].mightUpdate(target, caller);
+            if(this.delegate) {
+                return this.delegate.mightUpdate(target, caller);
             }
         },
 
         willUpdate: function(target, caller) {
-            if(this.delegate && Wonder.delegates[this.delegate] && Wonder.delegates[this.delegate].willUpdate) {
-                return Wonder.delegates[this.delegate].willUpdate(target, caller);
+            if(this.delegate) {
+                return this.delegate.willUpdate(target, caller);
             }
         },
 
@@ -176,27 +194,27 @@ String.addQueryParameters = function(additionalParameters) {
         },
 
         didUpdate: function(target, caller) {
-            if(this.delegate && Wonder.delegates[this.delegate] && Wonder.delegates[this.delegate].didUpdate) {
-                return Wonder.delegates[this.delegate].didUpdate(target, caller);
+            if(this.delegate) {
+                return this.delegate.didUpdate(target, caller);
             }
             return true;
         },
 
         updateFailed: function(target, caller, callback) {
-            if(this.delegate && Wonder.delegates[this.delegate] && Wonder.delegates[this.delegate].updateFailed) {
-                Wonder.delegates[this.delegate].updateFailed(target, caller);
+            if(this.delegate) {
+                this.delegate.updateFailed(target, caller);
             }
         },
 
         handleFinish: function(target) {
-            return Wonder.Application.initialize(target);
+            return Wonder.Page.initialize(target);
         }
 
     });
 
     var AjaxOptions = {
         defaultOptions: function(additionalOptions) {
-            var options = {method: 'get', async: true, evalScripts: true};
+            var options = {type: 'GET', async: true, evalScripts: true};
             return $.extend(options, additionalOptions);
         }
     };
@@ -220,20 +238,19 @@ String.addQueryParameters = function(additionalParameters) {
         },
 
         registerPeriodic: function(element, canStop, stopped, options) {
+
             var self = this;
             var url = options.updateUrl;
-            self.delegate = eval(options.delegate);
+
             if(self.delegate) {
-                if(Wonder.delegates[this.delegate]) {
-                    options.beforeSend = function(element, element) {
-                        self.mightUpdate(element, element);
-                    };
-                }
+                options.beforeSend = function(element, element) {
+                    self.mightUpdate(element, element);
+                };
             }
+
             if(! canStop) {
                 if(! Wonder.PeriodicalRegistry[element.attr('id')]) {
                     Wonder.PeriodicalRegistry[element.attr('id')] = $.PeriodicalUpdater(url, options, function(remoteData, success, xhr, handle) {
-                        self.delegate = eval(options.delegate);
                         if(success) {
                             handle.pause();
                             self.processUpdate(element, element, remoteData, handle.pause);
@@ -243,19 +260,12 @@ String.addQueryParameters = function(additionalParameters) {
                     });
                 }
             }
-        },
 
-        cleanUp: function() {
-            var element = $(this);
-            // TODO bug with nested periodical components.  For some reason the unmatched function runs
-            // TODO (cont'd) before the matched function in livequery or something to that effect.
         },
 
         registerContainer: function(id, options) {
             if(!options) {
                 options = {};
-            } else if(options.delegate) {
-                this.delegate = eval(options.delegate);
             }
             eval(id + "Update = function() { AjaxUpdateContainer.update(id, options) }");
         },
@@ -287,7 +297,7 @@ String.addQueryParameters = function(additionalParameters) {
         init: function(element) {
             var element = $(element);
             this._super(element);
-            Wonder.Application.registerEvent(element, "click", this.update);
+            Wonder.Page.registerEvent(element, "click", this.update);
         },
 
         update: function() {
@@ -310,14 +320,23 @@ String.addQueryParameters = function(additionalParameters) {
                     actionUrl = actionUrl.replace(/[^\/]+$/, elementID);
                 }
 
-                // Should you be stored in a cache??
-                var updateComponent = new Wonder.AUC(target);
+                var updateComponent = Wonder.Page.getComponent(target);
 
                 $.ajax({
                     url: actionUrl,
                     data: options,
-                    success: function(data) {
+                    beforeSend: function(xhr, settings) {
+                        if(updateComponent.delegate) {
+                            updateComponent.delegate.mightUpdate(target, self);
+                        }
+                    },
+                    success: function(data, textStatus, xhr) {
                         updateComponent.processUpdate(target, self, data, options.callback);
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        if(updateComponent.delegate) {
+                            updateComponent.delegate.updateFailed(target, self);
+                        }
                     }
                 });
 
@@ -328,6 +347,117 @@ String.addQueryParameters = function(additionalParameters) {
     });
 
     Wonder.AUL = Wonder.AjaxUpdateLink;
+
+    Wonder.AjaxSubmitButton = Wonder.AjaxElement.extend({
+
+        PartialFormSenderIDKey: '_partialSenderID',
+        AjaxSubmitButtonNameKey: 'AJAX_SUBMIT_BUTTON_NAME',
+
+        init: function(element){
+            var element = $(element);
+            this._super(element);
+            Wonder.Page.registerEvent(element, "click", this.update);
+        },
+
+        defaultOptions: function(additionalOptions) {
+            var options = AjaxOptions.defaultOptions(additionalOptions);
+            options['type'] = 'POST';
+            options['cache'] = false;
+            return options;
+        },
+
+        update: function() {
+
+            var self = $(this);
+            var options = $.parseJSON(self.attr('data-wonder-options'));
+            var targetId = options.updateContainer;
+            var target = $("#" + targetId);
+            if(target == null) {
+                alert("There is no element on this page with the id " + targetId);
+            } else {
+
+                var form = options.formName ? document[options.formName] : this.form;
+                var actionUrl = Wonder.ASB.prototype.generateActionUrl(targetId, form, options);
+                var finalOptions = Wonder.ASB.prototype.processOptions(form, options);
+                var targetComponent = Wonder.Page.getComponent(target);
+
+                Wonder.log(actionUrl);
+
+                $.ajax({
+                    url: actionUrl,
+                    data: finalOptions['parameters'],
+                    beforeSend: function(xhr, settings) {
+                        Wonder.log("SENDING REQUEST");
+                        if(targetComponent.delegate) {
+                            targetComponent.delegate.mightUpdate(target, self);
+                        }
+                    },
+                    success: function(data, textStatus, xhr) {
+                        targetComponent.processUpdate(target, self, data, options.callback);
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        Wonder.log("UPDATE FAILED");
+                        if(targetComponent.delegate) {
+                            targetComponent.delegate.updateFailed(target, self);
+                        }
+                    }
+                });
+
+            }
+        },
+
+        processOptions: function(form, options) {
+
+            var processedOptions = null;
+
+            if(options != null) {
+                processedOptions = $.extend({}, options);
+                var ajaxSubmitButtonName = processedOptions['_asbn'];
+                Wonder.log(ajaxSubmitButtonName);
+                if(ajaxSubmitButtonName != null) {
+                    processedOptions['_asbn'] = null;
+                    var parameters = processedOptions['parameters'];
+                    if(parameters === undefined || parameters == null) {
+                        var formSerializer = processedOptions['_fs'];
+                        var serializedForm = $(form).serialize();
+                        processedOptions['parameters'] = serializedForm + '&' + Wonder.ASB.prototype.AjaxSubmitButtonNameKey +
+                            '=' + ajaxSubmitButtonName;
+                    }
+                    else {
+                        processedOptions['parameters'] = parameters + '&' + Wonder.ASB.prototype.AjaxSubmitButtonNameKey +
+                            '=' + ajaxSubmitButtonName;
+                    }
+                }
+            }
+
+            processedOptions = Wonder.ASB.prototype.defaultOptions(processedOptions);
+            return processedOptions;
+
+        },
+
+        generateActionUrl: function(id, form, options) {
+
+            var actionUrl = form.action;
+
+            actionUrl = actionUrl.replace(/\/wo\//, '/ajax/');
+
+            if(id != null) {
+                if(options && options['_r']) {
+                    actionUrl = actionUrl.addQueryParameters('_r=' + id);
+                }
+                else {
+                    actionUrl = actionUrl.addQueryParameters('_u=' + id);
+                }
+            }
+
+            actionUrl = actionUrl.addQueryParameters(new Date().getTime());
+            return actionUrl;
+
+        }
+
+    });
+
+    Wonder.ASB = Wonder.AjaxSubmitButton;
 
     Wonder.delegates = {};
     Wonder.delegates.debug = function() {}
@@ -344,32 +474,28 @@ String.addQueryParameters = function(additionalParameters) {
         Wonder.log("There was an error...", 1);
     };
 
-    Wonder.delegates.fade = function() {};
-    Wonder.delegates.fade.prototype = new Wonder.delegates.debug();
-    Wonder.delegates.fade.prototype.willUpdate = function(target, caller) {
-        return $(container).fadeOut();
+    Wonder.delegates.fade = new Wonder.delegates.debug();
+    Wonder.delegates.fade.willUpdate = function(target, caller) {
+        return $(target).fadeOut();
     };
 
     Wonder.delegates.fade.didUpdate = function(target, caller) {
-        return $(container).fadeIn();
+        return $(target).fadeIn();
     };
 
-    Wonder.delegates.slide = function() {};
     Wonder.delegates.slide = new Wonder.delegates.debug();
 
     Wonder.delegates.slide.willUpdate = function(target, caller) {
         return $(target).slideUp();
     };
+
     Wonder.delegates.slide.didUpdate = function(target, caller) {
         return $(target).slideDown();
     };
 
-    Wonder.AUC.delegates = $.extend(Wonder.delegates, {
-    });
-
     (function() {
         $(window).load(function() {
-            Wonder.Application.initialize(document);
+            Wonder.Page.initialize(document);
         });
     })();
 

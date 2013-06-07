@@ -48,18 +48,13 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 			
 				response.appendContentString("<");
 				response.appendContentString(elementName);
-				response.appendContentString(" ");
 				
 				if(button) {
 					appendTagAttributeToResponse(response, "type", button);
 				}
 				
 				if(isATag) {
-					appendTagAttributeToResponse(response, "href", "#");
-				}
-
-				if(!disabled) {
-					// add data tags...
+					appendTagAttributeToResponse(response, "href", "javascript:void(0)");
 				}
 				
 				appendTagAttributeToResponse(response, "title", valueForBinding("title", component));
@@ -68,8 +63,11 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 				appendTagAttributeToResponse(response, "style", valueForBinding("style", component));
 				appendTagAttributeToResponse(response, "id", valueForBinding("id", component));
 				appendTagAttributeToResponse(response, "accesskey", valueForBinding("accesskey", component));
-				appendTagAttributeToResponse(response, "data-wonder-id", "AUL");
-				appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
+
+				if(! disabled) {
+					appendTagAttributeToResponse(response, "data-wonder-id", "AUL");
+					appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
+				}
 				
 				if(button) {
 					if(stringValue != null) {
