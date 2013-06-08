@@ -147,8 +147,9 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 			WOContext context) {
 
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
-		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", "javascript/plugins/periodical/jquery.periodicalupdater.js");
-		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", "javascript/core/q.min.js");
+		if(hasBinding("minTimeout")) {
+			JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", "javascript/plugins/periodical/jquery.periodicalupdater.js");
+		}
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 		
 	}

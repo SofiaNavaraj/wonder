@@ -26,6 +26,6 @@ SubmitButton : JQAjaxSubmitButton {
 }
 
 UpdateContainer : JQAjaxUpdateContainer {
-	delegate = "slide";
+	delegate = "testCustom";
 	id = "UpdateContainer";
 }

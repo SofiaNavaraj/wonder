@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d0a4aa-7209-4556-94cd-4b28572d8b21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateLink.java" afterPath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateLink.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.html" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.wod" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.wod" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_Asset.java" afterPath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_Asset.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_AssetGroup.java" afterPath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_AssetGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_Tag.java" afterPath="$PROJECT_DIR$/../../../../Examples/Misc/ERIndexingExample/Sources/er/indexing/example/eof/_Tag.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateContainer.java" afterPath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/AjaxSubmitButtonPage.wo/AjaxSubmitButtonPage.html" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/AjaxSubmitButtonPage.wo/AjaxSubmitButtonPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Sources/er/ajax/jquery/example/components/AjaxSubmitButtonPage.java" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Sources/er/ajax/jquery/example/components/AjaxSubmitButtonPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxSubmitButton.java" afterPath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxSubmitButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" afterPath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/WebServerResources/stylesheets/screen.css" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/WebServerResources/stylesheets/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/WebServerResources/sass/screen.scss" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/WebServerResources/sass/screen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebServerResources.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/jQWonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368241909596" ignored="false" />
     <file path="/screen.scss" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368083196164" ignored="false" />
     <file path="/jquery.periodicalupdater.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1369794844040" ignored="false" />
-    <file path="/jquery.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370567888121" ignored="false" />
+    <file path="/jquery.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370586810860" ignored="false" />
     <file path="/jquery.livequery.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368405379441" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
@@ -119,7 +113,7 @@
           <file leaf-file-name="jquery.wonder.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="494" column="0" selection-start="16526" selection-end="16526" vertical-scroll-proportion="0.7183099">
+                <state line="489" column="0" selection-start="16328" selection-end="16328" vertical-scroll-proportion="0.7183099">
                   <folding />
                 </state>
               </provider>
@@ -158,9 +152,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="980" />
     <option name="y" value="22" />
-    <option name="width" value="1578" />
+    <option name="width" value="1680" />
     <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -242,7 +235,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="980" y="22" width="1578" height="1024" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -431,7 +424,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="494" column="0" selection-start="16526" selection-end="16526" vertical-scroll-proportion="0.7183099">
+        <state line="489" column="0" selection-start="16328" selection-end="16328" vertical-scroll-proportion="0.7183099">
           <folding />
         </state>
       </provider>

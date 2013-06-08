@@ -26,7 +26,7 @@ public class AjaxSubmitButtonPage extends Main {
 	}
 
 	public WOActionResults updateName() {
-		System.out.println("HELLO??");
 		return null;
 	}
+
 }

@@ -17,7 +17,9 @@ import er.ajax.AjaxSubmitButton;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
 import er.ajax.IAjaxElement;
+import er.extensions.appserver.ERXWOContext;
 import er.extensions.appserver.ajax.ERXAjaxApplication;
+import er.extensions.appserver.ajax.ERXAjaxSession;
 import er.extensions.components._private.ERXWOForm;
 import er.extensions.foundation.ERXProperties;
 import er.extensions.foundation.ERXPropertyListSerialization;
@@ -31,8 +33,8 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 	@Override
 	protected void addRequiredWebResources(WOResponse response,
 			WOContext context) {
-		// TODO Auto-generated method stub
-		
+		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
+		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 	}
 	
 	public String nameInContext(WOContext context, WOComponent component) {
@@ -177,24 +179,25 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 	
 	@Override
 	public WOActionResults invokeAction(WORequest request, WOContext context) {
-		
-		System.out.println(request.formValues());
-		System.out.println(nameInContext(context));
-		System.out.println(request.formValueForKey(AjaxSubmitButton.KEY_AJAX_SUBMIT_BUTTON_NAME));
-		
+						
 		WOActionResults result = null;
 		WOComponent component = context.component();
 	
 		String nameInContext = nameInContext(context, component);
-	    boolean shouldHandleRequest = (!disabledInComponent(component) && context.wasFormSubmitted()) && 
-	    		((context.isMultipleSubmitForm() && nameInContext.equals(((String)request.formValueForKey(AjaxSubmitButton.KEY_AJAX_SUBMIT_BUTTON_NAME)).replace("'", ""))) || ! context.isMultipleSubmitForm());
+		String requestName = (String) request.formValueForKey(AjaxSubmitButton.KEY_AJAX_SUBMIT_BUTTON_NAME);
+		if(requestName != null) {
+			requestName = requestName.replace("'", "");
+		}
+		
+		boolean shouldHandleRequest = (!disabledInComponent(component) && context.wasFormSubmitted()) && 
+	    		((context.isMultipleSubmitForm() && nameInContext.equals(requestName)) || ! context.isMultipleSubmitForm());
 
 		if(shouldHandleRequest) {
 			String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component);
 			AjaxUpdateContainer.setUpdateContainerID(request, updateContainerID);
 			context.setActionInvoked(true);
 			result = handleRequest(request, context);
-			ERXAjaxApplication.enableShouldNotStorePage();
+			ERXWOContext.contextDictionary().takeValueForKey(ERXAjaxSession.DONT_STORE_PAGE, ERXAjaxSession.DONT_STORE_PAGE);
 		}
 		
 		return result;

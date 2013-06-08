@@ -381,13 +381,10 @@ var Wonder = Wonder || {};
                 var finalOptions = Wonder.ASB.prototype.processOptions(form, options);
                 var targetComponent = Wonder.Page.getComponent(target);
 
-                Wonder.log(actionUrl);
-
                 $.ajax({
                     url: actionUrl,
                     data: finalOptions['parameters'],
                     beforeSend: function(xhr, settings) {
-                        Wonder.log("SENDING REQUEST");
                         if(targetComponent.delegate) {
                             targetComponent.delegate.mightUpdate(target, self);
                         }
@@ -396,7 +393,6 @@ var Wonder = Wonder || {};
                         targetComponent.processUpdate(target, self, data, options.callback);
                     },
                     error: function(xhr, textStatus, errorThrown) {
-                        Wonder.log("UPDATE FAILED");
                         if(targetComponent.delegate) {
                             targetComponent.delegate.updateFailed(target, self);
                         }
@@ -413,7 +409,6 @@ var Wonder = Wonder || {};
             if(options != null) {
                 processedOptions = $.extend({}, options);
                 var ajaxSubmitButtonName = processedOptions['_asbn'];
-                Wonder.log(ajaxSubmitButtonName);
                 if(ajaxSubmitButtonName != null) {
                     processedOptions['_asbn'] = null;
                     var parameters = processedOptions['parameters'];
