@@ -105,30 +105,8 @@ var Wonder = Wonder || {};
         },
 
         getComponent: function(element) {
+            if(typeof element === 'string') element = $("#" + element);
             return element.data()['component'];
-        },
-
-        addEvent: function(element, type, fn) {
-            var data = element.data();
-            if(! data.handlers) data.handlers = {};
-            if(! data.handlers[type]) data.handlers[type] = [];
-            if(! fn.guid) fn.guid = Wonder.nextGuid++;
-            data.handlers[type].push(fn);
-            if(! data.dispatcher) {
-                data.disabled = false;
-                data.dispatcher = function(event) {
-                    if(data.disabled) return;
-                    var handlers = data.handlers[event.type];
-                    if(handlers) {
-                        for(var n = 0; n < handlers.length; n++) {
-                            handlers[n].call(element, event);
-                        }
-                    }
-                }
-            }
-            if(data.handlers[type].length == 1) {
-                element.bind(type, data.dispatcher);
-            }
         }
 
     };
@@ -139,10 +117,6 @@ var Wonder = Wonder || {};
         init: function(element) {
             Wonder.log("Initializing " + element.attr('data-wonder-id'));
             this.options = $.parseJSON(element.attr('data-wonder-options'));
-        },
-
-        sayHi: function() {
-            alert('hi');
         }
 
     });
@@ -161,14 +135,14 @@ var Wonder = Wonder || {};
         },
 
         mightUpdate: function(target, caller) {
-            if(this.delegate) {
-                return this.delegate.mightUpdate(target, caller);
+            if(this.currentDelegate) {
+                return this.currentDelegate.mightUpdate(target, caller);
             }
         },
 
         willUpdate: function(target, caller) {
-            if(this.delegate) {
-                return this.delegate.willUpdate(target, caller);
+            if(this.currentDelegate) {
+                return this.currentDelegate.willUpdate(target, caller);
             }
         },
 
@@ -191,15 +165,15 @@ var Wonder = Wonder || {};
         },
 
         didUpdate: function(target, caller) {
-            if(this.delegate) {
-                return this.delegate.didUpdate(target, caller);
+            if(this.currentDelegate) {
+                return this.currentDelegate.didUpdate(target, caller);
             }
             return true;
         },
 
         updateFailed: function(target, caller, callback) {
-            if(this.delegate) {
-                this.delegate.updateFailed(target, caller);
+            if(this.currentDelegate) {
+                this.currentDelegate.updateFailed(target, caller);
             }
         },
 
@@ -219,6 +193,8 @@ var Wonder = Wonder || {};
 
     Wonder.AjaxUpdateContainer = Wonder.AjaxComponent.extend({
 
+        currentDelegate: null,
+
         init: function(element) {
 
             this.element = $(element);
@@ -232,12 +208,35 @@ var Wonder = Wonder || {};
                 );
             } else {
                 Wonder.Page.addComponent(this.element, this);
+                if(this.options['observeFields']) {
+                    var observeFields = this.options['observeFields'].split(",");
+                    for(var i = 0; i < observeFields.length; i++) {
+                        var field = $("#" + $.trim(observeFields[i]));
+                        if(field) {
+                            field.bind("change", { updateContainer: this.element }, function(event) {
+                                var form = this.form;
+                                Wonder.log(form.name);
+                                var actionUrl = form.action;
+                                actionUrl = actionUrl.replace(/\/wo\//, '/ajax/');
+                                var caller = $(this);
+                                var updateContainer = Wonder.Page.getComponent(event.data.updateContainer.attr("id"));
+                                var data = {};
+                                var formFieldName = caller.attr('name');
+                                data[formFieldName] = caller.val();
+                                data['_partialSenderID'] = formFieldName;
+                                updateContainer.update(actionUrl, caller, null, data);
+                            });
+                        }
+                    }
+                }
             }
         },
 
         registerPeriodic: function(canStop, stopped) {
 
-            if(this.delegate) {
+            this.currentDelegate = this.delegate;
+
+            if(this.currentDelegate) {
                 this.options['beforeSend'] = $.proxy(function(xhr) {
                     this.mightUpdate(this.element, this.element);
                 }, this);
@@ -249,12 +248,14 @@ var Wonder = Wonder || {};
 
             if(! canStop) {
                 if(! Wonder.PeriodicalRegistry[this.element.attr('id')]) {
-                    Wonder.PeriodicalRegistry[this.element.attr('id')] = $.PeriodicalUpdater(this.url, this.options, $.proxy(function(remoteData, success, xhr, handle) {
-                        if(success) {
-                            handle.pause();
-                            this.processUpdate(this.element, this.element, remoteData, handle.pause);
-                        }
-                    }, this));
+                    Wonder.PeriodicalRegistry[this.element.attr('id')] = $.PeriodicalUpdater(this.url, this.options,
+                        $.proxy(function(remoteData, success, xhr, handle) {
+                            if(success) {
+                                handle.pause();
+                                this.processUpdate(this.element, this.element, remoteData, handle.pause);
+                            }
+                       }, this)
+                    );
                 }
             }
 
@@ -263,15 +264,24 @@ var Wonder = Wonder || {};
         update: function(url, caller, options, data) {
 
             var updateUrl = url || this.url;
-            var delegate = options.delegate || this.delegate;
+            var options = options || this.options;
+            this.currentDelegate = options['delegate'] || this.delegate;
             var aCaller = caller || this.element;
+
+            var id = this.element.attr("id");
+            if(options && options['_r']) {
+                updateUrl = updateUrl.addQueryParameters('_r='+ id);
+            }
+            else {
+                updateUrl = updateUrl.addQueryParameters('_u=' + id);
+            }
 
             options['context'] = this;
             options['data'] = data;
 
             options['beforeSend'] = function(xhr, settings) {
-                if(delegate) {
-                    delegate.mightUpdate(this.element, aCaller);
+                if(this.currentDelegate) {
+                    this.currentDelegate.mightUpdate(this.element, aCaller);
                 }
             };
 
@@ -280,8 +290,8 @@ var Wonder = Wonder || {};
             };
 
             options['error'] = function(xhr, textStatus, errorThrown) {
-                if(delegate) {
-                    delegate.updateFailed(this.element, aCaller);
+                if(this.currentDelegate) {
+                    this.currentDelegate.updateFailed(this.element, aCaller);
                 }
             };
 
@@ -324,10 +334,10 @@ var Wonder = Wonder || {};
             var caller = $(this);
             var options = event.data.options;
 
-            var updateContainer = Wonder.Page.getComponent($("#" + options['updateContainer']));
+            var updateContainer = Wonder.Page.getComponent(options['updateContainer']);
 
             if(updateContainer == null) {
-                alert('There is no element on this page with the id "' + options['updateContainer'] + '".');
+               alert('There is no element on this page with the id "' + options['updateContainer'] + '".');
             } else {
 
                 var elementID = options['elementID'];

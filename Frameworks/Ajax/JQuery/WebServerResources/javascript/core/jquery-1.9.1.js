@@ -57,7 +57,7 @@
         core_trim = core_version.trim,
 
     // Define a local copy of jQuery
-        jQuery = function( selector, context ) {
+         jQuery = function( selector, context ) {
             // The jQuery object is actually just the init constructor 'enhanced'
             return new jQuery.fn.init( selector, context, rootjQuery );
         },

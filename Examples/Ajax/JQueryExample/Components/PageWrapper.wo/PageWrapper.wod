@@ -1,3 +1,8 @@
+AOFLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxObserveFieldPage";
+}
+
 ASBLink : WOHyperlink {
 	class = navigationClassName;
 	directActionName = "PageAction/AjaxSubmitButtonPage";

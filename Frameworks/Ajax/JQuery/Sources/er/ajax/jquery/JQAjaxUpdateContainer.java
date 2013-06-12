@@ -171,6 +171,7 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 		ajaxOptionsArray.addObject(new AjaxOption("maxTimeout", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("multiplier", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("maxCalls", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new AjaxOption("observeFields", AjaxOption.ARRAY));
 		ajaxOptionsArray.addObject(new AjaxOption("headers", AjaxOption.ARRAY));
 
 		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48d0a4aa-7209-4556-94cd-4b28572d8b21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateContainer.java" afterPath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxUpdateContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/AjaxSubmitButtonPage.wo/AjaxSubmitButtonPage.html" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/AjaxSubmitButtonPage.wo/AjaxSubmitButtonPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Sources/er/ajax/jquery/example/components/AjaxSubmitButtonPage.java" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Sources/er/ajax/jquery/example/components/AjaxSubmitButtonPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxSubmitButton.java" afterPath="$PROJECT_DIR$/../Sources/er/ajax/jquery/JQAjaxSubmitButton.java" />
+    <list default="true" id="48d0a4aa-7209-4556-94cd-4b28572d8b21" name="Default" comment="Refactored.  Used data instead of own caching system.  Various improvements.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" afterPath="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" afterPath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebServerResources.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/jQWonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368241909596" ignored="false" />
     <file path="/screen.scss" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368083196164" ignored="false" />
     <file path="/jquery.periodicalupdater.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1369794844040" ignored="false" />
-    <file path="/jquery.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370586810860" ignored="false" />
+    <file path="/jquery.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1371028378165" ignored="false" />
     <file path="/jquery.livequery.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1368405379441" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
@@ -30,7 +28,8 @@
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-2_0.xsd" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xml.xsd" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
-    <file path="/Dummy.txt" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549624110" ignored="false" />
+    <file path="/Dummy.txt" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370805274339" ignored="false" />
+    <file path="/fathers-day.html" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370912518747" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +48,13 @@
     <favorites_list name="WebServerResources" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.26448563">
+    <splitter split-orientation="horizontal" split-proportion="0.53047675">
       <split-first>
         <leaf>
-          <file leaf-file-name="jquery-1.9.1.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="jquery-1.9.1.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascript/core/jquery-1.9.1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="828" column="8" selection-start="27670" selection-end="27670" vertical-scroll-proportion="0.0">
+                <state line="9279" column="19" selection-start="360983" selection-end="360983" vertical-scroll-proportion="-4.7747316">
                   <folding />
                 </state>
               </provider>
@@ -79,10 +78,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/screen.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.10688836">
+                <state line="6" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.6">
                   <folding />
                 </state>
               </provider>
@@ -97,6 +96,15 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="kamaaina-june.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/kamaaina-june.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="296.25">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -104,16 +112,25 @@
           <file leaf-file-name="jquery.periodicalupdater.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/javascript/plugins/periodical/jquery.periodicalupdater.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="194" column="0" selection-start="6633" selection-end="6633" vertical-scroll-proportion="0.0">
+                <state line="249" column="62" selection-start="8983" selection-end="8998" vertical-scroll-proportion="-61.115383">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="jquery.wonder.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="jquery.wonder.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="489" column="0" selection-start="16328" selection-end="16328" vertical-scroll-proportion="0.7183099">
+                <state line="225" column="72" selection-start="7448" selection-end="7448" vertical-scroll-proportion="-79.5">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fathers-day.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="0.5529132">
                   <folding />
                 </state>
               </provider>
@@ -139,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" />
         <option value="$PROJECT_DIR$/javascript/core/jquery-1.9.1.min.js" />
         <option value="$PROJECT_DIR$/javascript/core/jQWonder.js" />
         <option value="$PROJECT_DIR$/javascript/core/jquery-wonder.js" />
@@ -147,6 +163,8 @@
         <option value="$PROJECT_DIR$/javascript/core/q.min.js" />
         <option value="$PROJECT_DIR$/javascript/plugins/periodical/jquery.periodicalupdater.js" />
         <option value="$PROJECT_DIR$/sass/screen.scss" />
+        <option value="$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html" />
+        <option value="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" />
         <option value="$PROJECT_DIR$/javascript/core/jquery.wonder.js" />
       </list>
     </option>
@@ -170,7 +188,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -181,19 +199,45 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServerResources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServerResources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServerResources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Sites/BuzzsWharf/Email/kamaaina-june.html" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Sites/BuzzsWharf/Email" />
+      <recent name="$PROJECT_DIR$/javascript/core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/javascript/core" />
     </key>
   </component>
@@ -232,16 +276,22 @@
       <created>1368000902876</created>
       <updated>1368000902876</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactored.  Used data instead of own caching system.  Various improvements.">
+      <created>1370805281208</created>
+      <updated>1370805281208</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13322823" sideWeight="0.9884259" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24510515" sideWeight="0.9884259" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -298,7 +348,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored.  Used data instead of own caching system.  Various improvements." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -312,25 +362,12 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Refactored.  Used data instead of own caching system.  Various improvements." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/javascript/core/jquery.livequery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="1" selection-start="5866" selection-end="5867" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/screen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -394,16 +431,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/core/jquery-1.9.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="828" column="8" selection-start="27670" selection-end="27670" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.10688836">
+        <state line="6" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.6">
           <folding />
         </state>
       </provider>
@@ -417,14 +447,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/plugins/periodical/jquery.periodicalupdater.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="0" selection-start="6633" selection-end="6633" vertical-scroll-proportion="0.0">
+        <state line="249" column="62" selection-start="8983" selection-end="8998" vertical-scroll-proportion="-61.115383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/kamaaina-june.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="296.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/core/jquery-1.9.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9279" column="19" selection-start="360983" selection-end="360983" vertical-scroll-proportion="-4.7747316">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="489" column="0" selection-start="16328" selection-end="16328" vertical-scroll-proportion="0.7183099">
+        <state line="225" column="72" selection-start="7448" selection-end="7448" vertical-scroll-proportion="-79.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="0.5529132">
           <folding />
         </state>
       </provider>

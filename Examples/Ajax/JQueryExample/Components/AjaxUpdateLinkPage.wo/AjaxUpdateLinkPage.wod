@@ -3,10 +3,6 @@ PageWrapper : PageWrapper {
 	pageTitle = "Ajax Update Links Test Page";
 }
 
-TestString : WOString {
-	value = test;
-}
-
 Time : WOString {
 	dateformat = "%H:%M:%S";
 	value = now;
@@ -15,6 +11,10 @@ Time : WOString {
 UpdateContainer : JQAjaxUpdateContainer {
 	delegate = "slide";
 	id = "UpdateContainer";
+}
+
+UpdateContainer3 : JQAjaxUpdateContainer {
+	id = "UpdateContainer3";
 }
 
 UpdateContainer2 : JQAjaxUpdateContainer {
