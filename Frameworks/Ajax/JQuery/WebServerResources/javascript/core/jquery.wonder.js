@@ -450,6 +450,8 @@ var Wonder = Wonder || {};
 
     Wonder.ASB = Wonder.AjaxSubmitButton;
 
+    /*
+
     Wonder.AjaxObserveField = Wonder.AjaxElement.extend({
 
         init: function(element) {
@@ -473,6 +475,8 @@ var Wonder = Wonder || {};
     });
 
     Wonder.AOF = Wonder.AjaxObserveField;
+
+    */
 
     Wonder.delegates = {};
     Wonder.delegates.debug = function() {}

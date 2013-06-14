@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d0a4aa-7209-4556-94cd-4b28572d8b21" name="Default" comment="Refactored.  Used data instead of own caching system.  Various improvements.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" afterPath="$PROJECT_DIR$/javascript/core/jquery-1.9.1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" afterPath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebServerResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,13 +46,13 @@
     <favorites_list name="WebServerResources" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.53047675">
+    <splitter split-orientation="horizontal" split-proportion="0.5003018">
       <split-first>
         <leaf>
           <file leaf-file-name="jquery-1.9.1.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascript/core/jquery-1.9.1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9279" column="19" selection-start="360983" selection-end="360983" vertical-scroll-proportion="-4.7747316">
+                <state line="9560" column="26" selection-start="370957" selection-end="370957" vertical-scroll-proportion="0.5887962">
                   <folding />
                 </state>
               </provider>
@@ -118,19 +116,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="jquery.wonder.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="jquery.wonder.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="225" column="72" selection-start="7448" selection-end="7448" vertical-scroll-proportion="-79.5">
+                <state line="456" column="0" selection-start="15267" selection-end="15859" vertical-scroll-proportion="3.3241954">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="fathers-day.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="fathers-day.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="0.5529132">
+                <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="46.208332">
                   <folding />
                 </state>
               </provider>
@@ -459,23 +457,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="46.208332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/javascript/core/jquery-1.9.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9279" column="19" selection-start="360983" selection-end="360983" vertical-scroll-proportion="-4.7747316">
+        <state line="9560" column="26" selection-start="370957" selection-end="370957" vertical-scroll-proportion="0.5887962">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/core/jquery.wonder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="72" selection-start="7448" selection-end="7448" vertical-scroll-proportion="-79.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Sites/BuzzsWharf/Email/fathers-day.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="449" column="62" selection-start="0" selection-end="26738" vertical-scroll-proportion="0.5529132">
+        <state line="456" column="0" selection-start="15267" selection-end="15859" vertical-scroll-proportion="3.3241954">
           <folding />
         </state>
       </provider>
