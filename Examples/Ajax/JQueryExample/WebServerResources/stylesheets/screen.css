@@ -330,7 +330,7 @@ hr {
   width: 250px;
 }
 /* line 47, ../sass/screen.scss */
-#wrapper > div:first-child nav > label:first-child {
+#wrapper > div:first-child nav > label {
   background-color: darkgray;
   color: white;
   display: block;

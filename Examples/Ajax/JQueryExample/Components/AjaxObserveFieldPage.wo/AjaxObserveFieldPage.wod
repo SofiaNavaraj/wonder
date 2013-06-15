@@ -11,7 +11,7 @@ Form : WOForm {
 
 PageWrapper : PageWrapper {
 	index = 4;
-	pageTitle = "Ajax Submit Button Test Page";
+	pageTitle = "Ajax Observe Field Test Page";
 }
 
 SelectedColor : WOTextField {

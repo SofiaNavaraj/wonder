@@ -215,7 +215,6 @@ var Wonder = Wonder || {};
                         if(field) {
                             field.bind("change", { updateContainer: this.element }, function(event) {
                                 var form = this.form;
-                                Wonder.log(form.name);
                                 var actionUrl = form.action;
                                 actionUrl = actionUrl.replace(/\/wo\//, '/ajax/');
                                 var caller = $(this);

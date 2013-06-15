@@ -13,6 +13,8 @@ public class JQAjaxUtils extends AjaxUtils {
 	public static final String FRAMEWORK = "JQuery";
 	public static final String JQUERY_JS = "javascript/core/jquery-1.9.1.js";
 	public static final String JQUERY_WONDER_JS = "javascript/core/jquery.wonder.js";
+	public static final String JQUERY_UI_JS = "javascript/core/jquery-ui.js";
+	public static final String JQUERY_UI_WONDER_JS = "javascript/core/jquery-ui.wonder.js";
 	
 	public static void addScriptResourceInHead(WOContext aContext, WOResponse aResponse, String framework, String fileName) {
 		String processedFileName = fileName;
@@ -20,6 +22,20 @@ public class JQAjaxUtils extends AjaxUtils {
 			processedFileName = JQUERY_MIN_JS;
 		}
 		ERXResponseRewriter.addScriptResourceInHead(aResponse, aContext, framework, processedFileName);
+	}
+
+	public static void addUIStylesheetResourceInHead(WOContext aContext, WOResponse aResponse, String framework, String fileName) {
+
+		if(framework == null) {
+			framework = ERXProperties.stringForKey("er.ajax.jquery-ui.theme.framework");
+		}
+		
+		if(fileName == null) {
+			fileName = ERXProperties.stringForKey("er.ajax.jquery-ui.theme.fileName");
+		}
+		
+		ERXResponseRewriter.addStylesheetResourceInHead(aResponse, aContext, framework, fileName);
+
 	}
 	
 }

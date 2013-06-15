@@ -55,3 +55,8 @@ ScreenStylesheet : ERXStyleSheet {
 	filename = "stylesheets/screen.css";
 	media = "screen, projection";
 }
+
+SliderLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxSliderPage";
+}
