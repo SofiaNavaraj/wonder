@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d0a4aa-7209-4556-94cd-4b28572d8b21" name="Default" comment="Refactored.  Used data instead of own caching system.  Various improvements.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.html" afterPath="$PROJECT_DIR$/../../../../Examples/Ajax/JQueryExample/Components/PageWrapper.wo/PageWrapper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" afterPath="$PROJECT_DIR$/javascript/core/jquery.wonder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../JQueryUI/Sources/er/ajax/jquery/ui/JQAjaxSlider.java" afterPath="$PROJECT_DIR$/../../JQueryUI/Sources/er/ajax/jquery/ui/JQAjaxSlider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebServerResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +29,7 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370549509689" ignored="false" />
     <file path="/Dummy.txt" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370805274339" ignored="false" />
     <file path="/fathers-day.html" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1370912518747" ignored="false" />
-    <file path="/jquery-ui.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1371266086258" ignored="false" />
+    <file path="/jquery-ui.wonder.js" changelist="48d0a4aa-7209-4556-94cd-4b28572d8b21" time="1371266932179" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,7 @@
           <file leaf-file-name="jquery-ui.wonder.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../../JQueryUI/WebServerResources/javascript/core/jquery-ui.wonder.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.09638554">
+                <state line="41" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.4939759">
                   <folding />
                 </state>
               </provider>
@@ -536,7 +536,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../JQueryUI/WebServerResources/javascript/core/jquery-ui.wonder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.09638554">
+        <state line="41" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.4939759">
           <folding />
         </state>
       </provider>

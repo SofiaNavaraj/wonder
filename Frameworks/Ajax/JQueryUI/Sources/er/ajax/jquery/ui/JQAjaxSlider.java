@@ -17,6 +17,7 @@ import com.webobjects.foundation.NSNumberFormatter;
 
 import er.ajax.AjaxDynamicElement;
 import er.ajax.AjaxOption;
+import er.ajax.AjaxSubmitButton;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
 import er.ajax.jquery.JQAjaxUtils;
@@ -70,38 +71,44 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	public void takeValuesFromRequest(WORequest aRequest, WOContext aContext) {
 
 		WOComponent component = aContext.component();
+		
+		
+		if(aRequest.formValueForKey(AjaxSubmitButton.KEY_PARTIAL_FORM_SENDER_ID).equals(aContext.elementID())) {
 
-		try {
+			try {
 
-			String format = stringValueForBinding("numberformat", "0", component);
-			NSNumberFormatter numericFormatter = new NSNumberFormatter(format);
-			
-			if(hasBinding("value")) {
-			
-				Number number = aRequest.numericFormValueForKey(aContext.elementID(), numericFormatter);
-				if(number != null) {
-					setValueForBinding(number, "value", component);
-				}
-				
-			} else {
-
+				String format = stringValueForBinding("numberformat", "0", component);
+				NSNumberFormatter numericFormatter = new NSNumberFormatter(format);
 				String requestString = (String) aRequest.formValueForKey(aContext.elementID());
-				String[] values = requestString.split(":");
-				Number minValue = numericValue(values[0], numericFormatter);
-
-				if(minValue != null) {
-					setValueForBinding(minValue, "minValue", component);
-				}
 				
-				Number maxValue = numericValue(values[1], numericFormatter);
-				if(maxValue != null) {
-					setValueForBinding(maxValue, "maxValue", component);
+				if(requestString.indexOf(":") > 0) {
+					
+					String[] values = requestString.split(":");
+					Number minValue = numericValue(values[0], numericFormatter);
+
+					if(minValue != null) {
+						setValueForBinding(minValue, "minValue", component);
+					}
+					
+					Number maxValue = numericValue(values[1], numericFormatter);
+					if(maxValue != null) {
+						setValueForBinding(maxValue, "maxValue", component);
+					}
+					
+				} else {
+
+					Number number = aRequest.numericFormValueForKey(aContext.elementID(), numericFormatter);
+					if(number != null) {
+						setValueForBinding(number, "value", component);
+					}
+
 				}
 
+			} catch(NumberFormatException e) {
+				log.error(e);
 			}
-
-		} catch(NumberFormatException e) {
-			log.error(e);
+			
+			
 		}
 		
 		super.takeValuesFromRequest(aRequest, aContext);
