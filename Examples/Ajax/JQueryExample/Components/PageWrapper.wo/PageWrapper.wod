@@ -1,3 +1,8 @@
+AccordionLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AccordionTestPage";
+}
+
 AOFLink : WOHyperlink {
 	class = navigationClassName;
 	directActionName = "PageAction/AjaxObserveFieldPage";
@@ -20,6 +25,16 @@ AULLink : WOHyperlink {
 
 Content : WOComponentContent {
 	
+}
+
+DatePickerLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxDatePickerPage";
+}
+
+FormValidationLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/FormValidationTestPage";
 }
 
 HomePageLink : WOHyperlink {

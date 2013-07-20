@@ -1,0 +1,26 @@
+Accordion : JQAccordion {
+	
+}
+
+CollapsibleAccordion : JQAccordion {
+	collapsible = true;
+}
+
+IconLabelsAccordion : JQAccordion {
+	activeHeader = "ui-icon-circle-arrow-s";
+	header = "ui-icon-circle-arrow-e";
+}
+
+PageWrapper : PageWrapper {
+	index = 8;
+	pageTitle = "Accordion Test Page";
+}
+
+Repetition : WORepetition {
+	count = 3;
+	index = index;
+}
+
+Tab : JQAccordionTab {
+	label = label;
+}

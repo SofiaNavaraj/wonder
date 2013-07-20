@@ -183,8 +183,8 @@ public class MTAjaxSortableList extends AjaxComponent {
 		ajaxOptionsArray.addObject(new AjaxOption("clone", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("constrain", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("handle", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new AjaxOption("onStart", AjaxOption.FUNCTION_1));
 		ajaxOptionsArray.addObject(new AjaxOption("onComplete", AjaxOption.SCRIPT));
-		ajaxOptionsArray.addObject(new AjaxOption("onSort", AjaxOption.SCRIPT));
 		ajaxOptionsArray.addObject(new AjaxOption("onStart", AjaxOption.SCRIPT));
 		ajaxOptionsArray.addObject(new AjaxOption("opacity", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("revert", AjaxOption.STRING));

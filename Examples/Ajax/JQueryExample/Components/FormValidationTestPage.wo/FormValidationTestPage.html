@@ -1,0 +1,66 @@
+<webobject name = "PageWrapper">
+	<style>
+	
+		label, input {
+			display: block;
+		}
+		
+		input[type="text"], input[type="email"], input[type="tel"] {
+			margin-bottom: 1.0rem;
+		}
+		
+		label.error {
+			background: #e38d8d;
+			border: 1px solid #af3637;
+			color: white;
+			display: block;
+			font-size: 0.75rem;
+			margin-bottom: 1.0rem;
+			margin-top: -0.5rem;
+			padding: 5px;
+		}
+		
+		#AjaxForm {
+			margin-bottom: 1.0rem;
+		}
+	
+	</style>
+	<script type = "text/javascript">
+
+		(function($) {
+
+			Wonder.delegates.testCustom = $.extend({}, Wonder.delegates.fade);
+    		Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
+				return Wonder.Page.getComponent("AjaxForm").form();
+    		};
+			
+		})(jQuery);		
+		
+	</script>
+
+	<h1>Form Validation</h1>
+	<h2>Demonstration with various options.</h2>
+	<p>Check out the plugins documentation for more information: <a href = "http://validation.bassistance.de" target = "_blank">http://validation.bassistance.de</a></p>
+	<h3>Simple</h3>
+	<webobject name = "Form">
+		<label for = "SimpleNameInput">Your name</label>	
+		<webobject name = "NameInput" />
+		<label for = "SimpleEmailInput">Your email</label>
+		<webobject name = "EmailInput" />
+		<label for = "SimplePhoneInput">Your phone</label>
+		<webobject name = "PhoneInput" />
+		<webobject name = "SubmitButton" />
+	</webobject>
+	<hr>
+	<h3>Validate before AJAX submit (using a custom delegate)</h3>
+	<webobject name = "AjaxForm">
+		<label for = "FavoriteColorInput">Your Favorite Color</label>	
+		<webobject name = "FavoriteColorInput" />
+		<webobject name = "AjaxSubmitButton" />
+	</webobject>
+	<webobject name = "AUC">
+		<label>Your answer</label>
+		<webobject name = "FavoriteColorAnswer" />
+	</webobject>
+
+</webobject>

@@ -150,6 +150,7 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 		if(hasBinding("minTimeout")) {
 			JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", "javascript/plugins/periodical/jquery.periodicalupdater.js");
 		}
+
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 		
 	}
@@ -176,6 +177,10 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 
 		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "updateUrl");
+
+		if(hasBinding("subscribes")) {
+			options.takeValueForKey(stringValueForBinding("subscribes", component), "subscribes");	
+		}
 
 		return options;
 		

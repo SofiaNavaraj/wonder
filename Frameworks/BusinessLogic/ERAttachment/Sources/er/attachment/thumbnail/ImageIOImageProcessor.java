@@ -29,7 +29,7 @@ public class ImageIOImageProcessor extends ERImageProcessor {
       colorProfilePath = colorProfileFile.getAbsolutePath();
     }
     if (!processImage2(resizeWidth, resizeHeight, dpi, sharpenRadius, sharpenIntensity, gamma, cropX, cropY, cropWidth, cropHeight, watermarkPath, tileWatermark, compressionQuality, colorProfilePath, inputFile.getAbsolutePath(), outputFile.getAbsolutePath(), outputMimeType == null ? null : outputMimeType.uti())) {
-      throw new IOException("Failed to process image '" + inputFile + "' into '" + outputFile + "'.");
+    	throw new IOException("Failed to process image '" + inputFile + "' into '" + outputFile + "'.");
     }
   }
 

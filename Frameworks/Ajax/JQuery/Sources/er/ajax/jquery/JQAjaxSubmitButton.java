@@ -51,6 +51,7 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 		ajaxOptionsArray.addObject(new AjaxOption("async", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("cache", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("delegate", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new AjaxOption("onBeforeClick", AjaxOption.STRING));
 		
 		NSMutableDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "url");
@@ -157,7 +158,6 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 				appendTagAttributeToResponse(response, "data-wonder-id", "ASB");
 				appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
 			}
-	    	
 	    	
 	    	if(showButton && !useButtonTag) {
 	    		response.appendContentString("/>");

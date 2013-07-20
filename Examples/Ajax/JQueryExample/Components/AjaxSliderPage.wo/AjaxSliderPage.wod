@@ -1,0 +1,45 @@
+Form : WOForm {
+	action = update;
+}
+
+MaxValue : WOTextField {
+	value = maxValue;
+}
+
+MinValue : WOTextField {
+	value = minValue;
+}
+
+PageWrapper : PageWrapper {
+	index = 6;
+	pageTitle = "Ajax Slider Test Page";
+}
+
+RangeSlider : JQAjaxSlider {
+	animate = true;
+	maxValue = maxValue;
+	minValue = minValue;
+	updateContainerID = "RangeSliderUpdateContainer";
+}
+
+RangeSliderUpdateContainer : JQAjaxUpdateContainer {
+	id = "RangeSliderUpdateContainer";
+}
+
+Slider : JQAjaxSlider {
+	trigger = true;
+	triggerName = "mySlider";
+	updateContainerID = "UpdateContainer";
+	value = sliderValue;
+}
+
+SliderValue : WOTextField {
+	disabled = true;
+	value = sliderValue;
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	delegate = "fade";
+	id = "UpdateContainer";
+	subscribes = "mySlider";
+}

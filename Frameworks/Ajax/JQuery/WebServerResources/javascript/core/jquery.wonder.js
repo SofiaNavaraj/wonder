@@ -141,6 +141,7 @@ var Wonder = Wonder || {};
         },
 
         willUpdate: function(target, caller) {
+			Wonder.log(this.currentDelegate);
             if(this.currentDelegate) {
                 return this.currentDelegate.willUpdate(target, caller);
             }
@@ -228,6 +229,16 @@ var Wonder = Wonder || {};
                         }
                     }
                 }
+                if(this.options['subscribes']) {
+                    var subscribedEvents = this.options['subscribes'].split(",");
+                    for(var i = 0; i < subscribedEvents.length; i++) {
+                        var eventName = $.trim(subscribedEvents[i]);
+                        $(document).on(eventName, { updateContainer: this.element }, function(event) {
+                            var updateContainer = Wonder.Page.getComponent(event.data.updateContainer.attr("id"));
+                            updateContainer.update(this.url, this.element, {'delegate' : updateContainer.delegate}, null);
+                        });
+                    }
+                }
             }
         },
 
@@ -266,7 +277,6 @@ var Wonder = Wonder || {};
             var options = options || this.options;
             this.currentDelegate = options['delegate'] || this.delegate;
             var aCaller = caller || this.element;
-
             var id = this.element.attr("id");
             if(options && options['_r']) {
                 updateUrl = updateUrl.addQueryParameters('_r='+ id);
@@ -280,7 +290,7 @@ var Wonder = Wonder || {};
 
             options['beforeSend'] = function(xhr, settings) {
                 if(this.currentDelegate) {
-                    this.currentDelegate.mightUpdate(this.element, aCaller);
+                    return this.currentDelegate.mightUpdate(this.element, aCaller);
                 }
             };
 
@@ -356,6 +366,16 @@ var Wonder = Wonder || {};
 
     Wonder.AUL = Wonder.AjaxUpdateLink;
 
+	Wonder.Validate = Wonder.AjaxElement.extend({
+		
+		init: function(element) {
+            var element = $(element);
+            this._super(element);
+			Wonder.Page.addComponent(element, element.validate(this.options));
+		}
+		
+	});
+
     Wonder.AjaxSubmitButton = Wonder.AjaxElement.extend({
 
         PartialFormSenderIDKey: '_partialSenderID',
@@ -395,6 +415,7 @@ var Wonder = Wonder || {};
                 target.update(actionUrl, caller, settings, data['parameters']);
 
             }
+
         },
 
         processOptions: function(form, options) {
@@ -483,7 +504,7 @@ var Wonder = Wonder || {};
         Wonder.log("Might update...", 1);
     };
     Wonder.delegates.debug.prototype.willUpdate = function(target, caller) {
-        Wonder.log("Might update...", 1);
+        Wonder.log("Will update...", 1);
     };
     Wonder.delegates.debug.prototype.didUpdate = function(target, caller) {
         Wonder.log("Did update...", 1);

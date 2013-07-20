@@ -375,13 +375,14 @@ hr {
 /* line 87, ../sass/screen.scss */
 #wrapper > div:nth-child(2) {
   left: 250px;
+  padding-bottom: 30px;
   right: 0px;
 }
-/* line 90, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #wrapper > div:nth-child(2) > * {
   padding: 0px 20px;
 }
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #wrapper > div:nth-child(2) h1:first-of-type {
   padding-top: 1.0em;
 }

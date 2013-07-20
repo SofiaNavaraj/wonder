@@ -33,9 +33,10 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	
 	public void appendToResponse(WOResponse aResponse, WOContext aContext) {
 
-		super.appendToResponse(aResponse, aContext);
 		WOComponent component = aContext.component();
 		NSDictionary options = _options(component);
+		options.takeValueForKey(aContext.elementID(), "elementID");
+		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(aContext), "url");
 
 		String elementName = stringValueForBinding("elementName", "div", component);
 		
@@ -44,8 +45,9 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 		appendTagAttributeToResponse(aResponse, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
 		appendTagAttributeToResponse(aResponse, "name", aContext.elementID());
 		aResponse.appendContentString("></" + elementName + ">");
-		
+
 		super.appendToResponse(aResponse, aContext);
+
 	}
 
 	@Override
@@ -69,11 +71,25 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	
 	@Override
 	public void takeValuesFromRequest(WORequest aRequest, WOContext aContext) {
+		
+		_takeValuesFromRequest(aRequest, aContext);
+		super.takeValuesFromRequest(aRequest, aContext);
+
+	}
+
+	public void _takeValuesFromRequest(WORequest aRequest, WOContext aContext) {
 
 		WOComponent component = aContext.component();
+
+		Object partialFormSenderId = null;
 		
+		if(aRequest.formValues() != null) {
+			if(aRequest.formValues().containsKey(AjaxSubmitButton.KEY_PARTIAL_FORM_SENDER_ID)) {
+				partialFormSenderId = aRequest.formValueForKey(AjaxSubmitButton.KEY_PARTIAL_FORM_SENDER_ID);
+			}
+		}
 		
-		if(aRequest.formValueForKey(AjaxSubmitButton.KEY_PARTIAL_FORM_SENDER_ID).equals(aContext.elementID())) {
+		if(partialFormSenderId != null && partialFormSenderId.equals(aContext.elementID())) {
 
 			try {
 
@@ -84,8 +100,8 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 				if(requestString.indexOf(":") > 0) {
 					
 					String[] values = requestString.split(":");
-					Number minValue = numericValue(values[0], numericFormatter);
 
+					Number minValue = numericValue(values[0], numericFormatter);
 					if(minValue != null) {
 						setValueForBinding(minValue, "minValue", component);
 					}
@@ -110,9 +126,6 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 			
 			
 		}
-		
-		super.takeValuesFromRequest(aRequest, aContext);
-
 	}
 	
 	public Number numericValue(String numberString, NSNumberFormatter numericFormatter) {
@@ -131,7 +144,13 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	
 	@Override
 	public WOActionResults handleRequest(WORequest request, WOContext context) {
+
 		WOResponse result = AjaxUtils.createResponse(request, context);
+		
+		if(AjaxUtils.isAjaxRequest(request)) {
+			_takeValuesFromRequest(request, context);
+		}
+		
 		return result;
 	}
 
@@ -148,12 +167,14 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 		ajaxOptionsArray.addObject(new AjaxOption("step", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("maxValue", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("minValue", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new AjaxOption("trigger", AjaxOption.BOOLEAN));
 		
 		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
-		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "url");
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 
 		options.takeValueForKey(updateContainerID, "updateContainer");
-		options.takeValueForKey(component.context().elementID(), "elementID");
+		if(hasBinding("triggerName")) {
+			options.takeValueForKey(stringValueForBinding("triggerName", component), "triggerName");
+		}
 		return options;
 		
 	}

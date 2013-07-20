@@ -19,8 +19,6 @@ PageWrapper : PageWrapper {
 	pageTitle = "Ajax Submit Button Test Page";
 }
 
-
-
 SubmitButton : JQAjaxSubmitButton {
 	action = updateName;
 	updateContainerID = "UpdateContainer";

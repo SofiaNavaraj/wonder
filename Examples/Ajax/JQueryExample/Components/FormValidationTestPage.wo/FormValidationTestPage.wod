@@ -1,0 +1,55 @@
+AjaxForm : JQValidateForm {
+	id = "AjaxForm";
+}
+
+AjaxSubmitButton : JQAjaxSubmitButton {
+	action = submit;
+	updateContainerID = "UpdateContainer";
+	value = "Tell Us";
+}
+
+AUC : JQAjaxUpdateContainer {
+	delegate = "testCustom";
+	id = "UpdateContainer";
+}
+
+EmailInput : ERXWOEmailField {
+	id = "SimpleEmailInput";
+	otherTagString = "required";
+	value = email;
+}
+
+FavoriteColorAnswer : WOTextField {
+	disabled = true;
+	value = favoriteColor;
+}
+
+FavoriteColorInput : WOTextField {
+	otherTagString = "required";
+	value = favoriteColor;
+}
+
+Form : JQValidateForm {
+	
+}
+
+NameInput : WOTextField {
+	id = "SimpleNameInput";
+	otherTagString = "required";
+	value = theName;
+}
+
+PageWrapper : PageWrapper {
+	index = 5;
+	pageTitle = "Form Validation Examples";
+}
+
+PhoneInput : ERXWOTelField {
+	id = "SimplePhoneInput";
+	otherTagString = "required";
+	value = phone;
+}
+
+SubmitButton : WOSubmitButton {
+	action = submit;
+}
