@@ -3,6 +3,11 @@ AccordionLink : WOHyperlink {
 	directActionName = "PageAction/AccordionTestPage";
 }
 
+AjaxTabPanel : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxTabTestPage";
+}
+
 AOFLink : WOHyperlink {
 	class = navigationClassName;
 	directActionName = "PageAction/AjaxObserveFieldPage";

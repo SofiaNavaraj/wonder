@@ -42,7 +42,7 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 			}
 			
 			boolean isATag = "a".equalsIgnoreCase(elementName);
-			boolean renderTags = (!disabled || !isATag);
+			boolean renderTags = (isATag);
 
 			if(renderTags) {
 			
@@ -63,10 +63,11 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 				appendTagAttributeToResponse(response, "style", valueForBinding("style", component));
 				appendTagAttributeToResponse(response, "id", valueForBinding("id", component));
 				appendTagAttributeToResponse(response, "accesskey", valueForBinding("accesskey", component));
+				appendTagAttributeToResponse(response, "data-wonder-id", "AUL");
+				appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
 
-				if(! disabled) {
-					appendTagAttributeToResponse(response, "data-wonder-id", "AUL");
-					appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
+				if(disabled) {
+					appendTagAttributeToResponse(response, "disabled", true);
 				}
 				
 				if(button) {
@@ -107,6 +108,7 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
 		ajaxOptionsArray.addObject(new AjaxOption("async", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("cache", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new AjaxOption("callback", AjaxOption.FUNCTION_2));
 		ajaxOptionsArray.addObject(new AjaxOption("complete", AjaxOption.FUNCTION_2));
 		ajaxOptionsArray.addObject(new AjaxOption("delegate", AjaxOption.STRING));
 

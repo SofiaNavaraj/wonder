@@ -23,6 +23,10 @@ p {
 	line-height: 1.4rem;
 }
 
+ul {
+	padding: 10px;
+}
+
 hr {
 	margin-bottom: 1.0rem;
 }
@@ -91,6 +95,14 @@ hr {
     > * {
       padding: 0px 20px;
     }
+    
+    > ul {
+    	padding-left: 40px;
+    	li {
+    		padding-bottom: .75rem;
+    	}
+    }
+    
     h1:first-of-type {
       padding-top: 1.0em;
     }

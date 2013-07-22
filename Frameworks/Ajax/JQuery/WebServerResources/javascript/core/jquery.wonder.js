@@ -154,7 +154,8 @@ var Wonder = Wonder || {};
                 $.when(self.didUpdate(target, caller)).done(function() {
                     $.when(self.handleFinish(target)).done(function() {
                         if(callback) {
-                            callback.call();
+							eval("var fn = (" + callback + ")");
+							fn.call(this, target, caller);
                         }
                     })
                 });
@@ -349,14 +350,18 @@ var Wonder = Wonder || {};
                alert('There is no element on this page with the id "' + options['updateContainer'] + '".');
             } else {
 
-                var elementID = options['elementID'];
-                var actionUrl = updateContainer.url;
+				if(! caller.attr('disabled')) {
 
-                if(elementID) {
-                    actionUrl = actionUrl.replace(/[^\/]+$/, elementID);
-                }
-
-                updateContainer.update(actionUrl, caller, options);
+	                var elementID = options['elementID'];
+	                var actionUrl = updateContainer.url;
+	
+	                if(elementID) {
+	                    actionUrl = actionUrl.replace(/[^\/]+$/, elementID);
+	                }
+	
+	                updateContainer.update(actionUrl, caller, options);
+				
+				}
 
             }
 
@@ -456,7 +461,7 @@ var Wonder = Wonder || {};
                 if(options && options['_r']) {
                     actionUrl = actionUrl.addQueryParameters('_r=' + id);
                 }
-                else {
+                else { 
                     actionUrl = actionUrl.addQueryParameters('_u=' + id);
                 }
             }
@@ -469,6 +474,17 @@ var Wonder = Wonder || {};
     });
 
     Wonder.ASB = Wonder.AjaxSubmitButton;
+
+	Wonder.AjaxTabPanel = {
+	
+		switchTab: function(target, caller) {
+			caller.attr('disabled', '');
+			caller.parent().siblings().each(function(index, element) {
+				$(element).children().first().removeAttr('disabled');
+			});
+		}
+		
+	};
 
     /*
 

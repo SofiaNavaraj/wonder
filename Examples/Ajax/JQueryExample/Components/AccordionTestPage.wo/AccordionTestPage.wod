@@ -12,7 +12,7 @@ IconLabelsAccordion : JQAccordion {
 }
 
 PageWrapper : PageWrapper {
-	index = 8;
+	index = 9;
 	pageTitle = "Accordion Test Page";
 }
 

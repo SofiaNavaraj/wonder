@@ -13,7 +13,7 @@ Form : WOForm {
 }
 
 PageWrapper : PageWrapper {
-	index = 7;
+	index = 8;
 	pageTitle = "Ajax Date Picker Test Page";
 }
 

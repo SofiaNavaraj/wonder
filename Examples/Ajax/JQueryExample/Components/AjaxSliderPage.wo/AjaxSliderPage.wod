@@ -1,7 +1,3 @@
-Form : WOForm {
-	action = update;
-}
-
 MaxValue : WOTextField {
 	value = maxValue;
 }
@@ -11,7 +7,7 @@ MinValue : WOTextField {
 }
 
 PageWrapper : PageWrapper {
-	index = 6;
+	index = 7;
 	pageTitle = "Ajax Slider Test Page";
 }
 

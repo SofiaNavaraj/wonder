@@ -54,7 +54,6 @@ public class JQAccordion extends AjaxDynamicElement {
 		ajaxOptionsArray.addObject(new AjaxOption("collapsible", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("disabled", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("event", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("header", AjaxOption.STRING));
 		ajaxOptionsArray.addObject(new AjaxOption("activate", AjaxOption.FUNCTION_2));
 		ajaxOptionsArray.addObject(new AjaxOption("beforeActivate", AjaxOption.FUNCTION_2));
 		ajaxOptionsArray.addObject(new AjaxOption("create", AjaxOption.FUNCTION_2));
