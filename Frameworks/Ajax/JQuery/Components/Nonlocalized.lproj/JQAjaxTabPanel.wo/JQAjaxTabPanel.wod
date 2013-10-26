@@ -1,0 +1,62 @@
+ComponentContent: WOComponentContent {
+}
+
+AjaxSubmit : JQAjaxSubmitButton {
+	button = false;
+	action = switchSubmitTab;
+	updateContainerID = ^id;
+}
+
+AjaxLink : JQAjaxUpdateLink {
+	action = switchSubmitTab;
+	callback = "Wonder.AjaxTabPanel.switchTab(v1, v2);";
+	updateContainerID = ^id;
+	disabled = isDisabled;
+}
+
+TabLi: WOGenericContainer { 
+	elementName = "li";
+}
+
+TabLabel: WOString {
+	value = currentTabName;
+}
+
+TabRepetition: WORepetition {
+	item = currentTab;
+	list = tabs;
+}
+
+TablUl: WOGenericContainer {
+   elementName = "ul";
+   class = "TabItemsList";
+}
+
+TabContentWrapper: ERXUniquingWrapper {
+	id = selectedTabIdentifier;
+}
+
+HasTabs: WOConditional {
+	condition=tabs.count;
+}
+
+HasNoTabs: WOConditional {
+	condition=tabs.count;
+	negate = true;
+}
+
+SubmitForm : WOConditional {
+  condition = dontSubmitForm;
+  negate = true;
+}
+
+DontSubmitForm : WOConditional {
+  condition = dontSubmitForm;
+}
+
+AjaxUpdateContainer : JQAjaxUpdateContainer {
+	class = "TabPanelWrapper";
+	delegate = ^delegate;
+	id = ^id;
+
+}

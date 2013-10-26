@@ -1,0 +1,22 @@
+DatePicker : JQDatePicker {
+	format = "%m/%d/%Y";
+	value = date;
+}
+
+DatePickerDisplay : WOTextField {
+	disabled = true;
+	value = date;
+}
+
+Form : WOForm {
+	
+}
+
+PageWrapper : PageWrapper {
+	index = 8;
+	pageTitle = "Ajax Date Picker Test Page";
+}
+
+SubmitButton : WOSubmitButton {
+	action = selectDate;
+}

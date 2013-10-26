@@ -1,0 +1,36 @@
+ColorSelector : WOPopUpButton {
+	id = "ColorSelector";
+	list = colors;
+	noSelectionString = "Please pick a color.";
+	selection = selectedColor;
+}
+
+Form : WOForm {
+	
+}
+
+PageWrapper : PageWrapper {
+	index = 4;
+	pageTitle = "Ajax Observe Field Test Page";
+}
+
+SelectedColor : WOTextField {
+	disabled = true;
+	value = selectedColor;
+}
+
+SelectedSize : WOTextField {
+	disabled = true;
+	value = selectedSize;
+}
+
+SizeSelector : WOPopUpButton {
+	id = "SizeSelector";
+	noSelectionString = "Please select a size.";
+	list = sizes;
+	selection = selectedSize;
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	observeFields = "ColorSelector, SizeSelector";
+}

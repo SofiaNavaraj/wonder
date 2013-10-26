@@ -1,0 +1,20 @@
+AJAXDialog : JQDialog {
+	ajax = true;
+	id = "AjaxDialog";
+	modal = "true";
+	title = "Ajax Dialog";
+}
+
+Now : WOString {
+	dateformat = "%I:%M:%S %p";
+	value = now;
+}
+
+PageWrapper : PageWrapper {
+	index = 10;
+	pageTitle = "JQuery UI Dialog Test Page";
+}
+
+SimpleDialog : JQDialog {
+	title = "Simple Dialog";
+}

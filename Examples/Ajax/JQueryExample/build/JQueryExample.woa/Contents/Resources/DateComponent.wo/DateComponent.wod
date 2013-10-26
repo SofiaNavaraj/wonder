@@ -1,0 +1,8 @@
+Date : WOString {
+	dateformat = ^dateformat;
+	value = now;
+}
+
+ShouldDisplay : WOConditional {
+	condition = shouldDisplay;
+}

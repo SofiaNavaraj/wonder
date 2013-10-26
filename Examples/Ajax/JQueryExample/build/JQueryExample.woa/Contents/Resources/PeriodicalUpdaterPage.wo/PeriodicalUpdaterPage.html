@@ -1,0 +1,25 @@
+<webobject name = "PageWrapper">
+	<h1>Periodical Updater</h1>
+	<p>Automatically refreshes content</p>
+	<webobject name = "OutsidePeriodicalUpdater">
+		<webobject name = "Now"></webobject>
+	</webobject>
+	<hr>
+	<p>I only update 3 times every 3 seconds.</p>	
+	<webobject name = "LimitedCountPeriodicalUpdater">
+		<webobject name = "Now"></webobject>
+	</webobject>
+
+	<!-- 
+		<hr>
+		<webobject name = "OneTimePeriodicalUpdater">
+			I only update the time once (after 5 seconds): <webobject name = "Now"></webobject><br>
+			<webobject name = "Display">
+				I'm an update container returned by an Ajax request and I run forever: 
+				<webobject name = "PeriodicalUpdater">
+					<webobject name = "Date"></webobject>
+				</webobject>
+			</webobject>
+		</webobject>
+	 -->
+</webobject>

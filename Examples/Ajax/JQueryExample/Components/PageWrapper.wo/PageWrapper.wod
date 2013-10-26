@@ -1,0 +1,87 @@
+AccordionLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AccordionTestPage";
+}
+
+AjaxTabPanel : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxTabTestPage";
+}
+
+AOFLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxObserveFieldPage";
+}
+
+ASBLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxSubmitButtonPage";
+}
+
+AUCLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/PeriodicalUpdaterPage";
+}
+
+AULLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxUpdateLinkPage";
+}
+
+Content : WOComponentContent {
+	
+}
+
+DatePickerLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxDatePickerPage";
+}
+
+DialogLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxDialogTestPage";
+}
+
+FormValidationLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/FormValidationTestPage";
+}
+
+HomePageLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/HomePage";
+}
+
+IEConditional : ERXIEConditionalComment {
+	
+}
+
+IEStylesheet : ERXStyleSheet {
+	filename = "stylesheets/ie.css";
+	media="screen, projection";
+}
+
+MetaDescription : WOGenericElement {
+	content = ^content;
+	elementName = "meta";
+	name = "description";
+}
+
+PageTitle : WOString {
+	value = ^pageTitle;
+}
+
+PrintStylesheet : ERXStyleSheet {
+	filename = "stylesheets/print.css";
+	media = "print";
+}
+
+ScreenStylesheet : ERXStyleSheet {
+	filename = "stylesheets/screen.css";
+	media = "screen, projection";
+}
+
+SliderLink : WOHyperlink {
+	class = navigationClassName;
+	directActionName = "PageAction/AjaxSliderPage";
+}

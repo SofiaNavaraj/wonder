@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="JQDialog.java" wocomponentcontent="false">
+
+        <binding name="id"/>
+        <binding name="linkElementName"/>
+        <binding name="label"/>
+        <binding name="dialogID"/>
+        <binding name="href"/>
+        <binding name="class"/>
+        <binding name="style"/>
+        <binding name="title"/>
+        <binding name="appendTo"/>
+        <binding name="autoOpen"/>
+        <binding name="buttons"/>
+        <binding name="closeOnEscape"/>
+        <binding name="closeText"/>
+        <binding name="dialogClass"/>
+        <binding name="draggable"/>
+        <binding name="height"/>
+        <binding name="hide"/>
+        <binding name="maxHeight"/>
+        <binding name="maxWidth"/>
+        <binding name="minHeight"/>
+        <binding name="minWidth"/>
+        <binding name="modal"/>
+        <binding name="position"/>
+        <binding name="resizable"/>
+        <binding name="show"/>
+        <binding name="width"/>
+    </wo>
+</wodefinitions>

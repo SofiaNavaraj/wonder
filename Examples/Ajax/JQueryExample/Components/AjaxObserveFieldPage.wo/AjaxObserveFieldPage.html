@@ -1,0 +1,17 @@
+<webobject name = "PageWrapper">
+	<h1>Ajax Observe Field</h1>
+	<h2>Various test of the Ajax Observe Field</h2>
+	<webobject name = "Form">
+		<webobject name = "ColorSelector"></webobject>
+		<webobject name = "SizeSelector"></webobject>
+	</webobject>
+	<hr>
+	<h3>Observe multiple</h3>
+	<p>Below is an update container that observes both select boxes.  You can now pass the update container an array of ids.  It will create an observer for each ID.</p>
+	<webobject name = "UpdateContainer">
+		<ul>
+			<li><label>Selected Color:</label><webobject name = "SelectedColor" /></li>
+			<li><label>Selected Size:</label><webobject name = "SelectedSize" /></li>
+		</ul>
+	</webobject>
+</webobject>

@@ -1,0 +1,10 @@
+DateInput : WOTextField {
+	class = ^class;
+	data-wonder-id = "DatePicker";
+	data-wonder-options = options;
+	formatter = formatter;
+	id = ^id;
+	name = ^name;
+	placeholder = ^placeholder;
+	value = ^value;
+}

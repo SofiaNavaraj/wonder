@@ -1,0 +1,16 @@
+PageWrapper : PageWrapper {
+	index = 6;
+	pageTitle = "Ajax Tab Test Page";
+}
+
+TabContent : WOSwitchComponent {
+	WOComponentName = selectedTab.componentName;
+}
+
+TabPanel : JQAjaxTabPanel {
+	delegate = "fade";
+	id = "TabTest";
+	tabs = tabs;
+	tabNameKey = "displayName";
+	selectedTab = selectedTab;
+}

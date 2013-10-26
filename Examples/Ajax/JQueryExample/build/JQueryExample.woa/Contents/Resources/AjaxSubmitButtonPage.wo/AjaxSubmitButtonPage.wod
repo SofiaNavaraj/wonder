@@ -1,0 +1,31 @@
+Form : WOForm {
+	
+}
+
+GuestNameInput : WOTextField {
+	value = guestName;
+}
+
+GuestName : WOString {
+	value = guestName;
+}
+
+NameIsDefined : ERXNonNullConditional {
+	condition = guestName;
+}
+
+PageWrapper : PageWrapper {
+	index = 3;
+	pageTitle = "Ajax Submit Button Test Page";
+}
+
+SubmitButton : JQAjaxSubmitButton {
+	action = updateName;
+	updateContainerID = "UpdateContainer";
+	value = "Tell us your name";
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	delegate = "testCustom";
+	id = "UpdateContainer";
+}

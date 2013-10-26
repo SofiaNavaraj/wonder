@@ -1,0 +1,45 @@
+<webobject name = "PageWrapper">
+	<h1>Project Wonder jQuery Components</h1>
+	<h3>Introduction</h3>
+	<p>
+		This framework is based upon the original Ajax framework for Project Wonder.  
+		There are some major differences besides the obvious one (we are using the JQuery JavaScript framework in place of the Prototype.js framework).  
+		Unlike the original framwork we are going to use the "data" attribute in place of putting JavaScript on the page.
+		This presents some different opportunities and challenges.
+	</p>
+	<h3>Object Initialization</h3>
+	<p>
+		When the page loads or when a page fragment gets returned from an Ajax request a JavaScript function is called.  
+		The function will use a "selector" to find all the HTML elements within the document or page fragment that has an attribute named "data-wonder-id".
+		The function will use the value of the attribute to decide how to initialize the element.
+		This works like a factory method.
+	</p>
+	<h3>Object Caching</h3>
+	<p>
+		Some components like the AjaxUpdateContainer require a JavaScript object to be initialized.  
+		To access the object associated with the component you call the method Wonder.Page.getComponent(theElementsID);  
+		So if you wanted to update an AjaxUpdateContainer using JavaScript you call: Wonder.Page.getComponent(theElementID).update();  
+		See the example on the AjaxUpdateLink page (onClick).  
+		Because we are using the JQuery data function to store the object if the element gets removed from the page the object will automatically get deallocated.
+	</p>
+	<h3>Delegates</h3>
+	<p>
+		This is still raw and could be overhauled.  Advice would be greatly appreciated!
+		When an AjaxUpdateContainer updates it's contents it goes through the following phases: 
+	</p>
+	<ul>
+		<li>mightUpdate - called before the AJAX request i.e. if you want to do some sort of check before making the request - see the Form Validation page (AJAX request).</li>
+		<li>willUpdate - called after the AJAX request completes but before the DOM is updated.</li>
+		<li>didUpdate - is called after the DOM has been updated.</li>
+	</ul>
+	<p>
+		An example of how you would use this is for animations: During willUpdate the AUC will fade out - when completed the DOM gets updated and then during didUpdate the AUC will fade back in.
+		There is the additional phase, updateFailed, in the event of an error during one of the phases.
+		Right now I'm using the JQuery implementation of the Promise design pattern to make sure that each phase completes before stepping into the next one. 
+		You can also specify a callback which will be called after the didUpdate phase is completed.
+		Look at the source of jquery.wonder.js for delegate examples.  To use a delegate just pass in the name of the delegate to the "delegate" binding of the AUC.  
+		If you want to override the AUC's delegate just pass in the name of your delegate to the component that will tell the AUC to update i.e. an AjaxUpdateLink.
+	</p>
+	<h3>Namespace</h3>
+	<p>Using this framework only introduces two variables to the window's namespace: JQuery (duh!) and Wonder.  So you shouldn't have to worry about using this framework with other JavaScript libraries.</p>
+</webobject>

@@ -1,0 +1,16 @@
+<webobject name = "PageWrapper">
+	<style type = "text/css">
+		a[disabled] {
+			color: black;
+			text-decoration: none;
+		}
+	</style>
+	<h1>Ajax Tab Panel</h1>
+	<h2>Works just like CCAjaxTabPanel*</h2>
+	<p>* with one small difference; I put the update container around the component content instead of the whole panel so that I could use animations when replacing the content that wouldn't effect the tabs.  The tabs use a callback to make the selected tab disabled.  To style a disabled tab use this CSS rule: a[disabled] {}</p>
+	<hr/>
+	<h3>Demo</h3>
+	<webobject name = "TabPanel">
+		<webobject name = "TabContent"></webobject>
+	</webobject>
+</webobject>

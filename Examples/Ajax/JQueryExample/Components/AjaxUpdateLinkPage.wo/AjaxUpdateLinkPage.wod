@@ -1,0 +1,33 @@
+PageWrapper : PageWrapper {
+	index = 2;
+	pageTitle = "Ajax Update Links Test Page";
+}
+
+Time : WOString {
+	dateformat = "%H:%M:%S";
+	value = now;
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	delegate = "slide";
+	id = "UpdateContainer";
+}
+
+UpdateContainer3 : JQAjaxUpdateContainer {
+	id = "UpdateContainer3";
+}
+
+UpdateContainer2 : JQAjaxUpdateContainer {
+	delegate = "fade";
+	id = "UpdateContainer2";
+}
+
+UpdateLink : JQAjaxUpdateLink {
+	action = updateTime;
+	updateContainerID = "UpdateContainer";
+}
+
+UpdateLink2 : JQAjaxUpdateLink {
+	action = updateTime;
+	updateContainerID = "UpdateContainer2";
+}

@@ -1,0 +1,12 @@
+<webobject name = "PageWrapper">
+	<h1>Ajax Update Links</h1>
+	<p>Various Tests of the Ajax Update Link</p>
+	<webobject name = "UpdateLink">Update Time (Slide)</webobject>
+	<webobject name = "UpdateContainer"><webobject name = "Time" /></webobject>
+	<webobject name = "UpdateLink2">Update Time (Fade)</webobject>
+	<webobject name = "UpdateContainer2"><webobject name = "Time" /></webobject>
+	<a href = "#" onclick = "Wonder.Page.getComponent('UpdateContainer3').update(null, this, {'delegate': Wonder.delegates.slide});">Update Time (onClick)</a>
+	<webobject name = "UpdateContainer3">
+		<webobject name = "Time" />
+	</webobject>
+</webobject>
