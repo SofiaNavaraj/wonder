@@ -1,5 +1,7 @@
 DatePicker : JQDatePicker {
+	class = "form-control";
 	format = "%m/%d/%Y";
+	includeUIStylesheet = false;
 	value = date;
 }
 
@@ -13,7 +15,7 @@ Form : WOForm {
 }
 
 PageWrapper : PageWrapper {
-	index = 8;
+	index = 9;
 	pageTitle = "Ajax Date Picker Test Page";
 }
 

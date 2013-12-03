@@ -1,4 +1,4 @@
-ColorSelector : WOPopUpButton {
+ColorSelector : JQBSelectPicker {
 	id = "ColorSelector";
 	list = colors;
 	noSelectionString = "Please pick a color.";
@@ -24,7 +24,7 @@ SelectedSize : WOTextField {
 	value = selectedSize;
 }
 
-SizeSelector : WOPopUpButton {
+SizeSelector : JQBSelectPicker {
 	id = "SizeSelector";
 	noSelectionString = "Please select a size.";
 	list = sizes;

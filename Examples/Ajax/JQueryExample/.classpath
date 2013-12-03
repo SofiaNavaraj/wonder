@@ -16,5 +16,6 @@
 	<classpathentry kind="con" path="WOFramework/Ajax"/>
 	<classpathentry kind="con" path="WOFramework/JQuery"/>
 	<classpathentry kind="con" path="WOFramework/JQueryUI"/>
+	<classpathentry kind="con" path="WOFramework/JQueryBootstrap"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

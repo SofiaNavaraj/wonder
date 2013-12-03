@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-        <wo wocomponentcontent="false" class="AjaxTabTestPage.java">
+        <wo class="AjaxTabTestPage.java" wocomponentcontent="false">
 
-        </wo>
+        <binding name="tabContainerClassNames"/>
+    <binding name="selectedTabClassNames"/>
+    </wo>
 </wodefinitions>

@@ -24,7 +24,8 @@ public class JQAccordion extends AjaxDynamicElement {
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
-		
+
+		super.appendToResponse(response, context);
 		WOComponent component = context.component();
 		String elementName = stringValueForBinding("elementName", "div", component);
 		response.appendContentString("<");
@@ -40,7 +41,6 @@ public class JQAccordion extends AjaxDynamicElement {
 		response.appendContentString(elementName);
 		response.appendContentString(">");
 
-		super.appendToResponse(response, context);
 
 	}
 

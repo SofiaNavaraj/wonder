@@ -11,7 +11,7 @@ Now : WOString {
 }
 
 PageWrapper : PageWrapper {
-	index = 10;
+	index = 11;
 	pageTitle = "JQuery UI Dialog Test Page";
 }
 

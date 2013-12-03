@@ -43,12 +43,18 @@
 	<p>Check out the plugins documentation for more information: <a href = "http://validation.bassistance.de" target = "_blank">http://validation.bassistance.de</a></p>
 	<h3>Simple</h3>
 	<webobject name = "Form">
-		<label for = "SimpleNameInput">Your name</label>	
-		<webobject name = "NameInput" />
-		<label for = "SimpleEmailInput">Your email</label>
-		<webobject name = "EmailInput" />
-		<label for = "SimplePhoneInput">Your phone</label>
-		<webobject name = "PhoneInput" />
+		<div class = "input-group">
+			<label for = "SimpleNameInput">Your name</label>	
+			<webobject name = "NameInput" />
+		</div>
+		<div class = "input-group">
+			<label for = "SimpleEmailInput">Your email</label>
+			<webobject name = "EmailInput" />
+		</div>
+		<div class = "input-group">
+			<label for = "SimplePhoneInput">Your phone</label>
+			<webobject name = "PhoneInput" />
+		</div>
 		<webobject name = "SubmitButton" />
 	</webobject>
 	<hr>

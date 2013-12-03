@@ -7,7 +7,7 @@ MinValue : WOTextField {
 }
 
 PageWrapper : PageWrapper {
-	index = 7;
+	index = 8;
 	pageTitle = "Ajax Slider Test Page";
 }
 

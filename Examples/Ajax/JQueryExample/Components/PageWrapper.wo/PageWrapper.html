@@ -3,41 +3,37 @@
 	<head>
 		<title><webobject name = "PageTitle" /></title>
 		<webobject name = "MetaDescription"></webobject>
-		<webobject name = "ScreenStylesheet"></webobject>
-		<webobject name = "PrintStylesheet"></webobject>
-		<webobject name = "IEConditional">
-			<webobject name = "IEStylesheet" />
-		</webobject>
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div id = "wrapper">
-			<div>
-				<nav>
-					<label>Navigation</label>
-					<ul>
-						<li><webobject name = "HomePageLink">Home Page</webobject></li>
-					</ul>
-					<label>Core</label>
-					<ul>
-						<li><webobject name = "AUCLink">Periodical Updater</webobject></li>
-						<li><webobject name = "AULLink">Update Link</webobject></li>
-						<li><webobject name = "ASBLink">Ajax Submit Button</webobject></li>
-						<li><webobject name = "AOFLink">Ajax Observe Field</webobject></li>
-						<li><webobject name = "FormValidationLink">Form Validation</webobject></li>
-						<li><webobject name = "AjaxTabPanel">Tab Panel</webobject></li>
-					</ul>	
-					<label>JQueryUI</label>
-					<ul>
-						<li><webobject name = "SliderLink">Ajax Slider</webobject></li>
-						<li><webobject name = "DatePickerLink">Date Picker</webobject></li>
-						<li><webobject name = "AccordionLink">Accordion</webobject></li>
-						<li><webobject name = "DialogLink">Dialog</webobject></li>
-					</ul>
-				</nav>
-			</div>			
-			<div>
-				<webobject name = "Content" />
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-md-3">
+					<nav>
+						<ul class = "nav nav-list nav-list-vivid">
+							<li class = "nav-header">Navigation</li>
+							<webobject name = "ListItem"><webobject name = "HomePageLink">Home Page</webobject></webobject>
+							<li class = "nav-header">Core</li>
+							<webobject name = "ListItem"><webobject name = "AUCLink">Periodical Updater</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "AULLink">Update Link</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "ASBLink">Ajax Submit Button</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "AOFLink">Ajax Observe Field</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "FormValidationLink">Form Validation</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "AjaxTabPanel">Tab Panel</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "SelectBoxLink">Styled Popup Button</webobject></webobject>
+							<li class = "nav-header">JQueryUI</li>
+							<webobject name = "ListItem"><webobject name = "SliderLink">Ajax Slider</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "DatePickerLink">Date Picker</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "AccordionLink">Accordion</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "DialogLink">Dialog</webobject></webobject>
+							<li class = "nav-header">Bootstrap</li>
+							<webobject name = "ListItem"><webobject name = "SelectPickerLink">Bootstrap Styled Popup Button</webobject></webobject>
+							<webobject name = "ListItem"><webobject name = "DropButtonButtonLink">Dropdown Buttons</webobject></webobject>
+						</ul>
+					</nav>
+				</div>			
+				<div class = "col-md-9">
+					<webobject name = "Content" />
+				</div>
 			</div>
 		</div>
 	</body>

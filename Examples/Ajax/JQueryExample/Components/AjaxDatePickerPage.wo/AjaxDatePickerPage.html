@@ -3,11 +3,20 @@
 	<h2>Various Tests of an Ajax Date Picker</h2>
 	<h3>Very Simple Example</h3>
 	<p>I need to implement the various options.</p>
-	<webobject name = "Form">
-		<label>Date</label>
-		<webobject name = "DatePicker"></webobject>
-		<webobject name = "SubmitButton"></webobject>
-	</webobject>
+	<div class = "row">
+		<div class="col-lg-5">
+			<webobject name = "Form">
+				<div class = "form-group">
+					<label>Date</label>
+					<div class = "input-group">
+						<span class="input-group-addon"><span class = "fui-calendar"></span></span>
+						<webobject name = "DatePicker"></webobject>
+					</div>
+				</div>
+				<webobject name = "SubmitButton"></webobject>
+			</webobject>
+		</div>
+	</div>
 	<div>
 		<label>Selected Date:</label>
 		<webobject name = "DatePickerDisplay"></webobject>

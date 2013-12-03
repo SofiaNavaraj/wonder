@@ -162,17 +162,17 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	protected NSDictionary _options(WOComponent component) {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("value", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("animate", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("disabled", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("max", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new AjaxOption("maxValue", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("min", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new AjaxOption("minValue", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("orientation", AjaxOption.STRING));
 		ajaxOptionsArray.addObject(new AjaxOption("range", AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("step", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("maxValue", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("minValue", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("trigger", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new AjaxOption("value", AjaxOption.NUMBER));
 		
 		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 

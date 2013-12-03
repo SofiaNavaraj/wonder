@@ -62,8 +62,8 @@ public class JQValidateForm extends ERXWOForm {
 
 	@Override
 	public void appendToResponse(WOResponse response, WOContext context) {
-		addRequiredWebResources(response, context);
 		super.appendToResponse(response, context);
+		addRequiredWebResources(response, context);
 		
 	}
 

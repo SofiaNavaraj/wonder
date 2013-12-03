@@ -78,6 +78,7 @@ var Wonder = Wonder || {};
         verbose: 0
     };
 
+	Wonder.BreakException = {};
     Wonder.PeriodicalRegistry = {};
     Wonder.nextGuid = 1;
     Wonder.components = [];
@@ -194,7 +195,6 @@ var Wonder = Wonder || {};
             return Wonder.Page.initialize(target);
         }
 
-
     });
 
     var AjaxOptions = {
@@ -234,7 +234,11 @@ var Wonder = Wonder || {};
                                 var updateContainer = Wonder.Page.getComponent(event.data.updateContainer.attr("id"));
                                 var data = {};
                                 var formFieldName = caller.attr('name');
-                                data[formFieldName] = caller.val();
+                                if(caller.prop("tagName") == 'INPUT' && caller.prop('type') == 'checkbox') {
+	                                data[formFieldName] = caller.prop('checked') ? "" : "false";
+                                } else {
+	                                data[formFieldName] = caller.val();
+                                }
                                 data['_partialSenderID'] = formFieldName;
                                 updateContainer.update(actionUrl, caller, null, data);
                             });
@@ -299,6 +303,7 @@ var Wonder = Wonder || {};
 
             options['context'] = this;
             options['data'] = data;
+
 
             options['beforeSend'] = function(xhr, settings) {
                 if(this.currentDelegate) {
@@ -490,12 +495,26 @@ var Wonder = Wonder || {};
 	
 		switchTab: function(target, caller) {
 			caller.attr('disabled', '');
+			caller.parent().attr('class', 'active');
 			caller.parent().siblings().each(function(index, element) {
 				$(element).children().first().removeAttr('disabled');
+				$(element).removeAttr('class');
 			});
 		}
 		
 	};
+
+	Wonder.SelectBox = Wonder.AjaxElement.extend({
+		
+		init: function(element) {
+            var element = $(element);
+            this._super(element);
+			element.selectBox(this.options);
+			Wonder.Page.addComponent(element, element.data('selectBox'));	
+			Wonder.log(Wonder.Page.getComponent(element));
+		}
+
+	});
 
     /*
 

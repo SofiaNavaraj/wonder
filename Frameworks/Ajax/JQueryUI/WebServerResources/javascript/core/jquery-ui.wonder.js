@@ -146,11 +146,25 @@
                     });
                 }
             }
+            
+        	var showEffect = this.options['showEffect'];
+        	this.options['show'] = {
+        		effect: 'drop',
+        		direction: 'up',
+        		duration: 200
+        	},
+			this.options['hide'] = {
+				effect: 'fade',
+        		duration: 200
+            }
+            
+
             var dialog = $(dialogID).dialog(this.options);
-            element.click(function() {
+            element.click(function(event) {
                 event.preventDefault();
                 dialog.dialog("open");
             });
+
     	}
     
     

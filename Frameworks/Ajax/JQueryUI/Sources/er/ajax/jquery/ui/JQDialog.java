@@ -152,6 +152,7 @@ public class JQDialog extends AjaxDynamicElement {
 		ajaxOptionsArray.addObject(new AjaxOption("position", AjaxOption.DEFAULT));
 		ajaxOptionsArray.addObject(new AjaxOption("resizable",AjaxOption.BOOLEAN));
 		ajaxOptionsArray.addObject(new AjaxOption("show", AjaxOption.DEFAULT));
+		ajaxOptionsArray.addObject(new AjaxOption("showEffect", AjaxOption.NUMBER));
 		ajaxOptionsArray.addObject(new AjaxOption("title",AjaxOption.STRING));
 		ajaxOptionsArray.addObject(new AjaxOption("width", AjaxOption.NUMBER));
 

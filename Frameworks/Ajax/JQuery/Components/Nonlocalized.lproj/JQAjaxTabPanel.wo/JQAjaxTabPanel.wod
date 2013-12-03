@@ -15,6 +15,7 @@ AjaxLink : JQAjaxUpdateLink {
 }
 
 TabLi: WOGenericContainer { 
+	class = tabClassName;
 	elementName = "li";
 }
 
@@ -29,7 +30,7 @@ TabRepetition: WORepetition {
 
 TablUl: WOGenericContainer {
    elementName = "ul";
-   class = "TabItemsList";
+   class = tabContainerClassNames;
 }
 
 TabContentWrapper: ERXUniquingWrapper {

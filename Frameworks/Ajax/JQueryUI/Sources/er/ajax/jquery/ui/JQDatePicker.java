@@ -6,9 +6,11 @@ import com.ibm.icu.text.SimpleDateFormat;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
+import com.webobjects.foundation.NSMutableArray;
 import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation.NSTimestampFormatter;
 
+import er.ajax.AjaxOption;
 import er.ajax.jquery.JQAjaxUtils;
 import er.ajax.jquery.utils.JQueryUtils;
 import er.extensions.components.ERXComponent;
@@ -33,13 +35,15 @@ public class JQDatePicker extends ERXComponent {
 
 		WOComponent component = context.component();
 		String framework = component.valueForStringBinding("framework", null);
-		String filename = component.valueForStringBinding("fileName", null);
+		String filename = component.valueForStringBinding("filename", null);
 
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQueryUI", JQAjaxUtils.JQUERY_UI_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQueryUI", JQAjaxUtils.JQUERY_UI_WONDER_JS);
-		JQAjaxUtils.addUIStylesheetResourceInHead(context, response, framework, filename);
+		if(valueForBooleanBinding("includeUIStylesheet", true)) {
+			JQAjaxUtils.addUIStylesheetResourceInHead(context, response, framework, filename);
+		}
 
 	}
 	
@@ -78,6 +82,11 @@ public class JQDatePicker extends ERXComponent {
 	}
 	
 	public String options() {
+
+		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
+		ajaxOptionsArray.addObject(new AjaxOption("showOtherMonths", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new AjaxOption("selectOtherMonths", AjaxOption.BOOLEAN));
+		
 		NSMutableDictionary<String, Object> options = new NSMutableDictionary<String, Object>();
 		options.takeValueForKey(altFormat(format()), "dateFormat");
 		return JQueryUtils.simpleSerialize(options, true);
