@@ -1,0 +1,31 @@
+AddItemToCart : WOHyperlink {
+	action = addItemToCart;
+}
+
+Item : WOString {
+	value = item;
+}
+
+ItemsInCartRepetition : WORepetition {
+	item = item;
+	list = cart;
+}
+
+ItemRepetition : WORepetition {
+	item = item;
+	list = items;
+}
+
+PageWrapper : PageWrapper {
+	index = 13;
+	pageTitle = "Bootstrap Drop Down Buttons";
+}
+
+ResetDropDown : JQBButtonDropdown {
+	action = resetCart;
+	actionButtonLabel = "Reset Cart";
+}
+
+SimpleDropDown : JQBButtonDropdown {
+	dropDownButtonLabel = "Add to Cart";
+}
