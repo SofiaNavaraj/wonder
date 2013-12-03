@@ -1,0 +1,29 @@
+Form : WOForm {
+		
+}
+
+FruitSelected : ERXNonNullConditional {
+	condition = selectedItem;
+}
+
+PageWrapper : PageWrapper {
+	index = 7;
+	pageTitle = "Bootstrap Select Picker";
+}
+
+SelectedFruit : WOString {
+	value = selectedItem;
+}
+
+StandardPopupButton : JQSelectBox {
+	class = "form-control";
+	item = item;
+	list = list;
+	noSelectionString = "Fruit List";
+	selection = selectedItem;
+}
+
+SubmitButton : WOSubmitButton {
+	action = selectFruit;
+	class = "btn btn-default";
+}

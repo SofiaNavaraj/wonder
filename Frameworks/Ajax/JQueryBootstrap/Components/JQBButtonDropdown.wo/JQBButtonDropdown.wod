@@ -1,0 +1,29 @@
+ActionButton : ERXLinkButton5 {
+	action = ^action;
+	class = buttonClass;
+	string = ^actionButtonLabel;	
+}
+
+ActionIsDefined : ERXNonNullConditional {
+	condition = ^action;
+}
+
+ActionIsNotDefined : ERXNonNullConditional {
+	condition = ^action;
+	negate = true;
+}
+
+DropdownButton : WOGenericContainer {
+	class = dropdownButtonClass;
+	data-toggle = "dropdown";
+	elementName = "button";
+	type = "button";
+}
+
+DropdownButtonLabel : WOString {
+	value = ^dropDownButtonLabel;
+}
+
+ComponentContent : WOComponentContent {
+	
+}

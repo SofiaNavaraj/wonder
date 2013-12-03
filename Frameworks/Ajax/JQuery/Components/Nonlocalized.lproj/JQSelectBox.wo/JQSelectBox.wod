@@ -1,0 +1,36 @@
+SelectedValueNonNullConditional : WOConditional {
+	condition = selectedValueIsDefined;
+}
+
+SelectedValuePopUpButton : WOPopUpButton {
+	data-wonder-id = "SelectBox";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	displayString = ^displayString;
+	escapeHTML = ^escapeHTML;
+	id = id;
+	item = ^item;
+	list = ^list;
+	name = ^name;
+	noSelectionString = ^noSelectionString;
+	selectedValue = ^selectedValue;	
+	value = ^value;	
+}
+
+SelectionNonNullConditional : WOConditional {
+	condition = selectionIsDefined;
+}
+
+SelectionPopUpButton : WOPopUpButton {
+	data-wonder-id = "SelectBox";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	displayString = ^displayString;
+	escapeHTML = ^escapeHTML;
+	id = id;
+	item = ^item;
+	list = ^list;
+	name = ^name;
+	noSelectionString = ^noSelectionString;
+	selection = ^selection;
+}
