@@ -1,0 +1,72 @@
+HasNextPageConditional : WOConditional {
+	condition = hasNextPage;
+}
+
+HasPreviousConditional : WOConditional {
+	condition = hasPreviousPage;
+}
+
+HasMultipleBatches : WOConditional {
+	condition = displayGroup.hasMultipleBatches;
+}
+
+HasNoNextPageConditional : WOConditional {
+	condition = hasNextPage;
+	negate = true;
+}
+
+HasNotPreviousConditional : WOConditional {
+	condition = hasPreviousPage;
+	negate = true;
+}
+
+IsCurrentPageNumberConditional : WOConditional {
+	condition = currentPageNumber;
+}
+
+IsEllipsisConditional : WOConditional {
+	condition = repetitionPageNumber.pageNumber;
+	negate = true;
+}
+
+IsNotCurrentPageNumberConditional : WOConditional {
+	condition = currentPageNumber;
+	negate = true;
+}
+
+IsPageNumberConditional : WOConditional {
+	condition = repetitionPageNumber.pageNumber;
+}
+
+NextLabel : ERXLocalizedString {
+	value = "ERXFlickrBatchNavigation.next";	
+}
+
+NextPageAction : JQAjaxUpdateLink {
+	action = nextPage;
+	updateContainerID = updateContainerID;
+}
+
+PageNumber : WOString {
+	numberformat = "0";
+	value = repetitionPageNumber.pageNumber;
+}
+
+PageNumberRepetition : WORepetition {
+	list = pageNumbers;
+	item = repetitionPageNumber;
+}
+
+PreviousLabel : ERXLocalizedString {
+	value = "ERXFlickrBatchNavigation.previous";	
+}
+
+PreviousPageAction : JQAjaxUpdateLink {
+	action = previousPage;
+	updateContainerID = updateContainerID;
+}
+
+SelectPageAction : JQAjaxUpdateLink {
+	action = selectPage;
+	updateContainerID = updateContainerID;
+}

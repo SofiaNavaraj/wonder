@@ -1,0 +1,31 @@
+BranchLabel : WOString {
+	value = branchButtonLabel;
+}
+
+BranchIcon : WOGenericContainer {
+	class = branchIcon;
+	elementName = "i";
+}
+
+HasBranchIcon : ERXNonNullConditional {
+	condition = branchIcon;
+}
+
+Link : WOHyperlink {
+	action = performAction;
+	class = branchLinkClass;
+}
+
+HasChoices: WOConditional {
+	condition = hasBranchChoices;
+}
+
+IsAllowed : WOConditional {
+	condition = isDelegateAllowed;
+}
+
+Repetition: WORepetition {
+	item = branch;
+	list = branchChoices;
+	checkHashCodes = false;
+}

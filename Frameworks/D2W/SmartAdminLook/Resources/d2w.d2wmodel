@@ -1,0 +1,2224 @@
+{
+  "rules" = (
+    {
+      "author" = "0"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "look"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+    }, 
+    {
+      "author" = "0"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useWideLayout"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "0"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useTableLayout"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "0"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useStandardLayout"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "0"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "isEmbedded"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showBottomActionBlock"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForMainContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForPageTabContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForPropertyContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForParentMainContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForRepetitionContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "controllerButtonComponentName"; 
+        "value" = "ERXEmptyComponent"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "*Embedded*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "isEmbedded"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "*Embedded*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "pageWrapperName"; 
+        "value" = "ERDEmptyPageWrapper"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.isToMany"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "1"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "er.directtoweb.ERDKeyValueAssignment"; 
+        "keyPath" = "embeddedPageConfiguration"; 
+        "value" = "listEmbeddedConfigurationName"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.isToMany"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "0"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "er.directtoweb.ERDKeyValueAssignment"; 
+        "keyPath" = "embeddedPageConfiguration"; 
+        "value" = "inspectEmbeddedConfigurationName"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment"; 
+        "keyPath" = "pickEmbeddedConfigurationName"; 
+        "value" = "<SADDefaultConfigurationNameAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment"; 
+        "keyPath" = "queryEmbeddedConfigurationName"; 
+        "value" = "<SADDefaultConfigurationNameAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment"; 
+        "keyPath" = "createEmbeddedConfigurationName"; 
+        "value" = "<SADDefaultConfigurationNameAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment"; 
+        "keyPath" = "selectEmbeddedConfigurationName"; 
+        "value" = "<SADDefaultConfigurationNameAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "10"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment"; 
+        "keyPath" = "editRelationshipEmbeddedConfigurationName"; 
+        "value" = "<SADDefaultConfigurationNameAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "15"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "edit"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "inspect"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "select"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "shouldShowCancelButton"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "headerElementName"; 
+        "value" = "h2"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForConfirmPage"; 
+        "value" = "SAD2WConfirmPage"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showTopBatchCount"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "propertyKey"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "editAction"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADEditButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "branchLinkClass"; 
+        "value" = "btn btn-default"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "sectionWrapper"; 
+        "value" = "SADSectionWrapper"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "actionBarComponentName"; 
+        "value" = "SADActionBar"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "headerComponentName"; 
+        "value" = "SAD2WTextHeader"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "printLinkClassNames"; 
+        "value" = "btn btn-default"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "pageConfiguration"; 
+        "selectorName" = "isLike"; 
+        "value" = "*Embedded*"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showHeader"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "propertyKey"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "inspectAction"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADInspectButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "sa.directtoweb.assignments.SADAssignment"; 
+        "keyPath" = "idForUpdateContainer"; 
+        "value" = "<SADAssignment>"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "shouldShowDefaultPageButtons"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showBottomBatchNavigationBar"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "tableHeaderComponentName"; 
+        "value" = "SAD2WTableHeader"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "emptyListComponentName"; 
+        "value" = "SADEmptyListMessage"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "printerButtonComponentName"; 
+        "value" = "SADPrinterButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "propertyNameComponentName"; 
+        "value" = "SAD2WPropertyName"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "propertyKey"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "editAction"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "editLinkClassNames"; 
+        "value" = "btn btn-primary btn-xs"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "defaultToEmbeddedEditRelationship"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForQueryAllPage"; 
+        "value" = "SAQueryEntitiesPage"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "propertyKey"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "inspectAction"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "inspectLinkClassNames"; 
+        "value" = "btn btn-info btn-xs"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForEditRelationshipPage"; 
+        "value" = "SADEditRelationshipPage"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.isToMany"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "1"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WQueryToManyField"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "propertyKey"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "deleteAction"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADDeleteButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "propertyKey"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "selectAction"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADSelectButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "repetitionComponentName"; 
+        "value" = "SADQueryPageRepetition"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "propertyKey"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "removeRelatedAction"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADRemoveRelatedButton"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "java.lang.String"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WQueryStringOperator"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "parentPageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "Inspect*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "shouldShowCancelButton"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "editRelationship"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "toManyRepetitionComponentName"; 
+        "value" = "SADListPageRepetition"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "*Embedded*"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = "editRelationship"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = "list"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showHeader"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WQueryDateRange"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EONotQualifier"; 
+            "qualifier" = {
+              "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+              "key" = "smartRelationship.isToMany"; 
+              "selectorName" = "isEqualTo"; 
+              "value" = {
+                "class" = "java.lang.Number"; 
+                "value" = "1"; 
+              }; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WQueryToOneField"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "smartRelationship"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "propertyKey"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "er.directtoweb.ERDKeyValueAssignment"; 
+        "keyPath" = "listConfigurationName"; 
+        "value" = "listEmbeddedConfigurationName"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "smartRelationship"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "propertyKey"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "edit"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "er.directtoweb.ERDKeyValueAssignment"; 
+        "keyPath" = "editConfigurationName"; 
+        "value" = "editEmbeddedConfigurationName"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "list"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "select"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+                "qualifiers" = (
+                  {
+                    "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                    "key" = "task"; 
+                    "selectorName" = "isEqualTo"; 
+                    "value" = "edit"; 
+                  }, 
+                  {
+                    "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                    "key" = "subTask"; 
+                    "selectorName" = "isEqualTo"; 
+                    "value" = "list"; 
+                  }
+                ); 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "repetitionComponentName"; 
+        "value" = "SADListPageRepetition"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "smartAttribute.className"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "java.lang.Number"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "smartAttribute.className"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "java.math.BigDecimal"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WQueryNumberRange"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "smartRelationship"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "propertyKey"; 
+                "selectorName" = "isNotEqualTo"; 
+                "value" = {
+                  "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+                }; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "inspect"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "er.directtoweb.ERDKeyValueAssignment"; 
+        "keyPath" = "inspectConfigurationName"; 
+        "value" = "inspectEmbeddedConfigurationName"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.destinationEntity.sharedObjectFetchSpecificationNames.count"; 
+            "selectorName" = "isGreaterThan"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "0"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.isToMany"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "1"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WEditToManyRelationship"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "defaultToEmbeddedEditRelationship"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "0"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.destinationEntity.sharedObjectFetchSpecificationNames.count"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "0"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "ERDEditRelationship"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.destinationEntity.sharedObjectFetchSpecificationNames.count"; 
+            "selectorName" = "isGreaterThan"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "0"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EONotQualifier"; 
+            "qualifier" = {
+              "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+              "key" = "smartRelationship.isToMany"; 
+              "selectorName" = "isEqualTo"; 
+              "value" = {
+                "class" = "java.lang.Number"; 
+                "value" = "1"; 
+              }; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WEditToOneRelationship"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "look"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "SmartAdminLook"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+                "qualifiers" = (
+                  {
+                    "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                    "key" = "task"; 
+                    "selectorName" = "isEqualTo"; 
+                    "value" = "list"; 
+                  }, 
+                  {
+                    "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+                    "qualifiers" = (
+                      {
+                        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                        "key" = "parentPageConfiguration"; 
+                        "selectorName" = "isLike"; 
+                        "value" = "*Edit*"; 
+                      }, 
+                      {
+                        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                        "key" = "parentPageConfiguration"; 
+                        "selectorName" = "isLike"; 
+                        "value" = "*Create*"; 
+                      }
+                    ); 
+                  }
+                ); 
+              }
+            ); 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "EditRelationship*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "actions"; 
+        "value" = {
+          "right" = (
+            "removeRelatedAction"
+          ); 
+        }; 
+      }; 
+    }, 
+    {
+      "author" = "25"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "java.lang.String"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.width"; 
+            "selectorName" = "isGreaterThanOrEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "110"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WEditLargeString"; 
+      }; 
+    }, 
+    {
+      "author" = "30"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "showTopBatchCount"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "30"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "java.lang.String"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WEditString"; 
+      }; 
+    }, 
+    {
+      "author" = "30"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "*Embedded*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "sectionWrapper"; 
+        "value" = "ERDEmptyPageWrapper"; 
+      }; 
+    }, 
+    {
+      "author" = "30"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "pageConfiguration"; 
+            "selectorName" = "isLike"; 
+            "value" = "*Embedded*"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "headerComponentName"; 
+        "value" = "ERXEmptyComponent"; 
+      }; 
+    }, 
+    {
+      "author" = "36"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "java.lang.String"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.width"; 
+            "selectorName" = "isGreaterThanOrEqualTo"; 
+            "value" = {
+              "class" = "java.lang.Number"; 
+              "value" = "110"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "staySmall"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "1"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SAD2WEditString"; 
+      }; 
+    }, 
+    {
+      "author" = "40"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "list"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "subTask"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "pick"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "parentPageConfiguration"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+            }; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "actions"; 
+        "value" = {
+          "left" = (
+            "selectionAction"
+          ); 
+        }; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "hasIcon"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForInspectPage"; 
+        "value" = "SADInspectPage"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useWideLayout"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "inputWrapperClassName"; 
+        "value" = "input"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForTabInspectPage"; 
+        "value" = "SAD2WTabInspectPage"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useStandardLayout"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "inspect"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useTableLayout"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "editRelationship"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "useWideLayout"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "look"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "SmartAdminLook"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "inspect"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "edit"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "repetitionComponentName"; 
+        "value" = "SADInspectPageRepetition"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "SADDatePicker"; 
+      }; 
+    }, 
+    {
+      "author" = "51"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "includeUIStylesheet"; 
+        "value" = "false"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = ""; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "task"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "edit"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "class"; 
+        "value" = "form-control"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "task"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "query"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForQueryPage"; 
+        "value" = "SADQueryPage"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForListPage"; 
+        "value" = "SAListPage"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "inspect"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "formClass"; 
+        "value" = "form-horizontal"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "hasIcon"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "nextButtonLabel"; 
+        "value" = "&gt;"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "prevButtonLabel"; 
+        "value" = "&lt;"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "changeYear"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.BooleanAssignment"; 
+        "keyPath" = "changeMonth"; 
+        "value" = "true"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "query"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "entity.name"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "BNPrincipal"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "entity.name"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "Foo"; 
+              }
+            ); 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "listConfigurationName"; 
+        "value" = "ListEmbeddedBNPrincipal"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "task"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "edit"; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartAttribute.className"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "com.webobjects.foundation.NSTimestamp"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "iconClassName"; 
+        "value" = "icon-append fa fa-calendar"; 
+      }; 
+    }
+  ); 
+}

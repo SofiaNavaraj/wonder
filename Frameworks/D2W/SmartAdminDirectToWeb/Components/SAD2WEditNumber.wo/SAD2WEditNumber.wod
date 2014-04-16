@@ -1,0 +1,11 @@
+EditNumber: WOTextField {
+	class = d2wContext.class;
+	disabled = d2wContext.readOnly;
+	id = d2wContext.id;
+	name = d2wContext.name;
+	otherTagString = d2wContext.otherTagString;
+	useDecimalNumber = isDecimalNumber;
+	size = length;
+	value = stringValue;
+}
+

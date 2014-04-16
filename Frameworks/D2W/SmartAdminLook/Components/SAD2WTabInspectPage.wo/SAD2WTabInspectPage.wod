@@ -1,0 +1,113 @@
+ActionBar: WOSwitchComponent {
+	WOComponentName = d2wContext.actionBarComponentName;
+	d2wContext = d2wContext;
+}
+
+CancelButton : ERXSingleButton {
+	action = cancelAction;
+	alt = "Reverts your changes";
+	class = "btn btn-default";
+	dontSubmitForm = true;
+	value = d2wContext.cancelButtonLabel;
+}
+
+Controller: WOSwitchComponent {
+	WOComponentName = d2wContext.controllerButtonComponentName;
+	d2wContext = d2wContext;
+}
+
+EditForm : JQOptionalForm {
+	class = "form-horizontal";
+	enctype = d2wContext.formEncoding;
+	hasForm = d2wContext.hasForm;
+	multipleSubmit = true;
+	name = "EditForm";
+}
+
+ErrorBlock : SADAlertBlock {
+	alertClass = "alert alert-danger fade in";
+	messages = 	errorMessages;
+	message = errorMessage;
+}
+
+HasChangesMarker : SADHasChangesMarker {
+	d2wContext = d2wContext;
+}
+
+Header: WOSwitchComponent {
+	WOComponentName = d2wContext.headerComponentName;
+	d2wContext = d2wContext;
+}
+
+InspectPageRepetition: WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	displayPropertyKeys = currentTab.keys;
+	d2wContext = localContext;
+	object = object;
+}
+
+IsEditing : WOConditional {
+	_unroll = true;
+	condition = isEditing;
+}
+
+IsNotEditing : WOConditional {
+	condition = isEditing;
+	negate = true;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = d2wContext.pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+PrinterButton: WOSwitchComponent {
+	WOComponentName = d2wContext.printerButtonComponentName;
+	class = d2wContext.printLinkClassNames;
+	d2wContext = d2wContext;
+	task = d2wContext.task;
+}
+
+RequiredWrapper : SADRequiredWrapper {
+	d2wContext = d2wContext;
+}
+
+ReturnButton : WOSubmitButton {
+	alt = "Return to the previous page";
+	action = nextPage;
+	class = "btn btn-default";
+	value = d2wContext.returnButtonLabel;
+}
+
+SaveChanges : WOSubmitButton {
+	action = submitAction;
+	alt = "Save your changes";
+	class = "btn btn-primary";
+	value = d2wContext.saveButtonLabel;
+}
+
+ShowCancel : WOConditional {
+	condition = showCancel;
+}
+
+ShowTopActionBlock : WOConditional {
+	condition = d2wContext.showTopActionBlock;
+}
+
+TabPanel : JQAjaxTabPanel {
+	contentWrapperComponentName = "SAD2WTabPanelContentWrapper";
+	formName = "EditForm";
+	id = "EditObjectTabContainer";
+	selectedTab = currentTab;
+	submitActionName = switchTabActionName;
+	tabNameKey = "displayName";
+	tabContainerClassNames = "nav nav-tabs pull-left in";
+	tabs = tabSectionsContents;
+	tabWrapperComponentName = "SAD2WTabPanelWrapper";
+	useFormSubmit = d2wContext.hasForm;
+}
+
+Widget : JQWidget {
+	widgetClass = "jarviswidget";
+}

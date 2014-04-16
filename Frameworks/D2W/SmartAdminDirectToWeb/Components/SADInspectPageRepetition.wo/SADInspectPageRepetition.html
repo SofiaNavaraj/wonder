@@ -1,0 +1,59 @@
+<webobject name = "Sections">
+	<fieldset>
+		<webobject name = "HasSectionName">
+			<legend><webobject name = "Section"/></legend>
+		</webobject>
+		<webobject name = "UseTableLayout">
+			<table class = "table table-bordered table-striped">
+				<tbody>
+					<webobject name = "AttributeRepetition">
+						<tr>
+							<td>
+								<webobject name = "PropertyName" />
+							</td>
+							<td>
+								<webobject name = "AttributeValue" />
+							</td>
+						</tr>
+					</webobject>
+				</tbody>
+			</table>
+		</webobject>
+		<webobject name = "UseStandardLayout">
+			<webobject name = "AttributeRepetition">
+				<div class = "form-group">
+					<webobject name = "UseNormalLayout">
+						<label class = "col-md-2 control-label">
+							<webobject name = "PropertyName" />			
+						</label>
+						<div class = "col-md-10">
+							<webobject name = "HasIcon">
+								<div class = "input-group">
+									<webobject name = "AttributeValue" />
+									<span class = "input-group-addon">
+										<webobject name = "Icon" />
+									</span>
+								</div>						
+							</webobject>
+							<webobject name = "NoIcon">
+								<webobject name = "AttributeValue" />
+							</webobject>
+							<webobject name = "HasNote">
+								<p class = "note"><webobject name = "Note" /></p>
+							</webobject>
+						</div>
+					</webobject>
+					<webobject name = "UseWideLayout">
+						<div class = "form-group">
+							<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class = "padding-10">
+									<webobject name = "AttributeValue"></webobject>
+								</div>
+							</article>
+						</div>		
+					</webobject>
+				</div>
+			</webobject>
+		</webobject>
+	</fieldset>
+</webobject>

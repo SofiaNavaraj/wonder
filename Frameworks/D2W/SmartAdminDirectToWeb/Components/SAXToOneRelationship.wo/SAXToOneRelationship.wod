@@ -1,0 +1,80 @@
+Browser: WOBrowser {
+	displayString = theCurrentValue;
+	item = theCurrentItem;
+	list = theList;
+	multiple = false;
+	selections = selection;
+	size = ^size;
+    name=^popupName;
+	class = ^class;
+	id = ^id;
+	disabled = ^disabled;
+	title = ^title;
+}
+
+IsBrowserConditional: WOConditional {
+	condition = isBrowser;
+}
+
+IsPopupConditional: WOConditional {
+	condition = isPopup;
+}
+
+IsRadioConditional: WOConditional {
+	condition = isRadio;
+}
+
+IsSelect2Conditional : WOConditional {
+	condition = isSelect2;
+}
+
+PopupList: WOPopUpButton { 
+	class = ^class;
+	displayString = theCurrentValue;
+	item = theCurrentItem;
+	list = theList;
+	selection = selection;
+    name=^popupName;
+	onChange = ^onChange;
+	onBlur = ^onBlur;
+	id = ^id;
+	disabled = ^disabled;
+	title = ^title;
+	value = theCurrentValue;
+}
+
+Select2 : JQSelect2 {
+	disabled = ^disabled;
+	displayString = theCurrentValue;
+	id = ^id;
+	includeStylesheet = false;
+	item = theCurrentItem;
+	list = theList;
+    name=^popupName;
+	onBlur = ^onBlur;
+	onChange = ^onChange;
+	selection = selection;
+	title = ^title;
+	value = theCurrentValue;
+	width = "copy";
+	style = "width: 100%";
+}
+
+RadioButtonMatrix: WOSwitchComponent {
+	WOComponentName = radioButtonComponentName;
+	item = theCurrentItem;
+	list = theList;
+	maxColumns = ^maxColumns;
+	selection = selection;
+	uniqueID = ^uniqueID;
+    goingVertically = ^goingVertically;
+	class = ^class;
+	id = ^id;
+	disabled = ^disabled;
+	displayString = theCurrentValue;
+}
+
+String: WOString {
+	value = theCurrentValue;
+	escapeHTML = false;
+}

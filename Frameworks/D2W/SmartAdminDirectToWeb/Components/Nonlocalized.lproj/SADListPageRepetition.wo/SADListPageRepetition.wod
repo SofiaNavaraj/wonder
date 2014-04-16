@@ -1,0 +1,79 @@
+AttributeDisplay: WOSwitchComponent { 
+	_componentUnroll = true;
+	_unroll = true;
+	localContext = d2wContext;
+	object = d2wContext.object;
+	WOComponentName = d2wContext.componentName;
+}
+
+AttributesRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+ColumnsRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+HasLeftActions : ERXNonZeroConditional {
+	condition = leftActions.count;
+}
+
+HasRightActions : ERXNonZeroConditional {
+	condition = rightActions.count;
+}
+
+LeftAction : WOSwitchComponent {
+	displayGroup = displayGroup;
+	localContext = d2wContext;
+	object = d2wContext.object;
+	WOComponentName = d2wContext.componentName;
+}
+
+LeftActionsRepetition : WORepetition {
+	item = propertyKey;
+	list = leftActions;
+}
+
+ObjectsRepetition: WORepetition {
+	item = d2wContext.object;
+	list = ^displayGroup.displayedObjects;
+	index = rowIndex;
+}
+
+RightAction : WOSwitchComponent {
+	displayGroup = displayGroup;	
+	localContext = d2wContext;
+	object = d2wContext.object;
+	WOComponentName = d2wContext.componentName;
+}
+
+RightActionsRepetition : WORepetition {
+	item = propertyKey;
+	list = rightActions;
+}
+
+SectionsRepetition : WORepetition {
+	list = sectionsContents;
+	item = currentSection;
+}
+
+TableHeader : WOSwitchComponent {
+	WOComponentName = d2wContext.tableHeaderComponentName;
+	displayGroup = displayGroup;
+	d2wContext = d2wContext;
+}
+
+TableHeaderRow : WOGenericContainer {
+	_unroll = true;
+	elementName = "tr";	
+}
+
+TableBodyRow : WOGenericContainer {
+	_unroll = true;
+	class = tableBodyRowClassName;
+	elementName = "tr";
+}

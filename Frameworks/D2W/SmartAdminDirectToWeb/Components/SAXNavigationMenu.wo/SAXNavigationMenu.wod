@@ -1,0 +1,13 @@
+RootItems : WORepetition {
+	item = aNavigationItem;
+	list = level1Items;
+}
+
+RootObject : SAXNavigationMenuItem {
+	level = 1;
+	navigationItem = aNavigationItem;
+}
+
+NavigationMenu : SANavigation {
+	accordion = false;
+}

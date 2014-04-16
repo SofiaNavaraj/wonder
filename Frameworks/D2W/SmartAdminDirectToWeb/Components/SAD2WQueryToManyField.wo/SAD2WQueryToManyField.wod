@@ -1,0 +1,22 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+KeyToQueryWith : WOString {
+	_unroll = true;
+	value = displayNameForKeyWhenRelationship;
+}
+
+Input : WOTextField {
+	class = "form-control";
+	name = d2wContext.name;	
+	value = value;
+}
+
+Is : ERXLocalizedString {
+	value = session.localizer.ERD2WQueryToManyField.is;
+}
+
+Where : ERXLocalizedString {
+	value = session.localizer.ERD2WQueryToManyField.where;
+}

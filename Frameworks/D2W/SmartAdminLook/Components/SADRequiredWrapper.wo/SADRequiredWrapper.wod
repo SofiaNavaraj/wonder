@@ -1,0 +1,32 @@
+Content : WOComponentContent {
+	
+}
+
+Header : WOSwitchComponent {
+	WOComponentName = d2wContext.headerComponentName;
+	d2wContext = d2wContext;
+	object = ^object;
+	key = ^key;
+}
+
+Help : ERDDebuggingHelp {
+	d2wContext = d2wContext;
+	condition = showHelp;
+}
+
+OptionalForm : JQOptionalForm {
+	class = d2wContext.formClass;
+	enctype = d2wContext.formEncoding;
+	showForm = showForm;
+	multipleSubmit = true;
+	name = formName;
+}
+
+ShowHeader : WOConditional {
+	condition = d2wContext.showHeader;
+}
+
+WrapperDiv : JQAjaxUpdateContainer {
+	id = d2wContext.idForMainContainer;
+	class = d2wContext.classForWrapper;
+}

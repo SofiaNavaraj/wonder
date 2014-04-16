@@ -1,0 +1,52 @@
+Child : SAXNavigationMenuItem {
+	level = nextLevel;
+	navigationItem = childNavigationItem;
+}
+
+Children : WORepetition {
+	item = childIdentifier;
+	list = navigationItem.children;
+}
+
+FirstLevelSpan : WOGenericContainer {
+	class = "menu-item-parent";
+	elementName = "span";
+}
+
+HasChildren : ERXNonZeroConditional {
+	condition = navigationItem.children.length.@count;
+}
+
+HasIcon : ERXNonNullConditional {
+	condition = navigationItem.iconClassNames;
+}
+
+Icon : WOGenericContainer {
+	class = navigationItem.iconClassNames;
+	elementName = "i";
+}
+
+IsFirstLevel : WOConditional {
+	condition = isFirstLevel;
+}
+
+IsNotFirstLevel : WOConditional {
+	condition = isFirstLevel;
+	negate = true;
+}
+
+Label : WOString {
+	value = displayName;
+    escapeHTML=false;
+}
+
+Link : WOGenericContainer {
+	elementName = "a";
+	href = contextComponentActionURL;
+	invokeAction = menuItemSelected;
+}
+
+ListItem : WOGenericContainer {
+	class = listItemClassNames;
+	elementName = "li";
+}

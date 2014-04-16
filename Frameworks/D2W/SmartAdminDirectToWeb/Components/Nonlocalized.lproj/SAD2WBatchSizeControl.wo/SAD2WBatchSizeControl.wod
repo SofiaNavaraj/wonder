@@ -1,0 +1,10 @@
+BatchSize : WOPopUpButton {
+	onChange = "this.form.submit();";
+	list = batchSizes;
+	selection = displayGroup.numberOfObjectsPerBatch;
+	size = 1;
+}
+
+OptionalForm : ERXOptionalForm {
+	showForm = d2wContext.includeOptionalForm;
+}

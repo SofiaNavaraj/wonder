@@ -1,0 +1,51 @@
+<webobject name = "NotUseAjax">
+	<webobject name = "HasAnyAction">
+		<webobject name = "StandardRemoveButton">
+			<webobject name = "RemoveButtonLabel" />
+		</webobject>
+	</webobject>
+	<webobject name = "NotHasAnyAction">
+		<webobject name = "DisabledRemoveButton">
+			<webobject name = "RemoveButtonLabel" />
+		</webobject>
+	</webobject>
+</webobject>
+<webobject name = "UseAjax">
+	<webobject name = "ButtonUpdateContainer">
+		<webobject name = "NotShowDialog">
+			<webobject name = "ShowDialogButton">
+				<webobject name = "RemoveButtonLabel" />
+			</webobject>	
+		</webobject>
+		<webobject name = "ShowDialog">
+			<webobject name = "DisabledRemoveButton">
+				<webobject name = "RemoveButtonLabel" />
+			</webobject>
+				<div class = "ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons">
+					<div class = "ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+						<span class = "ui-dialog-title">
+							<div class = "widget-header"><h4><i class = "fa fa-warning"></i></h4></div>
+						</span>
+					</div>
+					<div class = "ui-dialog-content ui-widget-content">
+						<p><webobject name = "DialogMessage" /></p>
+					</div>
+					<div class = "ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+						<div class = "ui-dialog-buttonset">
+							<webobject name = "ShowDeleteButton">
+								<webobject name = "DeleteButton">
+									<i class = "fa fa-trash-o"></i><webobject name = "DeleteButtonLabel" />
+								</webobject>
+							</webobject>
+							<webobject name = "ShowRemoveButton">
+								<webobject name = "RemoveButton"><webobject name = "RemoveButtonLabel" /></webobject>
+							</webobject>
+							<webobject name = "CancelButton">
+								<webobject name = "CancelButtonLabel"></webobject>
+							</webobject>
+						</div>
+					</div>
+				</div>
+		</webobject>
+	</webobject>
+</webobject>

@@ -1,0 +1,12 @@
+Header : WOGenericContainer {
+	elementName = d2wContext.headerElementName;
+}
+
+ShowHeading : WOConditional {
+	condition = showHeading;
+}
+
+String : WOString {
+	escapeHTML = d2wContext.escapeHTML;
+	value = headerString;
+}

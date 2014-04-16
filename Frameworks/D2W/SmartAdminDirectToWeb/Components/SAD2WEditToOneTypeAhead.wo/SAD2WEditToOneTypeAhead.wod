@@ -1,0 +1,8 @@
+AjaxAutoComplete : JQAutocomplete {
+	class = "form-control";
+	displayString = itemDisplayString;
+	item = item;
+	list = currentObjects;
+	selection = selection;
+	value = searchValue;
+}

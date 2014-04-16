@@ -1,0 +1,37 @@
+<webobject name = "PageWrapper">
+	<webobject name = "RequiredWrapper">
+		<webobject name = "ListNotEmpty">
+			<webobject name = "IsToMany">
+				<webobject name = "RepetitionUpdateContainer">
+					<webobject name = "ToManyListRepetition"></webobject>
+				</webobject>
+			</webobject>
+			<webobject name = "IsToOne">
+				<webobject name = "PropertyKey"></webobject>
+			</webobject>
+		</webobject>
+		<webobject name = "ListEmpty">
+			<webobject name = "EmptyMessageComponent" />
+		</webobject>
+		<webobject name = "ShowBottomBatchNavBar">
+			<div class = "dt-row dt-bottom-row">
+				<div class = "row">
+					<div class = "col-sm-12 text-right">
+						<webobject name = "NavigationBar"></webobject>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-12 text-right">
+						<webobject name = "QueryButton"></webobject>
+					</div>
+				</div>
+			</div>
+		</webobject>		
+		<webobject name = "DisplayQuery">
+			<div class = "ModalBlock"><webobject name = "QueryComponent" /></div>
+		</webobject>
+	    <webobject name = "DisplayList">
+	    		<div class = "ModalBlock"><webobject name = "ListComponent" /></div>
+	    	</webobject>
+	</webobject>
+</webobject>

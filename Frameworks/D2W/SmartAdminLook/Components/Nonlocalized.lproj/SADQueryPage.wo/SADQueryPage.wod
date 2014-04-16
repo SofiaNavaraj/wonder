@@ -1,0 +1,93 @@
+ActionBar: WOSwitchComponent {
+	WOComponentName = d2wContext.actionBarComponentName;
+	d2wContext = d2wContext;
+}
+
+ClearButton : JQSmartAjaxButton {
+	alt = "Clear Form";
+	value = d2wContext.clearButtonLabel;
+	action = clearAction;
+	class = "btn btn-default";
+	useAjax = d2wContext.useAjaxControlsWhenEmbedded;
+    updateContainerID = d2wContext.idForParentMainContainer;
+}
+
+Controller: WOSwitchComponent {
+	WOComponentName = d2wContext.controllerButtonComponentName;
+	d2wContext = d2wContext;
+}
+
+ErrorBlock : SADAlertBlock {
+	alertClass = "alert alert-danger fade in";
+	messages = 	errorMessages;
+	message = errorMessage;
+}
+
+ListPage : ERXD2WList {
+	dataSource = queryDataSource;
+	entityName = entity;
+	pageConfiguration = d2wContext.listConfigurationName;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+QueryButton : JQSmartAjaxButton {
+	action = queryAction;
+	alt = "Find objects matching the query";
+	class = "btn btn-primary";
+	updateContainerID = d2wContext.idForParentMainContainer;
+	useAjax = d2wContext.useAjaxControlsWhenEmbedded;
+	value = d2wContext.findButtonLabel;
+}
+
+QueryPageRepetition: WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	d2wContext = localContext;
+	displayGroup = displayGroup;
+}
+
+RequiredWrapper : SADRequiredWrapper {
+	d2wContext = d2wContext;
+}
+
+ReturnButton : WOHyperlink {
+	action = returnAction;
+	alt = "Return to the previous page";
+	class = "btn btn-default";
+}
+
+ReturnLabel : ERXLocalizedString {
+	value = d2wContext.returnButtonLabel;
+}
+
+ShowCancel : WOConditional {
+	condition = showCancel;
+}
+
+ShowList : WOConditional {
+	condition = d2wContext.showListInSamePage;	
+}
+
+ShowResults : WOConditional {
+	condition = showResults;
+}
+
+ShouldShowDefaultPageButtons : WOConditional {
+	condition = d2wContext.shouldShowDefaultPageButtons;
+}
+
+ShowBottomActionBlock : WOConditional {
+	condition = d2wContext.showBottomActionBlock;
+}
+
+ShowTopActionBlock : WOConditional {
+	condition = d2wContext.showTopActionBlock;
+}
+
+Widget : JQWidget {
+	widgetClass = "jarviswidget";
+}

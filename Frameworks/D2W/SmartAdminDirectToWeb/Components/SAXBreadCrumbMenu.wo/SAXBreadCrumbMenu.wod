@@ -1,0 +1,9 @@
+RootItems : WORepetition {
+	item = aNavigationItem;
+	list = level1Items;
+}
+
+RootObject : SAXBreadCrumbItem {
+	level = 1;
+	navigationItem = aNavigationItem;
+}

@@ -1,0 +1,23 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+From : ERXLocalizedString {
+	value = "ERD2WQueryDateRange.from";
+}
+
+LowerBound: WOTextField {
+	class = "form-control";
+	numberformat = formatter;
+	value = minValue;
+}
+
+UpperBound: WOTextField {
+	class = "form-control";
+	numberformat = formatter;
+	value = maxValue;
+}
+
+To : ERXLocalizedString {
+	value = "ERD2WQueryDateRange.to";
+}

@@ -1,0 +1,54 @@
+Checkbox : WOGenericElement {
+	elementName = "input";
+	id = ^itemID:
+	name = wrapperElementID;
+	otherTagString = otherTagStringForCheckBox;
+	type = "checkbox";
+	value = index;
+}
+
+CheckboxRepetition : WORepetition {
+	item = currentItem;
+	index = index;
+	list = maybeSortedList;
+}
+
+CheckboxOuterWrapper : WOGenericContainer {
+	elementID = wrapperElementID;
+	elementName = "span";
+	formValues = selections;
+	name = context.elementID;
+	id = ^id;
+}
+
+CheckboxInnerWrapper : WOGenericContainer {
+	class = "checkbox";
+	elementName = "div";
+}
+
+HiddenInput : WOGenericElement {
+	elementName = "input";
+	name = wrapperElementID;
+	type = "hidden";
+	value = "-1";
+}
+
+Label : WOComponentContent {
+	
+}
+
+ListNotEmpty : WOConditional {
+	condition = listEmpty;
+	negate = true;
+}
+
+SelectAllCheckbox : WOConditional {
+	condition = ^shouldShowSelectAllButtons;
+}
+
+ShowSelectAllCheckbox : WOGenericElement {
+	elementName = "input";
+	name = "SelectAll";
+	onclick = selectOnClick;
+	type = "checkbox";
+}

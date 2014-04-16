@@ -1,0 +1,22 @@
+ErrorMessageItem : WOString {
+	escapeHTML = false;
+	value = errorMessageItem;
+}
+
+ExtraErrorMessage : WOString {
+	escapeHTML = false;
+	value = extraErrorMessage;
+}
+
+HasExtraErrorMessage : ERXNonNullConditional {
+	condition = extraErrorMessage;
+}
+
+HasMessagesConditional : ERXNonZeroConditional {
+	condition = errorMessages.allKeys.count;
+}
+
+Repetition : WORepetition {
+	list = errorKeys;
+	item = errorKey;
+}

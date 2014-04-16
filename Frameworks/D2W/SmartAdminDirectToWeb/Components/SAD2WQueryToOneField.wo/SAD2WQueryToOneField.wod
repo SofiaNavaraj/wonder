@@ -1,0 +1,23 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+Input: WOTextField {
+	class = "form-control";
+	size = 25;
+	value = value;
+	formatter = valueFormatter;
+}
+
+Is: WOString {
+	value = session.localizer.ERD2WQueryToOneField.is;
+}
+
+KeyToQueryWith: WOString {
+	_unroll = true;
+	value = displayNameForKeyWhenRelationship;
+}
+
+Where: WOString {
+	value = where;
+}

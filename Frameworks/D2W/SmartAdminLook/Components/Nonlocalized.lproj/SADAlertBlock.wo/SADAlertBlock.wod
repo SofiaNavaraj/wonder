@@ -1,0 +1,17 @@
+AlertWrapper : WOGenericContainer {
+	class = alertClass;
+	elementName = "div";
+}
+
+ComponentContent : WOComponentContent {
+	
+}
+
+MessageBlock : SADMessageDictionaryPanel {
+	errorMessages = messages;
+	extraErrorMessage = message;
+}
+
+ShowMessage : WOConditional {
+	condition = showMessageBlock;
+}

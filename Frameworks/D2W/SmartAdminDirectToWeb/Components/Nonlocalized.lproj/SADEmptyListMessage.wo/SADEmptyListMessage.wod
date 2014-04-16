@@ -1,0 +1,41 @@
+CreateObjectLink : WOHyperlink {
+	action = createObject;
+	class = "btn btn-sm btn-default";
+}
+
+CreateObjectHeaderString : ERXLocalizedString {
+	escapeHTML = false;
+	object = bindings;
+	templateString = "SADEmptyListMessage.createNewObjectHeaderMessage";
+}
+
+CreateObjectString : ERXLocalizedString {
+	escapeHTML = false;
+	object = bindings;
+	templateString = "ERDEmptyListMessage.createObjectStringTemplate";
+}
+
+EmptyListMessage: WOString {
+	value = ^emptyListMessage;
+	escapeHTML = false;
+}
+
+EmptyListTemplate: ERXLocalizedString {
+	templateString = "ERDEmptyListMessage.emptyListMessage";
+	object = bindings;
+	escapeHTML = false;
+}
+
+HasNoMessage: ERXNonNullConditional {
+	condition = ^emptyListMessage;
+	negate = true;
+}
+
+HasMessage: ERXNonNullConditional {
+	condition = ^emptyListMessage;
+}
+
+ShowCreateObjectLink : WOConditional {
+	condition = showCreateObjectLink;
+}
+

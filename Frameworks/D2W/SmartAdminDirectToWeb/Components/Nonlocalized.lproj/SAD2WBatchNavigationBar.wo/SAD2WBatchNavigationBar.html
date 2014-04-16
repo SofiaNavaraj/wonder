@@ -1,0 +1,45 @@
+<webobject name = "HasMultipleBatches">
+	<div class = "dataTables_paginate paging_bootstrap">
+		<ul class = "pagination">
+			<webobject name = "HasPreviousConditional">
+				<li class = "prev">
+					<webobject name = "PreviousPageAction"><webobject name = "PreviousLabel" /></webobject>
+				</li>
+			</webobject>
+			<webobject name = "HasNotPreviousConditional">
+				<li class = "prev disabled">
+					<a href = "javascript:void(0)"><webobject name = "PreviousLabel" /></a>
+				</li>
+			</webobject>
+			<webobject name = "PageNumberRepetition">
+				<webobject name = "IsCurrentPageNumberConditional">
+					<li class = "active">
+						<a href = "javascript:void(0)"><webobject name = "PageNumber" /></a>
+					</li>
+				</webobject>
+				<webobject name = "IsNotCurrentPageNumberConditional">
+					<webobject name = "IsPageNumberConditional">
+						<li>
+							<webobject name = "SelectPageAction"><webobject name = "PageNumber" /></webobject>
+						</li>
+					</webobject>
+				</webobject>
+				<webobject name = "IsEllipsisConditional">
+					<li class = "disabled">
+						<a href = "javascript:void(0)">...</a>
+					</li>		
+				</webobject>
+			</webobject>
+			<webobject name = "HasNextPageConditional">
+				<li class = "next">
+					<webobject name = "NextPageAction"><webobject name="NextLabel"/></webobject>
+				</li>
+			</webobject>
+			<webobject name = "HasNoNextPageConditional">
+				<li class = "next disabled">
+					<a href = "javascript: void(0)"><webobject name="NextLabel"/></a>	
+				</li>
+			</webobject>
+		</ul>
+	</div>
+</webobject>

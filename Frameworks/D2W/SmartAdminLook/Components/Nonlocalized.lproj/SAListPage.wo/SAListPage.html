@@ -1,0 +1,71 @@
+<webobject name = "PageWrapper">
+	<webobject name = "SectionWrapper">
+		<div class = "jarviswidget">
+			<header role = "heading">
+				<span class = "widget-icon">
+					<i class = "fa fa-table"></i>
+				</span>
+			</header>
+			<div class = "widget-body-toolbar"></div>
+			<div role = "content">
+				<webobject name = "UpdateContainer">
+					<div class = "dataTables_wrapper form-inline">
+						<div class = "dt-top-row">
+							<div class = "DTTT btn-group">
+								<webobject name = "ShouldShowDefaultPageButtons">
+									<webobject name = "ActionBar" />
+									<webobject name = "PrinterButton" />	
+								</webobject>								
+								<webobject name = "ShowCancel">
+									<webobject name = "ReturnButton">
+										<i class = "fa fa-reply"></i>
+										<webobject name = "ReturnLabel" />
+									</webobject>
+								</webobject>
+							</div>
+							<webobject name = "ShowTopBatchCount">
+									<webobject name = "BatchSizeControl" />
+							</webobject>
+						</div>
+						<webobject name = "ListNotEmpty">
+							<div class = "dt-wrapper">
+								<webobject name = "ListPageRepetition"></webobject>
+							</div>
+						</webobject>	
+						<webobject name = "ListEmpty">
+							<div class = "padding-10">
+								<webobject name = "EmptyListPageComponent" />
+							</div>
+						</webobject>
+						<webobject name = "ShowBottomBatchNavigationBar">
+							<div class = "dt-row dt-bottom-row">
+								<div class = "row">
+									<div class = "col-sm-6">
+										<div class = "dataTables_info">
+											<webobject name = "Displaying"></webobject>&nbsp;
+											<webobject name = "MinRange" />&nbsp;
+											<webobject name = "To" />&nbsp;
+											<webobject name = "MaxRange" />&nbsp;
+											<webobject name = "Of" />&nbsp;
+											<webobject name = "AllObjectsCount" />
+										</div>
+									</div>
+									<div class = "col-sm-6 text-right">
+										<webobject name = "NavigationBar"></webobject>													
+									</div>
+							      <webobject name="ShouldShowDefaultPageButtons">
+							        <webobject name = "ShowCancel">
+										<div class = "col-sm-12 text-right">
+							            		<webobject name = "ReturnButton"><webobject name = "ReturnLabel"></webobject></webobject>
+										</div>
+							          </webobject>
+							        </webobject>
+								</div>
+							</div>
+						</webobject>
+					</div>
+				</webobject>
+			</div>
+		</div>
+	</webobject>
+</webobject>

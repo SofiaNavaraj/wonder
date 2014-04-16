@@ -1,0 +1,102 @@
+DisplayList: WOConditional {
+	condition = displayList;
+}
+
+DisplayQuery : WOConditional {
+	condition = displayQuery;
+}
+
+EmptyMessageComponent : WOSwitchComponent {
+	WOComponentName = d2wContext.emptyListComponentName;
+	d2wContext = d2wContext;
+}
+
+IsToMany: WOConditional {
+	condition = isRelationshipToMany;
+}
+
+IsToOne: WOConditional {
+	condition = isRelationshipToMany;
+	negate = true;
+}
+
+ListComponent: ERXD2WSelect {
+    pageConfiguration = d2wContext.selectEmbeddedConfigurationName;
+	action = selectAction;
+	dataSource = selectDataSource;
+	entityName = entity.name;
+	selectedObject = objectToAddToRelationship;
+	_settings = settings;
+}
+
+ListNotEmpty : ERXNonZeroConditional {
+	condition = relationshipDisplayGroup.displayedObjects.@count;
+}
+
+ListEmpty : ERXNonZeroConditional {
+	condition = relationshipDisplayGroup.displayedObjects.@count;
+	negate = true;
+}
+
+NavigationBar : SAD2WBatchNavigationBar {
+	displayGroup = relationshipDisplayGroup;
+    d2wContext = d2wContext;
+    updateContainerID = d2wContext.idForRepetitionContainer;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+PropertyKey : WOString {
+	value = propertyKey;
+}
+
+QueryButton : JQAjaxSubmitButton {
+	action = displayQueryAction;
+	class = "btn btn-default";
+	dontSubmitForm = true;
+	updateContainerID = d2wContext.idForMainContainer;
+	useAjax = d2wContext.useAjaxControls;
+	value = d2wContext.queryRelationshipButtonLabel;
+}
+
+QueryComponent: ERXD2WQuery {
+	allowInlineEditing = true;
+    pageConfiguration = d2wContext.queryEmbeddedConfigurationName;
+	action = queryAction;
+	entityName = entity.name;
+	queryDataSource = selectDataSource;
+	settings = settings;
+}
+
+RequiredWrapper : SADRequiredWrapper {
+	d2wContext = d2wContext;
+    key = relationshipKey;
+	object = object;
+	watchContainerID = d2wContext.idForMainComponent;
+}
+
+RepetitionUpdateContainer : JQAjaxUpdateContainer {
+	id = d2wContext.idForRepetitionContainer;
+}
+
+ShowBottomBatchNavBar : WOConditional {
+  condition = d2wContext.showBottomBatchNavigationBar;
+}
+
+ToManyListRepetition: WOSwitchComponent {
+    WOComponentName = d2wContext.toManyRepetitionComponentName;
+    d2wContext = localContext;
+    displayGroup = relationshipDisplayGroup;
+    updateContainerID = d2wContext.idForRepetitionContainer;
+}
+
+ToOneListRepetition: WOSwitchComponent {
+    WOComponentName = d2wContext.toOneRepetitionComponentName;
+    d2wContext = localContext;
+    displayGroup = relationshipDisplayGroup;
+    updateContainerID = d2wContext.idForRepetitionContainer;
+}

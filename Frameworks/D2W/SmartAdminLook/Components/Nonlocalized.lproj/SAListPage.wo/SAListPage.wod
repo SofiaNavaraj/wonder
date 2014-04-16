@@ -1,0 +1,110 @@
+ActionBar: WOSwitchComponent {
+	WOComponentName = d2wContext.actionBarComponentName;
+	d2wContext = d2wContext;
+}
+
+AllObjectsCount : WOString {
+	numberformat = "0";
+	value = displayGroup.allObjects.count;
+}
+
+BatchSizeControl : SAD2WBatchSizeControl {
+	displayGroup = displayGroup;
+}
+
+Displaying : ERXLocalizedString {
+	value = "Displaying";
+}
+
+EmptyListPageComponent : WOSwitchComponent {
+	d2wContext = d2wContext;
+	WOComponentName = d2wContext.emptyListComponentName;
+}
+
+ListEmpty : WOConditional {
+	condition = listEmpty;
+}
+
+ListPageRepetition : WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	d2wContext = localContext;
+	displayGroup = displayGroup;
+}
+
+MaxRange : WOString {
+	numberformat = "0";
+	value = maxRange;
+}
+
+MinRange : WOString {
+	numberformat = "0";
+	value = minRange;
+}
+
+Of : ERXLocalizedString {
+	value = "of";
+}
+
+ListNotEmpty : WOConditional {
+	condition = listEmpty;
+	negate = true;
+}
+
+NavigationBar : SAD2WBatchNavigationBar {
+	displayGroup = displayGroup;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = d2wContext.pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+PrinterButton: WOSwitchComponent {
+	WOComponentName = d2wContext.printerButtonComponentName;
+	class = d2wContext.printLinkClassNames;
+	d2wContext = d2wContext;
+	dataSource = dataSource;
+	displayGroup = displayGroup;
+	task = d2wContext.task;
+}
+
+ReturnLabel : ERXLocalizedString {
+	escapeHTML = false;
+	value = d2wContext.returnButtonLabel;
+}
+
+ReturnButton: WOHyperlink {
+	alt = "Returns to the previous page";
+	action = backAction;
+	class = "btn btn-default";
+}
+
+SectionWrapper : SADRequiredWrapper {
+	d2wContext = d2wContext;
+}
+
+ShouldShowDefaultPageButtons : WOConditional {
+	condition = d2wContext.shouldShowDefaultPageButtons;
+}
+
+ShowBottomBatchNavigationBar : WOConditional {
+	condition = d2wContext.showBottomBatchNavigationBar;
+}
+
+ShowCancel : WOConditional {
+	condition = showCancel;
+}
+
+ShowTopBatchCount : WOConditional {
+	condition = d2wContext.showTopBatchCount;
+}
+
+To : ERXLocalizedString {
+	value = "to";
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	class = "widget-body no-padding";
+	id = d2wContext.idForUpdateContainer;
+}

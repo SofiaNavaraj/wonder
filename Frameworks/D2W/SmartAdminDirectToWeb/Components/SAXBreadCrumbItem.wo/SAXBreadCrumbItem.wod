@@ -1,0 +1,28 @@
+DisplayObject : WOConditional {
+	condition = isSelected;
+}
+
+Child : SAXBreadCrumbItem {
+	level = nextLevel;
+	navigationItem = childNavigationItem;	
+}
+
+Children : WORepetition {
+	item = childIdentifier;
+	list = navigationItem.children;
+}
+
+HasChildren : ERXNonZeroConditional {
+	condition = navigationItem.children.length.@count;	
+}
+
+Label : WOString {
+	escapeHTML = false;
+	value = displayName;
+}
+
+Link : WOGenericContainer {
+	elementName = "a";
+	href = contextComponentActionURL;
+	invokeAction = menuItemSelected;
+}

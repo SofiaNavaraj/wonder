@@ -1,0 +1,62 @@
+EntityName : ERXPluralString {
+	count = 2;
+	showNumber = false;
+	value = d2wContext.displayNameForEntity;
+}
+
+EntitiesRepetition: WORepetition {
+	_unroll = true;
+	item = entityName;
+	list = currentSectionKeys;
+}
+
+HasSectionName: ERXNonZeroConditional {
+	condition = currentSection.name.length;
+}
+
+MoreOptions : ERXLocalizedString {
+	value = "More Options";
+}
+
+ShowMoreOptionsLink : WOHyperlink {
+	action = showRegularQueryAction;
+	alt = "Search with more options";
+	class = "btn btn-default";
+}
+
+QueryAnyField : SAD2WQueryAnyField {
+	_unroll = true;
+	displayGroup = displayGroup;
+	localContext = localContext;
+}
+
+QueryForm: WOForm {
+	action = queryAction;
+	class = "form-inline query-all-form";	
+	multipleSubmit = true;
+}
+
+SearchButton : WOSubmitButton {
+	action = queryAction;
+	class = "btn btn-primary";
+	value = d2wContext.findButtonLabel;
+}
+
+SectionsContents : WORepetition {
+	list = sectionsContents;
+	item = currentSection;
+}
+
+SectionName : WOString {
+	value = currentSection.name;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+Widget : JQWidget {
+	widgetClass = "jarviswidget";
+}

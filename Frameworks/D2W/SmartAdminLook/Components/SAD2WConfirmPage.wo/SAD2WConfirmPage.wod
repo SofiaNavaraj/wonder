@@ -1,0 +1,61 @@
+ConfirmMessage : ERDConfirmMessage {
+	confirmMessageManditory = d2wContext.confirmMessageManditory;
+	dataSource = dataSource;
+	object = object;
+	confirmMessageKey = d2wContext.confirmMessageKey;
+	confirmRows = d2wContext.confirmRows;
+	confirmMessageTextfieldSize = d2wContext.confirmMessageTextfieldSize;
+	confirmMessageManditoryErrorMessage = d2wContext.confirmMessageManditoryErrorMessage;
+	confirmMessageExplanation = d2wContext.confirmMessageExplanation;
+	confirmMessageIsTextfield = d2wContext.confirmMessageIsTextfield;
+	confirmMessageTextfieldMaxlength = d2wContext.confirmMessageTextfieldMaxlength;
+}
+
+Form : WOForm {
+	multipleSubmit = true;
+}
+
+HasMessage : ERXNonNullConditional {
+	condition = message;
+}
+
+Message : WOString {
+	escapeHTML = false;
+	value = message;
+}
+
+NoBranchChoices : WOConditional {
+	condition = hasBranchChoices;
+	negate = true;
+}
+
+ObjectDefinition : WOSwitchComponent {
+	WOComponentName = d2wContext.explanationComponentName;
+	dataSource = dataSource;
+	object = object;
+	pageConfiguration = d2wContext.explanationConfigurationName;
+	settings = settings;
+}
+
+OKButton : ERXSingleButton {
+	action = nextPageAction;
+	value = d2wContext.okButtonLabel;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = d2wContext.pageWrapperName;
+}
+
+ShowObjectDefinition : WOConditional {
+	condition = showExplanationComponent;
+}
+
+ShouldProvideConfirmMessage : WOConditional {
+	condition = d2wContext.shouldProvideConfirmMessage;
+}
+
+Warning : SADAlertBlock {
+	alertClass = "alert alert-warning fade in";
+	icon = "fa-fw fa fa-warning";
+	message = message;
+}
