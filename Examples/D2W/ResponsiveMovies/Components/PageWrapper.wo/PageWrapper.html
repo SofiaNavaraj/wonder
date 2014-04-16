@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><webobject name = "PageTitle" /></title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+	</head>
+	<body class = "smart-style">
+		<header id="header">
+			<div id="logo-group">
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo">
+					<webobject name = "Logo"></webobject>
+				</span>
+			</div>
+			<div class="pull-right">
+				<!-- collapse menu button -->
+				<webobject name = "HideMenuButton"></webobject>
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <webobject name = "SignOutButton"><i class="fa fa-sign-out"></i></webobject></span>
+				</div>
+			</div>	
+		</header>
+		<aside id="left-panel">
+			<div class="login-info">
+				<span>
+					<a href="javascript:void(0);" id="show-shortcut">
+						<webobject name = "Gravatar"></webobject>
+						<span><webobject name = "UserName"></webobject></span>
+					</a>					
+				</span>
+			</div>
+			<webobject name = "Menu" />
+			<webobject name = "MinifyButton"></webobject>
+
+		</aside>
+		<webobject name = "Main">
+			<div id = "ribbon">
+				<webobject name = "BreadCrumb"></webobject>
+			</div>
+			<div id = "content">
+				<webobject name = "Content" />
+			</div>
+		</webobject>
+	</body>
+</html>

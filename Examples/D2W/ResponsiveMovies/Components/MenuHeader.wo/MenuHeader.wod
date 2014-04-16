@@ -1,0 +1,7 @@
+HasValidSession: WOConditional {
+    condition = context.hasSession;
+}
+
+NavigationMenu: SAXNavigationMenu {
+	navigationContext = navigationContext;
+}

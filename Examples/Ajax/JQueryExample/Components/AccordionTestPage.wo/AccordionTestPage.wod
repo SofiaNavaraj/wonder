@@ -1,14 +1,20 @@
 Accordion : JQAccordion {
-	
+	includeUIStylesheet	= false;
 }
 
 CollapsibleAccordion : JQAccordion {
 	collapsible = true;
+	includeUIStylesheet = false;
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 IconLabelsAccordion : JQAccordion {
-	activeHeader = "ui-icon-circle-arrow-s";
-	header = "ui-icon-circle-arrow-e";
+	activeHeader = "fa fa-plus";
+	header = "fa fa-minus";
+	includeUIStylesheet = false;
 }
 
 PageWrapper : PageWrapper {

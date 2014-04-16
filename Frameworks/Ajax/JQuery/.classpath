@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="WOFramework/Ajax"/>
 	<classpathentry kind="con" path="WOFramework/ERAttachment"/>
+	<classpathentry kind="con" path="WOFramework/ERCoolComponents"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

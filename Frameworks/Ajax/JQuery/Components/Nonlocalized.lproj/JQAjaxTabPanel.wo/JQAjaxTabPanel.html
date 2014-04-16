@@ -1,16 +1,20 @@
 <webobject name = "HasTabs">
-	<webobject name = "TablUl">
-		<webobject name = "TabRepetition">
-			<webobject name = "TabLi">
-				<webobject name = "SubmitForm"><webobject name = "AjaxSubmit"><span><webobject name = "TabLabel" /></span></webobject></webobject>
-				<webobject name = "DontSubmitForm"><webobject name = "AjaxLink"><span><webobject name = "TabLabel" /></span></webobject></webobject>
+	<webobject name = "TabWrapper">
+		<webobject name = "TablUl">
+			<webobject name = "TabRepetition">
+				<webobject name = "TabLi">
+					<webobject name = "SubmitForm"><webobject name = "AjaxSubmit"><span><webobject name = "TabLabel" /></span></webobject></webobject>
+					<webobject name = "DontSubmitForm"><webobject name = "AjaxLink"><span><webobject name = "TabLabel" /></span></webobject></webobject>
+				</webobject>
 			</webobject>
 		</webobject>
 	</webobject>
-	<div class = "tab-content">
-		<webobject name = "AjaxUpdateContainer">
-			<webobject name = "TabContentWrapper"><webobject name = "ComponentContent" /></webobject>
-		</webobject>
-	</div>
+	<webobject name = "ContentWrapper">
+		<div class = "tab-content">
+			<webobject name = "AjaxUpdateContainer">
+				<webobject name = "TabContentWrapper"><webobject name = "ComponentContent" /></webobject>
+			</webobject>
+		</div>
+	</webobject>
 </webobject>
 <webobject name = "HasNoTabs"><div class = "TabPanelContent"><webobject name = "ComponentContent" /></div></webobject>

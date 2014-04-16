@@ -9,5 +9,15 @@
 		}    
 
     });
+    
+    Wonder.PopOver = Wonder.AjaxElement.extend({
+    	
+    	init: function(element) {
+    		var element = $(element);
+    		this._super(element);
+    		element.popover(this.options);
+    	}
+    	
+    });
 
 })(jQuery);

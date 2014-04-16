@@ -6,6 +6,7 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
 import com.webobjects.appserver.WORequest;
 import com.webobjects.appserver.WOResponse;
+import com.webobjects.appserver._private.WOKeyValueAssociation;
 import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableArray;
 
@@ -13,6 +14,7 @@ import er.ajax.AjaxDynamicElement;
 import er.ajax.AjaxOption;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
+import er.ajax.JQAjaxOption;
 import er.extensions.appserver.ajax.ERXAjaxApplication;
 import er.extensions.foundation.ERXPropertyListSerialization;
 
@@ -26,7 +28,7 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 
 		WOComponent component = context.component();
 		NSDictionary options = _options(component);
-
+		
 		boolean disabled = booleanValueForBinding("disabled", false, component);
 		Object stringValue = valueForBinding("string", component);
 		String functionName = (String) valueForBinding("functionName", component);
@@ -44,7 +46,7 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 			boolean isATag = "a".equalsIgnoreCase(elementName);
 			boolean renderTags = (isATag);
 
-			if(renderTags) {
+			if(true) {
 			
 				response.appendContentString("<");
 				response.appendContentString(elementName);
@@ -106,36 +108,38 @@ public class JQAjaxUpdateLink extends AjaxDynamicElement {
 	protected NSDictionary _options(WOComponent component) {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("async", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("cache", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("callback", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("complete", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("delegate", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("async", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("cache", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("callback", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("complete", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("delegate", AjaxOption.STRING));
 
-		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "url");
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 
 		options.takeValueForKey(updateContainerID, "updateContainer");
 		options.takeValueForKey(component.context().contextID() + "." + component.context().elementID(), "elementID");
+
 		return options;
 		
 	}
 	
 	
 	@Override
-	protected void addRequiredWebResources(WOResponse response,
-			WOContext context) {
+	protected void addRequiredWebResources(WOResponse response, WOContext context) {
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 	}
 
 	@Override
 	public WOActionResults handleRequest(WORequest request, WOContext context) {
+
 		WOComponent component = context.component();
 		boolean disabled = booleanValueForBinding("disabled", false, component);
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 
 		AjaxUpdateContainer.setUpdateContainerID(request, updateContainerID);
 		WOActionResults results = null;
+		
 		if (!disabled) {
 			results = (WOActionResults) valueForBinding("action", component);
 		}

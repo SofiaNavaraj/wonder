@@ -5,6 +5,11 @@ import com.webobjects.foundation.NSTimestamp;
 
 public class DateComponent extends BaseComponent {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public DateComponent(WOContext context) {
         super(context);
     }

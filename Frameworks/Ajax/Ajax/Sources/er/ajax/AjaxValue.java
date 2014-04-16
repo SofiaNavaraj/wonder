@@ -44,6 +44,15 @@ public class AjaxValue {
 		this(AjaxOption.DEFAULT, value);
 	}
 
+	protected AjaxOption.Type type() {
+		return _type;
+	}
+	
+	protected Object value() {
+		return _value;
+	}
+	
+	
 	/**
 	 * Creates AjaxValue for value with the indicated type.  If type is AjaxOption.DEFAULT, then
 	 * the actual type will be inferred if value is String, Number, Boolean, NSArray, NSDictionary, 

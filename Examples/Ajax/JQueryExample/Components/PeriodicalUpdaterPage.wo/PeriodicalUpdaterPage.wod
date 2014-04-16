@@ -6,6 +6,27 @@ Display : WOConditional {
 	condition = display;
 }
 
+DatePicker : JQDatePicker {
+	class = "form-control";
+	includeUIStylesheet = false;
+	nextText = "&gt;";
+	prevText = "&lt;";
+	value = now;
+}
+
+DontShowDate : WOConditional {
+	condition = showDate;
+	negate = true;
+}
+
+Form : WOForm {
+	class = "form-horizontal";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
 LimitedCountPeriodicalUpdater : JQAjaxUpdateContainer {
 	maxCalls = 3;
 	minTimeout = 3000;
@@ -21,8 +42,15 @@ OneTimePeriodicalUpdater : JQAjaxUpdateContainer {
 	maxCalls = 1;
 }
 
-OutsidePeriodicalUpdater : JQAjaxUpdateContainer {
+OneTimeUpdater : JQAjaxUpdateContainer {
+	action = changeShowDate;
 	delegate = "slide";
+	minTimeout = 5000;
+	maxCalls = 1;
+}
+
+OutsidePeriodicalUpdater : JQAjaxUpdateContainer {
+	delegate = "fade";
 	minTimeout = 2000;
 }
 
@@ -33,4 +61,8 @@ PageWrapper : PageWrapper {
 
 PeriodicalUpdater : JQAjaxUpdateContainer {
 	minTimeout = 4000;
+}
+
+ShowDate : WOConditional {
+	condition = showDate;
 }

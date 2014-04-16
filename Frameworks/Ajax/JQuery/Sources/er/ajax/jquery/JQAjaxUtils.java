@@ -4,6 +4,7 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
 
 import er.ajax.AjaxUtils;
+import er.ajax.JQResponseRewriter;
 import er.extensions.appserver.ERXResponseRewriter;
 import er.extensions.foundation.ERXProperties;
 
@@ -21,8 +22,9 @@ public class JQAjaxUtils extends AjaxUtils {
 		if(ERXProperties.booleanForKey("er.ajax.jquery.compressed") && FRAMEWORK.equals(framework) && JQUERY_JS.equals(fileName)) {
 			processedFileName = JQUERY_MIN_JS;
 		}
-		AjaxUtils.addScriptResourceInHead(aContext, aResponse, framework, processedFileName);
-		ERXResponseRewriter.addScriptResourceInHead(aResponse, aContext, framework, processedFileName);
+
+		JQResponseRewriter.addScriptResourceInHead(aResponse, aContext, framework, processedFileName);
+
 	}
 
 	public static void addUIStylesheetResourceInHead(WOContext aContext, WOResponse aResponse, String framework, String fileName) {
@@ -34,6 +36,9 @@ public class JQAjaxUtils extends AjaxUtils {
 		if(fileName == null) {
 			fileName = ERXProperties.stringForKey("er.ajax.jquery-ui.theme.fileName");
 		}
+		
+		System.out.println(framework);
+		System.out.println(fileName);
 		
 		ERXResponseRewriter.addStylesheetResourceInHead(aResponse, aContext, framework, fileName);
 

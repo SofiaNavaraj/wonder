@@ -1,16 +1,41 @@
 <webobject name = "PageWrapper">
-	<style type = "text/css">
-		a[disabled] {
-			color: black;
-			text-decoration: none;
-		}
-	</style>
-	<h1>Ajax Tab Panel</h1>
-	<h2>Works just like CCAjaxTabPanel*</h2>
-	<p>* with one small difference; I put the update container around the component content instead of the whole panel so that I could use animations when replacing the content that wouldn't effect the tabs.  The tabs use a callback to make the selected tab disabled.  To style a disabled tab use this CSS rule: a[disabled] {}</p>
-	<hr/>
-	<h3>Demo</h3>
-	<webobject name = "TabPanel">
-		<webobject name = "TabContent"></webobject>
-	</webobject>
+	<div id = "ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Ajax Tab Test</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<h2 class="row-seperator-header"><i class="fa fa-plus"></i> Customized Tabs </h2>
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<div class = "widget-body">
+						<h1>Ajax Tab Panel</h1>
+						<h2>Works just like CCAjaxTabPanel*</h2>
+						<hr class = "simple"/>
+						<p>* with one small difference; I put the update container around the component content instead of the whole panel so that I could use animations when replacing the content that wouldn't effect the tabs.  The tabs use a callback to make the selected tab disabled.  To style a disabled tab use this CSS rule: a[disabled] {}</p>
+					</div>
+				</div>
+				<div class="jarviswidget well" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Custom Delegate Test</h2>				
+					</header>	
+					<div>
+						<div class = "widget-body">
+							<webobject name = "TabPanel">
+								<webobject name = "TabContent"></webobject>
+							</webobject>
+						</div>
+					</div>
+				</div>
+				<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+					<webobject name = "TabPanel2">
+						<webobject name = "TabContent2"></webobject>
+					</webobject>
+				</div>
+			</article>
+		</div>
+	</div>
 </webobject>

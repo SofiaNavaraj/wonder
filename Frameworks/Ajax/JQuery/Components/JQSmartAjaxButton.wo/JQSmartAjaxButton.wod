@@ -1,0 +1,45 @@
+AjaxButton : JQAjaxSubmitButton {
+	action = ^action;
+	alt = ^alt;
+	button = false;
+	class = ^class;
+	updateContainerID = ^updateContainerID;
+}
+
+AjaxLink : JQAjaxUpdateLink {
+	action = ^action;
+	class = ^class;
+	alt = ^alt;
+	updateContainerID = ^updateContainerID;
+}
+
+Button : CCSubmitLinkButton {
+    action = ^action;
+    class = ^class;
+    dontSubmitForm = ^dontSubmitForm;
+    value = ^value;
+    alt = ^alt;	
+}
+
+ButtonLabel : ERXLocalizedString {
+	value = ^value;	
+}
+
+DontSumitForm : WOConditional {
+	condition = ^dontSubmitForm;
+}
+
+NotUseAjax : WOConditional {
+	condition = ^useAjax;
+	negate = true;
+}
+
+SubmitForm : WOConditional {
+	condition = ^dontSubmitForm;
+	negate = true;
+}
+
+UseAjax : WOConditional {
+	condition = ^useAjax;
+}
+

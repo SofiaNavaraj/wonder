@@ -1,7 +1,10 @@
 package er.ajax.jquery.example.components;
 
 import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSArray;
+
+import er.ajax.jquery.JQAjaxUtils;
 
 public class AjaxObserveFieldPage extends Main {
 
@@ -17,6 +20,12 @@ public class AjaxObserveFieldPage extends Main {
 	public AjaxObserveFieldPage(WOContext context) {
         super(context);
     }
+	
+	public void appendToResponse(WOResponse response, WOContext context) {
+		super.appendToResponse(response, context);
+		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
+		JQAjaxUtils.addScriptResourceInHead(context, response, "app", "js/smartwidgets/jarvis.widget.js");
+	}
 
 	public NSArray<String> colors() {
 		return _colors;

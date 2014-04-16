@@ -1,3 +1,7 @@
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
 MaxValue : WOTextField {
 	value = maxValue;
 }

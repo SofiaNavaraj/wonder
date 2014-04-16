@@ -17,6 +17,7 @@ import er.ajax.AjaxSubmitButton;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
 import er.ajax.IAjaxElement;
+import er.ajax.JQAjaxOption;
 import er.extensions.appserver.ERXWOContext;
 import er.extensions.appserver.ajax.ERXAjaxApplication;
 import er.extensions.appserver.ajax.ERXAjaxSession;
@@ -48,12 +49,14 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 	protected NSDictionary _options(WOComponent component) {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("async", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("cache", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("delegate", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("onBeforeClick", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("async", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("cache", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("callback", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("delegate", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("onBeforeClick", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("formName", AjaxOption.STRING));
 		
-		NSMutableDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSMutableDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "url");
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 
 		options.takeValueForKey(updateContainerID, "updateContainer");
@@ -141,11 +144,9 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 	    	else {
 	    		
 				boolean isATag = "a".equalsIgnoreCase(elementName);
+				response.appendContentString("<" + elementName);
 				if(isATag) {
 					appendTagAttributeToResponse(response, "href", "javascript:void(0)");
-				}
-				else {
-					response.appendContentString("<" + elementName);
 				}
 	    	}
 
@@ -153,7 +154,7 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 	    	appendTagAttributeToResponse(response, "style", valueForBinding("style", component));
 	    	appendTagAttributeToResponse(response, "id", valueForBinding("id", component));
 	    	appendTagAttributeToResponse(response, "title", valueForBinding("title", component));
-
+	    	
 	    	if(! disabled) {
 				appendTagAttributeToResponse(response, "data-wonder-id", "ASB");
 				appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(options));	
@@ -188,10 +189,10 @@ public class JQAjaxSubmitButton extends AjaxDynamicElement {
 		if(requestName != null) {
 			requestName = requestName.replace("'", "");
 		}
-		
+				
 		boolean shouldHandleRequest = (!disabledInComponent(component) && context.wasFormSubmitted()) && 
 	    		((context.isMultipleSubmitForm() && nameInContext.equals(requestName)) || ! context.isMultipleSubmitForm());
-
+		
 		if(shouldHandleRequest) {
 			String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component);
 			AjaxUpdateContainer.setUpdateContainerID(request, updateContainerID);

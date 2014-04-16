@@ -4,6 +4,8 @@ ComponentContent: WOComponentContent {
 AjaxSubmit : JQAjaxSubmitButton {
 	button = false;
 	action = switchSubmitTab;
+	callback = "Wonder.AjaxTabPanel.switchTab(v1, v2);";
+	formName = formName;
 	updateContainerID = ^id;
 }
 
@@ -28,12 +30,21 @@ TabRepetition: WORepetition {
 	list = tabs;
 }
 
+TabWrapper : WOSwitchComponent {
+	WOComponentName = tabWrapperComponentName;
+}
+
 TablUl: WOGenericContainer {
    elementName = "ul";
    class = tabContainerClassNames;
 }
 
+ContentWrapper : WOSwitchComponent {
+	WOComponentName = contentWrapperComponentName;
+}
+
 TabContentWrapper: ERXUniquingWrapper {
+	class = "tab-pane";
 	id = selectedTabIdentifier;
 }
 
@@ -57,7 +68,6 @@ DontSubmitForm : WOConditional {
 
 AjaxUpdateContainer : JQAjaxUpdateContainer {
 	class = "TabPanelWrapper";
-	delegate = ^delegate;
+	delegate = delegate;
 	id = ^id;
-
 }

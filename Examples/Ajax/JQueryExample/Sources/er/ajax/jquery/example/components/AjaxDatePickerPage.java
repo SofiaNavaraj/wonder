@@ -5,7 +5,8 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSTimestamp;
 
 public class AjaxDatePickerPage extends Main {
-    private NSTimestamp date;
+
+	private NSTimestamp _date;
 
 	public AjaxDatePickerPage(WOContext context) {
         super(context);
@@ -15,17 +16,17 @@ public class AjaxDatePickerPage extends Main {
 	 * @return the date
 	 */
 	public NSTimestamp date() {
-		if(date == null) {
-			date = new NSTimestamp();
+		if(_date == null) {
+			_date = new NSTimestamp();
 		}
-		return date;
+		return _date;
 	}
 
 	/**
 	 * @param date the date to set
 	 */
 	public void setDate(NSTimestamp date) {
-		this.date = date;
+		this._date = date;
 	}
 
 	public WOActionResults selectDate() {

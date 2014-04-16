@@ -11,6 +11,7 @@ public class AjaxTabTestPage extends BaseComponent {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Tab _selectedTab;
+	private Tab _selectedWrapperTab;
 	private NSArray<Tab> _tabs;
 	
 	public AjaxTabTestPage(WOContext context) {
@@ -43,6 +44,17 @@ public class AjaxTabTestPage extends BaseComponent {
 
 	public void setTabs(NSArray<Tab> tabs) {
 		this._tabs = tabs;
+	}
+
+	public Tab selectedWrapperTab() {
+		if(_selectedWrapperTab == null) {
+			_selectedWrapperTab = tabs().get(0);
+		}
+		return _selectedWrapperTab;
+	}
+
+	public void setSelectedWrapperTab(Tab selectedWrapperTab) {
+		this._selectedWrapperTab = selectedWrapperTab;
 	}
 
 	public class Tab {

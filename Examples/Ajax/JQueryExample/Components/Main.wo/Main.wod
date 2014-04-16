@@ -1,0 +1,4 @@
+PageWrapper : PageWrapper {
+	index = 0;
+	pageTitle = "Project Wonder jQuery Components";
+}

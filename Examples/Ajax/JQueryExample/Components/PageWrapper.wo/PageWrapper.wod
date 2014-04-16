@@ -22,16 +22,20 @@ AULLink : WOHyperlink {
 	directActionName = "PageAction/AjaxUpdateLinkPage";
 }
 
+Autocomplete : WOHyperlink {
+	directActionName = "PageAction/AutocompleteTestPage";
+}
+
 Content : WOComponentContent {
 	
 }
 
 DatePickerLink : WOHyperlink {
-	directActionName = "PageAction/AjaxDatePickerPage";
+	pageName = "AjaxDatePickerPage";
 }
 
 DialogLink : WOHyperlink {
-	directActionName = "PageAction/AjaxDialogTestPage";
+	pageName = "AjaxDialogTestPage";
 }
 
 DropButtonButtonLink : WOHyperlink {
@@ -42,13 +46,26 @@ FormValidationLink : WOHyperlink {
 	directActionName = "PageAction/FormValidationTestPage";
 }
 
+HideMenuButton : SAHideMenuButton {
+	
+}
+
 HomePageLink : WOHyperlink {
-	directActionName = "PageAction/HomePage";
+	pageName = "HomePage";
 }
 
 ListItem : WOGenericContainer {
 	class = navigationClassName;
 	elementName = "li";
+}
+
+Logo : WOImage {
+	framework = "app";
+	filename = "images/logo_bump.png";
+}
+
+Main : SAMainContent {
+	elementName = "div";
 }
 
 MetaDescription : WOGenericElement {
@@ -57,8 +74,20 @@ MetaDescription : WOGenericElement {
 	name = "description";
 }
 
+MinifyButton : SAMinifyButton {
+	
+}
+
+Navigation : SANavigation {
+	accordion = false;
+}
+
 PageTitle : WOString {
 	value = ^pageTitle;
+}
+
+PopOverLink : WOHyperlink {
+	directActionName = "PageAction/BSPopOverTestPage";
 }
 
 SelectBoxLink : WOHyperlink {

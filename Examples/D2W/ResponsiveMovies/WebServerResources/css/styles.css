@@ -1,0 +1,28 @@
+.form-inline.query-all-form {
+	margin-top: 20px;
+}
+
+.ModalBlock {
+	left: 10%;
+	position: absolute;
+	right: 10%;
+	top: 10px;
+	z-index: 1000;
+}
+
+.ModalBlock .jarviswidget {
+	box-shadow: #777 3px 3px 3px;
+	-moz-box-shadow: #777 3px 3px 3px;
+	-webkit-box-shadow:#777 3px 3px 3px;
+}
+
+
+.col-sm-6 + .col-sm-6 {
+	margin-top: 0.75rem;
+}
+
+@media (min-width:768px) { 
+	.col-sm-6 + .col-sm-6 {
+		margin-top: 0;
+	}
+};

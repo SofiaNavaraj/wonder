@@ -6,11 +6,12 @@ public class Session extends ERXSession {
 	private static final long serialVersionUID = 1L;
 
 	public Session() {
+		new RuntimeException("Session created...").printStackTrace();
 	}
 	
 	@Override
 	public Application application() {
-		return (Application)super.application();
+		return (Application) super.application();
 	}
 	
 }

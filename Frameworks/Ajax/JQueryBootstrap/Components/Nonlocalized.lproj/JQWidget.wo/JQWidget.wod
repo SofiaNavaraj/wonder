@@ -1,0 +1,10 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+Widget : WOGenericContainer {
+	class = widgetClass;
+	data-widget-togglebutton = true;
+	elementName = elementName;
+	id = ^id;
+}

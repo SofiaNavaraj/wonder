@@ -1,18 +1,48 @@
 <webobject name = "PageWrapper">
-	<h1>Bootstrap Select Picker</h1>	
-	<h2>Demonstration with various options</h2>
-	<p>This scripts lets you replace the standard popup button with one that you can style yourself.  Or you can use the default styling provided by the bootstrap framework or bootstrap framework extension that you are using.</p>
-	<hr/>
-	<h3>Component Action</h3>
-	<webobject name = "Form">
-		<div class = "form-group">
-			<label>Select your favorite fruit:</label>
-			<webobject name = "StandardPopupButton" />
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Bootstrap Styled Select Box</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<h1>
+						Bootstrap Select Picker<br>
+						<small>Demonstration with various options</small>
+					</h1>	
+					<hr class = "simple" />
+					<p>This scripts lets you replace the standard popup button with one that you can style yourself.  Or you can use the default styling provided by the bootstrap framework or bootstrap framework extension that you are using.</p>
+				</div>
+				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Component Action Test</h2>						
+					</header>
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">Select your favorite fruit</label>
+										<label class = "select"><webobject name = "StandardPopupButton" /></label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "SubmitButton"></webobject>
+								</footer>
+							</webobject>
+						</div>
+					</div>
+				</div>
+				<webobject name = "FruitSelected">
+					<div class = "well">
+						<h2>Your favorite fruit is: <webobject name = "SelectedFruit" /></h2>
+					</div>
+				</webobject>
+			</article>
 		</div>
-		<webobject name = "SubmitButton"></webobject>
-	</webobject>
-	<webobject name = "FruitSelected">
-		<hr/>
-		<h2>Your favorite fruit is: <webobject name = "SelectedFruit" /></h2>
-	</webobject>
+	</div>
 </webobject>

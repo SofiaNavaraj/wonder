@@ -1,0 +1,61 @@
+Form : WOForm {
+	class = "smart-form";	
+	multipleSubmit = true;
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
+LetterCount : WOString {
+	numberformat = "0";
+	value = selectedValue2.value;
+}
+
+Letters : ERXPluralString {
+	count = selectedValue2.value;
+	showNumber = false;
+	value = "letter";
+}
+
+PageWrapper : PageWrapper {
+	index = 12;
+	pageTitle = "JQueryUI | Auto Complete Test Page";
+}
+
+SimpleAjaxAutoComplete: JQAutocomplete {
+	class = "form-control";
+	list = currentValues2;
+	value = value2;
+	item = currentValue;
+	displayString = currentValue.name;
+	selection = selectedValue2;
+}
+
+ResetButton : WOSubmitButton {
+	class = "btn btn-default";
+	action = resetWord;
+	value = "Reset";
+}
+
+SubmitButton : JQAjaxSubmitButton {
+	action = submitted;
+	class = "btn btn-primary";
+	formName = "TestForm";
+	updateContainerID = "UpdateContainer";
+	value = "Submit";
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	delegate = "testCustom";
+	elementName = "span";
+	id = "UpdateContainer";
+}
+
+Word : WOString {
+	value = selectedValue2.name;
+}
+
+WordIsDefined : ERXNonNullConditional {
+	condition = selectedValue2;
+}

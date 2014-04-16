@@ -1,0 +1,16 @@
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
+PageWrapper : PageWrapper {
+	index = 14;
+	pageTitle = "Bootstrap Popovers";
+}
+
+Popover : JQBPopOver {
+	class = "btn btn-lg btn-danger";
+	content = "<b>And here's some amazing content. It's very engaging. right?</b>";
+	html = true;
+	title = "Test Title";
+	trigger = "hover";
+}

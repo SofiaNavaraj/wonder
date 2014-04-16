@@ -1,25 +1,66 @@
 <webobject name = "PageWrapper">
-	<h1>Periodical Updater</h1>
-	<p>Automatically refreshes content</p>
-	<webobject name = "OutsidePeriodicalUpdater">
-		<webobject name = "Now"></webobject>
-	</webobject>
-	<hr>
-	<p>I only update 3 times every 3 seconds.</p>	
-	<webobject name = "LimitedCountPeriodicalUpdater">
-		<webobject name = "Now"></webobject>
-	</webobject>
-
-	<!-- 
-		<hr>
-		<webobject name = "OneTimePeriodicalUpdater">
-			I only update the time once (after 5 seconds): <webobject name = "Now"></webobject><br>
-			<webobject name = "Display">
-				I'm an update container returned by an Ajax request and I run forever: 
-				<webobject name = "PeriodicalUpdater">
-					<webobject name = "Date"></webobject>
-				</webobject>
-			</webobject>
-		</webobject>
-	 -->
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Periodical Updater</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<h1>Periodical Updater</h1>
+					<hr class = "simple" />
+					<p>Automatically refreshes content</p>
+					<webobject name = "OutsidePeriodicalUpdater">
+						<webobject name = "Now"></webobject>
+					</webobject>
+					<hr class = "simple" />
+					<p>I only update 3 times every 3 seconds.</p>	
+					<webobject name = "LimitedCountPeriodicalUpdater">
+						<webobject name = "Now"></webobject>
+					</webobject>
+				
+					<!-- 
+						<hr>
+						<webobject name = "OneTimePeriodicalUpdater">
+							I only update the time once (after 5 seconds): <webobject name = "Now"></webobject><br>
+							<webobject name = "Display">
+								I'm an update container returned by an Ajax request and I run forever: 
+								<webobject name = "PeriodicalUpdater">
+									<webobject name = "Date"></webobject>
+								</webobject>
+							</webobject>
+						</webobject>
+					 -->
+					
+				</div>
+				<div class = "well">
+					<h1>Synchronous Dependency Loading</h1>
+					<hr class = "simple" />
+					<p>The example below shows the loading of a JavaScript dependency (date selector) that is loaded by an AJAX request.  The framework handles loading dependencies before initializing components returned by AJAX requests.  This is pretty much the same concept as the AjaxOnDemand function in the prototype version but in practice it's a little different because it supports initialzing components through the data-wonder-id attribute.</p>
+					<webobject name = "OneTimeUpdater">
+						<webobject name = "ShowDate">
+							<webobject name = "Form">
+								<fieldset>
+									<legend>Synchronous Example</legend>
+									<div class = "form-group">
+										<label class = "col-md-2 control-label">
+											A Date			
+										</label>
+										<div class = "col-md-10">
+											<webobject name = "DatePicker"></webobject>
+										</div>														
+									</div>
+								</fieldset>
+							</webobject>
+						</webobject>
+						<webobject name = "DontShowDate">
+							<p>I will be replaced by a date picker.</p>
+						</webobject>
+					</webobject>
+				</div>	
+			</article>
+		</div>
+	</div>
 </webobject>

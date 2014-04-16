@@ -7,6 +7,7 @@ import com.webobjects.foundation.NSMutableArray;
 import com.webobjects.foundation.NSMutableDictionary;
 
 import er.ajax.AjaxOption;
+import er.ajax.JQAjaxOption;
 import er.extensions.appserver.ERXWOContext;
 import er.extensions.components.ERXStatelessComponent;
 import er.extensions.foundation.ERXPropertyListSerialization;
@@ -49,7 +50,7 @@ public class JQSelectBox extends ERXStatelessComponent {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private NSDictionary _options() {
 		NSMutableArray ajaxOptionsArray = new NSMutableArray();
-		NSMutableDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, this);
+		NSMutableDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, this);
 		return options;		
 	}
 	

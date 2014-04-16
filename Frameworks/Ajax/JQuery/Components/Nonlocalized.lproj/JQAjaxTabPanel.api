@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-        <wo wocomponentcontent="false" class="JQAjaxTabPanel.java">
+        <wo class="JQAjaxTabPanel.java" wocomponentcontent="false">
 
-        </wo>
+        <binding name="contentWrapperComponentName"/>
+    <binding name="tabWrapperComponentName"/>
+    <binding name="tabContainerClassNames"/>
+    <binding name="selectedTabClassNames"/>
+    <binding name="delegate"/>
+        <binding name="id"/>
+    </wo>
 </wodefinitions>

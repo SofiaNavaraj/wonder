@@ -1,3 +1,7 @@
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
 PageWrapper : PageWrapper {
 	index = 2;
 	pageTitle = "Ajax Update Links Test Page";
@@ -19,7 +23,7 @@ UpdateContainer3 : JQAjaxUpdateContainer {
 
 UpdateContainer2 : JQAjaxUpdateContainer {
 	delegate = "fade";
-	id = "UpdateContainer2";
+	id = "UpdateContainer_2";
 }
 
 UpdateLink : JQAjaxUpdateLink {
@@ -29,5 +33,5 @@ UpdateLink : JQAjaxUpdateLink {
 
 UpdateLink2 : JQAjaxUpdateLink {
 	action = updateTime;
-	updateContainerID = "UpdateContainer2";
+	updateContainerID = "UpdateContainer_2";
 }

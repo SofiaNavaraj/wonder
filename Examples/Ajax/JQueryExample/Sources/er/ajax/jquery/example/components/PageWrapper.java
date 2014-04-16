@@ -3,8 +3,6 @@ package er.ajax.jquery.example.components;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
 
-import er.ajax.jquery.JQAjaxUtils;
-
 public class PageWrapper extends Main {
 
 	/**
@@ -19,24 +17,26 @@ public class PageWrapper extends Main {
     }
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
-		super.appendToResponse(response, context);
-
-		JQAjaxUtils.addStylesheetResourceInHead(context, response, "JQueryBootstrap", "css/bootstrap.min.css");
-		JQAjaxUtils.addStylesheetResourceInHead(context, response, "app", "css/flat-ui.css");
-		
+		super.appendToResponse(response, context);		
 	}
 	
-	public void reset() {
-		super.reset();
+	public void sleep() {
+		super.sleep();
 		counter = 0;
 		wasFound = false;
 	}
 	
 	@Override
 	public boolean isStateless() {
-		return true;
+		return false;
 	}
     
+	@Override
+	public boolean synchronizesVariablesWithBindings() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	public int index() {
 		return valueForIntegerBinding("index", -1);
 	}

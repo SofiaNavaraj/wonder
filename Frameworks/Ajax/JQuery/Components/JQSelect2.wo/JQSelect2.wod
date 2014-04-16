@@ -1,0 +1,67 @@
+Browser : WOBrowser {
+	class = ^class;
+	data-wonder-id = "Select2";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	displayString = ^displayString;
+	escapeHTML = ^escapeHTML;
+	id = id;
+	item = ^item;
+	list = ^list;
+	multiple = true;
+	name = ^name;
+	noSelectionString = ^noSelectionString;
+	otherTagString = ^otherTagString;
+	selections = ^selections;
+	style = ^style;
+}
+
+SelectedValuePopUpButton : WOPopUpButton {
+	class = ^class;
+	data-wonder-id = "Select2";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	displayString = ^displayString;
+	escapeHTML = ^escapeHTML;
+	id = id;
+	item = ^item;
+	list = ^list;
+	name = ^name;
+	noSelectionString = ^noSelectionString;
+	otherTagString = ^otherTagString;
+	selectedValue = ^selectedValue;
+	style = ^style;
+	value = ^value;
+}
+
+IsSelectedValuePopup : WOConditional {
+	condition = hasSelectedValueBinding;
+}
+
+IsSelectionPopup : WOConditional {
+	condition = hasSelectionBinding;
+}
+
+IsSelectionsPopup : WOConditional {
+	condition = hasSelectionsBinding;
+}
+
+SelectionPopUpButton : WOPopUpButton {
+	class = ^class;
+	data-wonder-id = "Select2";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	displayString = ^displayString;
+	escapeHTML = ^escapeHTML;
+	id = id;
+	item = ^item;
+	list = ^list;
+	name = ^name;
+	noSelectionString = ^noSelectionString;
+	otherTagString = ^otherTagString;
+	selection = ^selection;
+	style = ^style;
+	value = ^value;
+}
+
+

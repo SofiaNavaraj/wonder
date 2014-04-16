@@ -1,10 +1,11 @@
 <webobject name = "PageWrapper">
+
 	<script type = "text/javascript">
 
 		(function($) {
 
 			Wonder.delegates.testCustom = $.extend({}, Wonder.delegates.fade);
-    		Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
+    			Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
         		$(caller).attr('disabled', 'disabled');
     		};
 
@@ -16,19 +17,56 @@
 		})(jQuery);		
 		
 	</script>
-	<h1>Ajax Submit Button</h1>
-	<h2>Various test of the Ajax Submit Button</h2>
-	<webobject name = "Form">
-		<label>Your name</label>
-		<webobject name = "GuestNameInput" />
-		<webobject name = "SubmitButton" />
-	</webobject>
-	<hr>
-	<webobject name = "UpdateContainer">
-		<webobject name = "NameIsDefined">
-			<h2>
-				Hi <webobject name = "GuestName" />		
-			</h2>
-		</webobject>
-	</webobject>
+
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Periodical Updater</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<div class = "widget-body no-padding">
+						<h1>Ajax Submit Button</h1>
+						<p>Various test of the Ajax Submit Button</p>
+					</div>				
+				</div>
+				<div class="jarviswidget" id="wid-id-1">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Custom Delegate Test</h2>				
+					</header>	
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">Your name</label>
+										<label class = "input">
+											<webobject name = "GuestNameInput" />
+										</label>					
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "SubmitButton" />
+									<webobject name = "ResetButton" />
+								</footer>
+							</webobject>
+						</div>
+					</div>	
+				</div>
+				<webobject name = "UpdateContainer">
+					<webobject name = "NameIsDefined">
+						<div class = "well">
+							<h2>
+								Hi <webobject name = "GuestName" />		
+							</h2>
+						</div>
+					</webobject>
+				</webobject>
+			</article>
+		</div>
+	</div>			
 </webobject>

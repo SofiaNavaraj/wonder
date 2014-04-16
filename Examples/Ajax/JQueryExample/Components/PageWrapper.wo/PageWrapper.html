@@ -3,16 +3,33 @@
 	<head>
 		<title><webobject name = "PageTitle" /></title>
 		<webobject name = "MetaDescription"></webobject>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 	</head>
-	<body>
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-md-3">
-					<nav>
-						<ul class = "nav nav-list nav-list-vivid">
-							<li class = "nav-header">Navigation</li>
-							<webobject name = "ListItem"><webobject name = "HomePageLink">Home Page</webobject></webobject>
-							<li class = "nav-header">Core</li>
+	<body class = "smart-style-1">
+		<header id="header">
+			<div id="logo-group">
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo">
+					<webobject name = "Logo"></webobject>
+				</span>
+			</div>
+			<div class="pull-right">
+				<!-- collapse menu button -->
+				<webobject name = "HideMenuButton"></webobject>
+			</div>	
+		</header>
+		<aside id="left-panel">
+			<div class="login-info">
+				<span></span>
+			</div>
+			<webobject name = "Navigation">
+				<ul>
+					<webobject name = "ListItem">
+						<webobject name = "HomePageLink"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Home Page</span></webobject>
+					</webobject>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-code"></i> <span class="menu-item-parent">Core</span></a>
+						<ul>
 							<webobject name = "ListItem"><webobject name = "AUCLink">Periodical Updater</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "AULLink">Update Link</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "ASBLink">Ajax Submit Button</webobject></webobject>
@@ -20,21 +37,32 @@
 							<webobject name = "ListItem"><webobject name = "FormValidationLink">Form Validation</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "AjaxTabPanel">Tab Panel</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "SelectBoxLink">Styled Popup Button</webobject></webobject>
-							<li class = "nav-header">JQueryUI</li>
+						</ul>
+					</li>
+					<li class = "nav-header">
+						<a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">JQueryUI</span></a>
+						<ul>
 							<webobject name = "ListItem"><webobject name = "SliderLink">Ajax Slider</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "DatePickerLink">Date Picker</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "AccordionLink">Accordion</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "DialogLink">Dialog</webobject></webobject>
-							<li class = "nav-header">Bootstrap</li>
+							<webobject name = "ListItem"><webobject name = "Autocomplete">Auto Complete</webobject></webobject>
+						</ul>
+					</li>
+					<li class = "nav-header">
+						<a href="#"><i class="fa fa-lg fa-fw fa-html5"></i> <span class="menu-item-parent">Bootstrap</span></a>
+						<ul>
 							<webobject name = "ListItem"><webobject name = "SelectPickerLink">Bootstrap Styled Popup Button</webobject></webobject>
 							<webobject name = "ListItem"><webobject name = "DropButtonButtonLink">Dropdown Buttons</webobject></webobject>
-						</ul>
-					</nav>
-				</div>			
-				<div class = "col-md-9">
-					<webobject name = "Content" />
-				</div>
-			</div>
-		</div>
+							<webobject name = "ListItem"><webobject name = "PopOverLink">Popovers</webobject></webobject>
+						</ul>	
+					</li>
+				</ul>
+			</webobject>
+			<webobject name = "MinifyButton"></webobject>
+		</aside>
+		<webobject name = "Main">
+			<webobject name = "Content" />
+		</webobject>
 	</body>
 </html>

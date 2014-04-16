@@ -1,3 +1,7 @@
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
 PageWrapper : PageWrapper {
 	index = 6;
 	pageTitle = "Ajax Tab Test Page";
@@ -7,11 +11,25 @@ TabContent : WOSwitchComponent {
 	WOComponentName = selectedTab.componentName;
 }
 
+TabContent2 : WOSwitchComponent {
+	WOComponentName = selectedWrapperTab.componentName;
+}
+
 TabPanel : JQAjaxTabPanel {
-	delegate = "fade";
+//	delegate = "fade";
 	id = "TabTest";
 	tabs = tabs;
-	tabContainerClassNames = "nav nav-tabs nav-append-content";
+	tabContainerClassNames = "nav nav-tabs bordered";
 	tabNameKey = "displayName";
 	selectedTab = selectedTab;
+}
+
+TabPanel2 : JQAjaxTabPanel {
+	contentWrapperComponentName = "TabContentWrapperComponent";
+	id = "TabWrapperTest";
+	selectedTab = selectedWrapperTab;
+	tabContainerClassNames = "nav nav-tabs pull-left in";
+	tabNameKey = "displayName";
+	tabs = tabs;
+	tabWrapperComponentName = "HeaderComponent";
 }

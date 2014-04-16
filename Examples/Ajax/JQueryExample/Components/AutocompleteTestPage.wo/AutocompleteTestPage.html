@@ -1,0 +1,71 @@
+<webobject name = "PageWrapper">
+	<script type = "text/javascript">
+
+		(function($) {
+
+			Wonder.delegates.testCustom = $.extend({}, Wonder.delegates.fade);
+    		Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
+        		$(caller).attr('disabled', 'disabled');
+    		};
+
+		    Wonder.delegates.testCustom.didUpdate = function(target, caller) {
+		        $(caller).removeAttr('disabled');
+		        return $(target).fadeIn();
+		    };
+			
+		})(jQuery);		
+		
+	</script>
+
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Autocomplete</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="well well-sm well-light">
+					<h3>
+						Revisioned as dynamic element.  Needs more work.<br>
+					</h3>
+				</div>
+				<div class="jarviswidget" id="wid-id-1">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Simple Ajax Auto Complete</h2>				
+					</header>	
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">A word</label>
+										<label class = "input">
+											<webobject name = "SimpleAjaxAutoComplete"></webobject>
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "SubmitButton" />
+									<webobject name = "ResetButton" />
+								</footer>
+							</webobject>	
+						</div>					
+					</div>				
+				</div>
+					<div class = "well">
+						<h2>
+							Word of the day:
+							<webobject name = "UpdateContainer">
+								<webobject name = "WordIsDefined">
+									<webobject name = "Word" /> which is <webobject name = "LetterCount" /> <webobject name = "Letters" /> long
+								</webobject>
+							</webobject>				
+						</h2>
+					</div>
+			</article>
+		</div>
+	</div>
+</webobject>

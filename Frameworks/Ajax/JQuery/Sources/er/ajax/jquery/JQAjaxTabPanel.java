@@ -17,8 +17,12 @@ public class JQAjaxTabPanel extends ERXTabPanel {
     }
     
     public boolean dontSubmitForm() {
-    	return !ERXValueUtilities.booleanValue(valueForBinding("useFormSubmit"));
+    	return !useFormSubmit();
     }
+
+	private boolean useFormSubmit() {
+		return ERXValueUtilities.booleanValue(valueForBinding("useFormSubmit"));
+	}
 
 	public boolean isDisabled() {
 		return currentTab.equals(selectedTab());
@@ -36,5 +40,21 @@ public class JQAjaxTabPanel extends ERXTabPanel {
 		return valueForStringBinding("selectedTabClassNames", "active");
 	}
 
+	public String tabWrapperComponentName() {
+		return valueForStringBinding("tabWrapperComponentName", "JQEmptyPageWrapper");
+	}
 
-}
+	public String contentWrapperComponentName() {
+		return valueForStringBinding("contentWrapperComponentName", "JQEmptyPageWrapper");
+	}
+
+	public String formName() {
+		return valueForStringBinding("formName", null);
+	}
+
+	public String delegate() {
+		return valueForStringBinding("delegate", useFormSubmit() ? "asb"  : null);
+	}
+
+
+} 

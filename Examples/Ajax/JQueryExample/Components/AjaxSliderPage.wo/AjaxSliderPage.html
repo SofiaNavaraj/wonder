@@ -1,19 +1,44 @@
 <webobject name = "PageWrapper">
-	<h1>Ajax Slider</h1>
-	<h2>Various Tests of an Ajax Slider</h2>
-	<h3>Simple</h3>
-	<webobject name = "Slider"></webobject>
-	<hr>
-	<webobject name = "UpdateContainer">
-		<label>Slider Value:</label><webobject name = "SliderValue" />
-	</webobject>
-	<hr>
-	<h3>Range Slider with Animation</h3>
-	<p>Work in progress...  I want to create inputs that are Ajax enabled.  In this case when they observe that the slider changes they will update their value with an AJAX request.</p>
-	<webobject name = "RangeSlider"></webobject>
-	<hr>
-	<webobject name = "RangeSliderUpdateContainer">
-		<label>Min Value:</label><webobject name = "MinValue" />
-		<label>Max Value:</label><webobject name = "MaxValue" />
-	</webobject>
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Periodical Updater</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<div class = "widget-body no-padding">
+						<h1>Ajax Slider</h1>
+						<h2>Various Tests of an Ajax Slider</h2>
+					</div>
+				</div>
+				<div class="well well-sm well-light">
+					<h3>Simple</h3>
+					<div class = "padding-10">
+						<webobject name = "Slider"></webobject>
+					</div>	
+					<hr class = "simple">
+					<webobject name = "UpdateContainer">
+						<label>Slider Value:</label><webobject name = "SliderValue" />
+					</webobject>
+				</div>
+				<div class="well well-sm well-light">
+					<h3>
+						Range Slider with Animation<br>
+						<small>Work in progress...  I want to create inputs that are Ajax enabled.  In this case when they observe that the slider changes they will update their value with an AJAX request.</small>
+					</h3>
+					<div class = "padding-10">
+						<webobject name = "RangeSlider"></webobject>
+					</div>	
+					<hr class = "simple">
+					<webobject name = "RangeSliderUpdateContainer">
+						<label>Min Value:</label><webobject name = "MinValue" />
+						<label>Max Value:</label><webobject name = "MaxValue" />
+					</webobject>
+				 </div>
+			</article>
+		</div>
+	</div>
 </webobject>

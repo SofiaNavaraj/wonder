@@ -1,0 +1,42 @@
+LoginForm : JQValidateForm {
+	actionClass = "DirectAction";
+	class="smart-form client-form";
+	directActionName = "login";
+	multipleSubmit = false;
+	name="LoginForm";
+}
+
+Logo : WOImage {
+	alt = "Bump Networks";
+	framework = "app";
+	filename = "images/logo_bump.png";
+}
+
+Messages : SADAlertBlock {
+	alertClass = errorMessageType;
+	message = errorMessage;
+}
+
+UsernameField : WOTextField {
+  value = username;
+  name = "username";
+}
+
+PasswordField : WOPasswordField {
+  value = password;
+  name = "password";
+}
+
+HasErrorMessage : WOConditional {
+  condition = errorMessage;
+}
+
+ErrorMessage : WOString {
+  value = errorMessage;
+}
+
+DefaultSubmit : WOSubmitButton {
+	class = "btn btn-primary";
+	directActionName = "login";
+	value = "Sign In";
+}

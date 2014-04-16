@@ -1,18 +1,30 @@
 <webobject name = "PageWrapper">
-	<h1>JQuery UI Dialog / Modal Window</h1>
-	<h2>Demonstration with various options.</h2>
-	<h3>Simple</h3>
-	<webobject name = "SimpleDialog">
-		Hi, I'm the contents of the dialog.  I was <strong>not</strong> returned by an AJAX request.
-	</webobject>	
-	<hr>
-	<h3>AJAX</h3>
-	<webobject name = "AJAXDialog">
-		<p>
-			Hi, I'm the contents of the dialog.  I  <strong>was</strong> returned by an AJAX request.
-		</p>
-		<p>
-			The current time is: <webobject name = "Now" />
-		</p>
-	</webobject>	
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>JQuery UI Dialog / Modal Window</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="well well-sm well-light">
+					<h3>Simple</h3>
+					<webobject name = "SimpleDialog">
+						Hi, I'm the contents of the dialog.  I was <strong>not</strong> returned by an AJAX request.
+					</webobject>					
+					<hr class = "simple">
+					<h3>AJAX</h3>
+					<webobject name = "AJAXDialog">
+						<p>
+							Hi, I'm the contents of the dialog.  I  <strong>was</strong> returned by an AJAX request.
+						</p>
+						<p>
+							The current time is: <webobject name = "Now" />
+						</p>
+					</webobject>	
+				</div>	
+			</article>
+		</div>
+	</div>
 </webobject>

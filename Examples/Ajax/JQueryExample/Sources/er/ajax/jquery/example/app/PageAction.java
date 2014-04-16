@@ -13,7 +13,13 @@ public class PageAction extends ERXDirectAction {
 
 	@Override
 	public WOActionResults performActionNamed(String actionName) {
+
+		if(! context().hasSession()) {
+			session();
+		}
+		
 		return pageWithName(actionName);
+
 	}
 
 	

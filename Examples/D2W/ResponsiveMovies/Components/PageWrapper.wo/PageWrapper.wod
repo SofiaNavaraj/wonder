@@ -1,0 +1,46 @@
+BreadCrumb : SAXBreadCrumbMenu {
+	navigationContext = navigationContext;
+}
+
+Content : WOComponentContent {
+	
+}
+
+Gravatar : JQGravatar {
+	class = "online";
+	profile = "jlmiller@kahalawai.com";	
+}
+
+HideMenuButton : SAHideMenuButton {
+	
+}
+
+Logo : WOImage {
+	framework = "app";
+	filename = "images/logo_bump.png";
+}
+
+Main : SAMainContent {
+	elementName = "div";
+}
+
+Menu : MenuHeader {
+}
+
+MinifyButton : SAMinifyButton {
+	
+}
+
+PageTitle : WOString {
+	value = d2wContext.pageTitle;
+}
+
+SignOutButton : WOHyperlink {
+	action = logout;
+	data-logout-msg = "You can improve your security further after logging out by closing this opened browser";
+	title = "Sign Out";
+}
+
+UserName : WOString {
+	value = "Johnny Miller";
+}

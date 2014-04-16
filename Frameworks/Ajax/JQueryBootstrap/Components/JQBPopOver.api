@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="JQBPopOver" wocomponentcontent="false">    <binding name="animation"/>
+        <binding name="html"/>
+        <binding name="placement"/>
+        <binding name="selector"/>
+        <binding name="trigger"/>
+        <binding name="title"/>
+        <binding name="content"/>
+        <binding name="delay"/>
+        <binding name="container"/>
+    <binding name="class"/>
+    </wo>
+</wodefinitions>

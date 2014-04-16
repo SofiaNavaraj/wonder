@@ -3,6 +3,7 @@ package er.ajax.jquery.example.app;
 import er.extensions.appserver.ERXApplication;
 
 public class Application extends ERXApplication {
+
 	public static void main(String[] argv) {
 		ERXApplication.main(argv, Application.class);
 	}
@@ -13,4 +14,5 @@ public class Application extends ERXApplication {
 		setAllowsConcurrentRequestHandling(true);		
 		setDefaultRequestHandler(requestHandlerForKey(directActionRequestHandlerKey()));
 	}
+
 }

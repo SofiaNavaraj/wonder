@@ -1,72 +1,93 @@
 <webobject name = "PageWrapper">
-	<style>
-	
-		label, input {
-			display: block;
-		}
-		
-		input[type="text"], input[type="email"], input[type="tel"] {
-			margin-bottom: 1.0rem;
-		}
-		
-		label.error {
-			background: #e38d8d;
-			border: 1px solid #af3637;
-			color: white;
-			display: block;
-			font-size: 0.75rem;
-			margin-bottom: 1.0rem;
-			margin-top: -0.5rem;
-			padding: 5px;
-		}
-		
-		#AjaxForm {
-			margin-bottom: 1.0rem;
-		}
-	
-	</style>
 	<script type = "text/javascript">
 
 		(function($) {
 
 			Wonder.delegates.testCustom = $.extend({}, Wonder.delegates.fade);
-    		Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
-				return Wonder.Page.getComponent("AjaxForm").form();
-    		};
+	    		Wonder.delegates.testCustom.mightUpdate = function(target, caller) {
+					return Wonder.Page.getComponent(caller.parents("form:first")).form();
+	    		};
 			
 		})(jQuery);		
 		
 	</script>
-
-	<h1>Form Validation</h1>
-	<h2>Demonstration with various options.</h2>
-	<p>Check out the plugins documentation for more information: <a href = "http://validation.bassistance.de" target = "_blank">http://validation.bassistance.de</a></p>
-	<h3>Simple</h3>
-	<webobject name = "Form">
-		<div class = "input-group">
-			<label for = "SimpleNameInput">Your name</label>	
-			<webobject name = "NameInput" />
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Ajax Update Links</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<h1>Form Validation</h1>
+					<hr class = "simple"/>
+					<h3>Demonstration with various options.</h3>
+					<p>Check out the plugins documentation for more information: <a href = "http://jqueryvalidation.org" target = "_blank">http://jqueryvalidation.org</a></p>
+				</div>
+				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Simple</h2>
+					</header>
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">Your name</label>									
+										<label class = "input">
+											<webobject name = "NameInput" />
+										</label>
+									</section>
+									<section>
+										<label class = "label">Your E-Mail</label>									
+										<label class = "input">
+											<webobject name = "EmailInput" />
+										</label>
+									</section>
+									<section>
+										<label class = "label">Your phone</label>									
+										<label class = "input">
+											<webobject name = "PhoneInput" />
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "SubmitButton" />
+								</footer>
+							</webobject>
+						</div>
+					</div>
+				</div>
+				<div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" data-widget-custombutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Validate before AJAX submit (using a custom delegate)</h2>
+					</header>
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "AjaxForm">
+								<fieldset>
+									<section>
+										<label class = "label">Your Favorite Color</label>									
+										<label class = "input">
+											<webobject name = "FavoriteColorInput" />
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "AjaxSubmitButton"></webobject>
+								</footer>	
+							</webobject>
+						</div>
+					</div>
+				</div>				
+				<div class = "well">
+					<h1>Your answer: <webobject name = "AUC"><webobject name = "FavoriteColorAnswer" /></webobject></h1>
+				</div>
+			</article>
 		</div>
-		<div class = "input-group">
-			<label for = "SimpleEmailInput">Your email</label>
-			<webobject name = "EmailInput" />
-		</div>
-		<div class = "input-group">
-			<label for = "SimplePhoneInput">Your phone</label>
-			<webobject name = "PhoneInput" />
-		</div>
-		<webobject name = "SubmitButton" />
-	</webobject>
-	<hr>
-	<h3>Validate before AJAX submit (using a custom delegate)</h3>
-	<webobject name = "AjaxForm">
-		<label for = "FavoriteColorInput">Your Favorite Color</label>	
-		<webobject name = "FavoriteColorInput" />
-		<webobject name = "AjaxSubmitButton" />
-	</webobject>
-	<webobject name = "AUC">
-		<label>Your answer</label>
-		<webobject name = "FavoriteColorAnswer" />
-	</webobject>
-
+	</div>	
 </webobject>

@@ -1,0 +1,35 @@
+ComponentActionForm : JQValidateForm {
+	action = ^action;
+	class = ^class;
+	enctype = ^enctype;
+	fragmentIdentifier = ^fragmentIdentifier;
+	multipleSubmit= ^multipleSubmit;
+	name = ^name;
+	style = ^style;	
+}
+
+Content : WOComponentContent {
+	
+}
+
+DirectActionForm : JQValidateForm {
+	condition = ^directActionName;
+}
+
+DontUseForm : WOConditional {
+	condition = showForm;
+	negate = true;
+}
+
+HasDirectAction : ERXNonNullConditional {
+	condition = ^directActionName;
+}
+
+NotHaveDirectAction : ERXNonNullConditional {
+	condition = ^directActionName;
+	negate = true;
+}
+
+UseForm : WOConditional {
+	condition = showForm;
+}

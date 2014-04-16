@@ -16,6 +16,7 @@ import er.ajax.AjaxModalDialog;
 import er.ajax.AjaxOption;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
+import er.ajax.JQAjaxOption;
 import er.extensions.appserver.ERXWOContext;
 import er.extensions.foundation.ERXPropertyListSerialization;
 
@@ -39,6 +40,7 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
+		
 		WOComponent component = context.component();
 		if(!shouldRenderContainer(component)) {
 			if(hasChildrenElements()) {
@@ -162,20 +164,20 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 	protected NSDictionary _options(WOComponent component) {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("async", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("cache", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("complete", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("contents", AjaxOption.DICTIONARY));
-		ajaxOptionsArray.addObject(new AjaxOption("contentType", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("delegate", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("minTimeout", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("maxTimeout", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("multiplier", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("maxCalls", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("observeFields", AjaxOption.ARRAY));
-		ajaxOptionsArray.addObject(new AjaxOption("headers", AjaxOption.ARRAY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("async", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("cache", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("complete", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("contents", AjaxOption.DICTIONARY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("contentType", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("delegate", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("minTimeout", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("maxTimeout", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("multiplier", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("maxCalls", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("observeFields", AjaxOption.ARRAY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("headers", AjaxOption.ARRAY));
 
-		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		options.takeValueForKey(AjaxUtils.ajaxComponentActionUrl(component.context()), "updateUrl");
 
 		if(hasBinding("subscribes")) {
@@ -192,6 +194,44 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 		NSMutableDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		return options;
 	}
+	
+
+	@Override
+	public WOActionResults invokeAction(WORequest request, WOContext context) {
+		WOActionResults results;
+		if (shouldRenderContainer(context.component())) {
+			String previousUpdateContainerID = AjaxUpdateContainer.currentUpdateContainerID();
+			try {
+				AjaxUpdateContainer.setCurrentUpdateContainerID(_containerID(context));
+				results = super.invokeAction(request, context);
+			}
+			finally {
+				AjaxUpdateContainer.setCurrentUpdateContainerID(previousUpdateContainerID);
+			}
+		}
+		else {
+			results = super.invokeAction(request, context);
+		}
+		return results;
+	}
+	
+	
+	@Override
+	public void takeValuesFromRequest(WORequest request, WOContext context) {
+		if (shouldRenderContainer(context.component())) {
+			String previousUpdateContainerID = AjaxUpdateContainer.currentUpdateContainerID();
+			try {
+				AjaxUpdateContainer.setCurrentUpdateContainerID(_containerID(context));
+				super.takeValuesFromRequest(request, context);
+			}
+			finally {
+				AjaxUpdateContainer.setCurrentUpdateContainerID(previousUpdateContainerID);
+			}
+		}
+		else {
+			super.takeValuesFromRequest(request, context);
+		}
+	}	
 	
 	@Override
 	public WOActionResults handleRequest(WORequest request, WOContext context) {
