@@ -1,15 +1,18 @@
 AjaxForm : JQValidateForm {
+	class = "smart-form";
 	id = "AjaxForm";
 }
 
 AjaxSubmitButton : JQAjaxSubmitButton {
 	action = submit;
+	class = "btn btn-primary";
 	updateContainerID = "UpdateContainer";
 	value = "Tell Us";
 }
 
 AUC : JQAjaxUpdateContainer {
-	delegate = "testCustom";
+	delegate = "asb";
+	elementName = "span";
 	id = "UpdateContainer";
 }
 
@@ -19,8 +22,7 @@ EmailInput : ERXWOEmailField {
 	value = email;
 }
 
-FavoriteColorAnswer : WOTextField {
-	disabled = true;
+FavoriteColorAnswer : WOString {
 	value = favoriteColor;
 }
 
@@ -30,7 +32,11 @@ FavoriteColorInput : WOTextField {
 }
 
 Form : JQValidateForm {
-	
+	class = "smart-form";	
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 NameInput : WOTextField {
@@ -52,4 +58,5 @@ PhoneInput : ERXWOTelField {
 
 SubmitButton : WOSubmitButton {
 	action = submit;
+	class = "btn btn-primary";
 }

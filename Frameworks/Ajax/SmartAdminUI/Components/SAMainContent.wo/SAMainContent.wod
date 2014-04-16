@@ -1,0 +1,11 @@
+Content : WOComponentContent {
+	
+}
+
+Wrapper : WOGenericContainer {
+	data-wonder-id = "SAMainContent";
+	data-wonder-options = options;
+	elementName = elementName;
+	id = componentId;
+	role = role;
+}

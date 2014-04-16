@@ -1,5 +1,10 @@
 Form : WOForm {
-	
+	class = "smart-form";	
+	name = "TestForm";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 GuestNameInput : WOTextField {
@@ -19,8 +24,16 @@ PageWrapper : PageWrapper {
 	pageTitle = "Ajax Submit Button Test Page";
 }
 
+ResetButton : WOSubmitButton {
+	class = "btn btn-default";
+	action = resetName;
+	value = "Reset";
+}
+
 SubmitButton : JQAjaxSubmitButton {
 	action = updateName;
+	class = "btn btn-primary";
+	formName = "TestForm";
 	updateContainerID = "UpdateContainer";
 	value = "Tell us your name";
 }

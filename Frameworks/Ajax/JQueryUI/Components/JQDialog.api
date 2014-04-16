@@ -29,5 +29,6 @@
         <binding name="show"/>
         <binding name="width"/>
     <binding name="showEffect"/>
+    <binding name="ajax"/>
     </wo>
 </wodefinitions>

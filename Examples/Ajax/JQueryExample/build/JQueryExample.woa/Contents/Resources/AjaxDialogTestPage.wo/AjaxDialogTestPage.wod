@@ -1,8 +1,13 @@
 AJAXDialog : JQDialog {
 	ajax = true;
+	class = "btn btn-info";
 	id = "AjaxDialog";
 	modal = "true";
 	title = "Ajax Dialog";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 Now : WOString {
@@ -16,5 +21,6 @@ PageWrapper : PageWrapper {
 }
 
 SimpleDialog : JQDialog {
+	class = "btn btn-info";
 	title = "Simple Dialog";
 }

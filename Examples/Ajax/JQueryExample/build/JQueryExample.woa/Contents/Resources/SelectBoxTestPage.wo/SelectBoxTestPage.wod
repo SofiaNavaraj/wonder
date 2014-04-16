@@ -1,9 +1,13 @@
 Form : WOForm {
-		
+	class="smart-form";
 }
 
 FruitSelected : ERXNonNullConditional {
 	condition = selectedItem;
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 PageWrapper : PageWrapper {
@@ -25,5 +29,5 @@ StandardPopupButton : JQSelectBox {
 
 SubmitButton : WOSubmitButton {
 	action = selectFruit;
-	class = "btn btn-default";
+	class = "btn btn-primary";
 }

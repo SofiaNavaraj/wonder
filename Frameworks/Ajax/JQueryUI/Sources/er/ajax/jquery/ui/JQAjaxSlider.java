@@ -20,6 +20,7 @@ import er.ajax.AjaxOption;
 import er.ajax.AjaxSubmitButton;
 import er.ajax.AjaxUpdateContainer;
 import er.ajax.AjaxUtils;
+import er.ajax.JQAjaxOption;
 import er.ajax.jquery.JQAjaxUtils;
 import er.extensions.foundation.ERXPropertyListSerialization;
 import er.extensions.foundation.ERXStringUtilities;
@@ -162,19 +163,19 @@ public class JQAjaxSlider extends AjaxDynamicElement {
 	protected NSDictionary _options(WOComponent component) {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("animate", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("disabled", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("max", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("maxValue", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("min", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("minValue", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("orientation", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("range", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("step", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("trigger", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("value", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("animate", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("disabled", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("max", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("maxValue", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("min", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("minValue", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("orientation", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("range", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("step", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("trigger", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("value", AjaxOption.NUMBER));
 		
-		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		String updateContainerID = AjaxUpdateContainer.updateContainerID(this, component); 
 		options.takeValueForKey(updateContainerID, "updateContainer");
 		if(hasBinding("triggerName")) {

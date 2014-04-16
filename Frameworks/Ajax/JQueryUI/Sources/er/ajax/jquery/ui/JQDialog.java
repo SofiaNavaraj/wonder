@@ -16,6 +16,7 @@ import com.webobjects.foundation.NSMutableArray;
 import er.ajax.AjaxDynamicElement;
 import er.ajax.AjaxOption;
 import er.ajax.AjaxUtils;
+import er.ajax.JQAjaxOption;
 import er.ajax.jquery.JQAjaxUtils;
 import er.extensions.appserver.ERXRequest;
 import er.extensions.appserver.ERXWOContext;
@@ -134,29 +135,28 @@ public class JQDialog extends AjaxDynamicElement {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
 		
-		
-		ajaxOptionsArray.addObject(new AjaxOption("appendTo", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("autoOpen", false, AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("buttons", AjaxOption.ARRAY));
-		ajaxOptionsArray.addObject(new AjaxOption("closeOnEscape",AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("closeText", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("dialogClass", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("draggable", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("height", AjaxOption.DEFAULT));
-		ajaxOptionsArray.addObject(new AjaxOption("hide", AjaxOption.DEFAULT));
-		ajaxOptionsArray.addObject(new AjaxOption("maxHeight", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("maxWidth", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("minHeight", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("minWidth", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("modal",AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("position", AjaxOption.DEFAULT));
-		ajaxOptionsArray.addObject(new AjaxOption("resizable",AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("show", AjaxOption.DEFAULT));
-		ajaxOptionsArray.addObject(new AjaxOption("showEffect", AjaxOption.NUMBER));
-		ajaxOptionsArray.addObject(new AjaxOption("title",AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("width", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("appendTo", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("autoOpen", false, AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("buttons", AjaxOption.ARRAY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("closeOnEscape",AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("closeText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("dialogClass", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("draggable", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("height", AjaxOption.DEFAULT));
+		ajaxOptionsArray.addObject(new JQAjaxOption("hide", AjaxOption.DEFAULT));
+		ajaxOptionsArray.addObject(new JQAjaxOption("maxHeight", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("maxWidth", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("minHeight", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("minWidth", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("modal",AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("position", AjaxOption.DEFAULT));
+		ajaxOptionsArray.addObject(new JQAjaxOption("resizable",AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("show", AjaxOption.DEFAULT));
+		ajaxOptionsArray.addObject(new JQAjaxOption("showEffect", AjaxOption.NUMBER));
+		ajaxOptionsArray.addObject(new JQAjaxOption("title",AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("width", AjaxOption.NUMBER));
 
-		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		return options;
 	}
 

@@ -253,7 +253,7 @@ public abstract class ERDCustomComponent extends ERXNonSynchronizingComponent im
      */
     @Override
     public Object valueForBinding(String binding) {
-        Object value=null;
+    	Object value=null;
         logDebugInfo();
         if (super.hasBinding(binding)) {
         		if (log.isDebugEnabled())

@@ -77,7 +77,6 @@ public class ERMODEditRelationshipPage extends ERD2WPage implements ERMEditRelat
 		public static String displayPropertyKeys = "displayPropertyKeys";
 		public static String subTask = "subTask";
 		public static String isEntityCreatable = "isEntityCreatable";
-		
 	}
 	
 	private EOEnterpriseObject _masterObject;

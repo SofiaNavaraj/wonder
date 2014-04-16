@@ -132,9 +132,24 @@
 
     });
     
-    Wonder.Dialog = Wonder.AjaxElement.extend({
+    Wonder.Autocomplete = Wonder.AjaxElement.extend({
+    	
+    		init: function(element) {
+ 
+    			var element = $(element);
+    			this._super(element);
+			var id = element.attr("id")
+
+    			element.autocomplete(this.options);
+ 
+    		}
     
+    });
+    
+    Wonder.Dialog = Wonder.AjaxElement.extend({
+    dialog: null,
     	init: function(element) {
+		var self = this;
     		var element = $(element);
     		this._super(element);
 	        var dialogID = "#" + this.options['dialogID'];
@@ -159,16 +174,35 @@
             }
             
 
-            var dialog = $(dialogID).dialog(this.options);
+            this.dialog = $(dialogID).dialog(this.options);
             element.click(function(event) {
                 event.preventDefault();
-                dialog.dialog("open");
+                self.dialog.dialog("open");
             });
 
-    	}
-    
+            Wonder.Page.addComponent(element, this);
+
+    	},
+    	
+	destroy: function() {
+		this.dialog.dialog("destroy");
+	}
     
     });
     
 
 })(jQuery);
+
+	/*
+	 * CONVERT DIALOG TITLE TO HTML
+	 * REF: http://stackoverflow.com/questions/14488774/using-html-in-a-dialogs-title-in-jquery-ui-1-10
+	 */
+	$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+		_title : function(title) {
+			if (!this.options.title) {
+				title.html("&#160;");
+			} else {
+				title.html(this.options.title);
+			}
+		}
+	}));

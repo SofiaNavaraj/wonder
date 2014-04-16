@@ -13,6 +13,7 @@ import com.webobjects.foundation.NSMutableDictionary;
 
 import er.ajax.AjaxDynamicElement;
 import er.ajax.AjaxOption;
+import er.ajax.JQAjaxOption;
 import er.ajax.jquery.JQAjaxUtils;
 import er.extensions.foundation.ERXPropertyListSerialization;
 
@@ -33,6 +34,7 @@ public class JQAccordion extends AjaxDynamicElement {
 		appendTagAttributeToResponse(response, "id", id(context));
 		appendTagAttributeToResponse(response, "class", valueForBinding("class", component));
 		appendTagAttributeToResponse(response, "style", valueForBinding("style", component));
+		appendTagAttributeToResponse(response, "role", valueForBinding("role", component));
 		appendTagAttributeToResponse(response, "data-wonder-id", "Accordion");
 		appendTagAttributeToResponse(response, "data-wonder-options", ERXPropertyListSerialization.jsonStringFromPropertyList(_options(component)));
 		response.appendContentString(">");
@@ -49,17 +51,17 @@ public class JQAccordion extends AjaxDynamicElement {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
 
-		ajaxOptionsArray.addObject(new AjaxOption("active", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("activate", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("animate", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("beforeActivate", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("collapsible", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("disabled", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("create", AjaxOption.FUNCTION_2));
-		ajaxOptionsArray.addObject(new AjaxOption("event", AjaxOption.STRING));
-		ajaxOptionsArray.addObject(new AjaxOption("heightStyle", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("active", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("activate", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("animate", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("beforeActivate", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("collapsible", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("disabled", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("create", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("event", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("heightStyle", AjaxOption.STRING));
 		
-		NSDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
+		NSDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, component, associations());
 		NSDictionary icons = _icons(component);
 
 		if(icons != null) {
@@ -97,15 +99,18 @@ public class JQAccordion extends AjaxDynamicElement {
 			WOContext context) {
 
 		WOComponent component = context.component();
-		String framework = stringValueForBinding("framework", null, component);
-		String filename = stringValueForBinding("fileName", null, component);
 
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQueryUI", JQAjaxUtils.JQUERY_UI_JS);
 		JQAjaxUtils.addScriptResourceInHead(context, response, "JQueryUI", JQAjaxUtils.JQUERY_UI_WONDER_JS);
-		JQAjaxUtils.addUIStylesheetResourceInHead(context, response, framework, filename);
-		
+		boolean include = (Boolean) valueForBinding("includeUIStylesheet", true, component);
+		if(include) {
+			String framework = stringValueForBinding("framework", null, component);
+			String filename = stringValueForBinding("fileName", null, component);
+			JQAjaxUtils.addUIStylesheetResourceInHead(context, response, framework, filename);
+		}		
+
 	}
 
 	@Override

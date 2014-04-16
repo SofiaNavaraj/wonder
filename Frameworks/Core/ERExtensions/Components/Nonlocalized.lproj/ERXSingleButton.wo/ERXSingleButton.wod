@@ -1,4 +1,4 @@
-ButtonAsAction: WOSubmitButton {
+ ButtonAsAction: WOSubmitButton {
 	action = ^action;
 	value = ^value;
     class = ^class;

@@ -1,0 +1,9 @@
+Content : WOComponentContent {
+	
+}
+
+Wrapper : WOGenericContainer {
+	elementName = elementName;
+	data-wonder-id = "SANavigation";
+	data-wonder-options = options;
+}

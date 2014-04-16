@@ -23,7 +23,7 @@ public class JQAccordionTab extends AjaxDynamicElement {
 		
 		WOComponent component = context.component();
 
-		String labelElementName = stringValueForBinding("labelElementName", "h3", component);
+		String labelElementName = stringValueForBinding("labelElementName", "h4", component);
 		String paneElementName = stringValueForBinding("paneElementName", "div", component);
 		
 		response.appendContentString("<");

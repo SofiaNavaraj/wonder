@@ -1,4 +1,5 @@
 var Wonder = Wonder || {};
+var AOD;
 
 /* Simple JavaScript Inheritance
  * By John Resig http://ejohn.org/
@@ -73,15 +74,37 @@ var Wonder = Wonder || {};
         }
         return this;
     };
+    
+	var AjaxOnDemand = {
+
+		loadCSS: function(css) {
+	        var link=document.createElement("link");
+	        link.setAttribute("rel", "stylesheet");
+	        link.setAttribute("type", "text/css");
+	        link.setAttribute("href", css);
+	        if (typeof link!="undefined") {
+	            document.getElementsByTagName("head")[0].appendChild(link);
+	        }
+	    },
+		
+		loadedCSS: function(request) {
+			var inlineStyle = new Element("style", {"type": "text/css"});
+			inlineStyle.appendChild(document.createTextNode(request.responseText));
+			document.getElementsByTagName('HEAD')[0].appendChild(inlineStyle);
+		}
+
+	};
+	
+	AOD = AjaxOnDemand;    
 
     Wonder.settings = {
         verbose: 0
     };
 
 	Wonder.BreakException = {};
-    Wonder.PeriodicalRegistry = {};
-    Wonder.nextGuid = 1;
-    Wonder.components = [];
+	Wonder.PeriodicalRegistry = {};
+ 	Wonder.nextGuid = 1;
+ 	Wonder.components = [];
 
     Wonder.log = function(msg, lvl) {
         lvl = lvl || 1;
@@ -92,12 +115,23 @@ var Wonder = Wonder || {};
         }
     };
 
+	Wonder.error = function(msg) {
+		try {
+			console.error(msg);
+		} catch(err) {}
+	};
+
     Wonder.Page = {
 
         initialize: function(ctx) {
             $(ctx).find("[data-wonder-id]").each(function(index, element) {
-                var component = eval(Wonder[$(element).attr('data-wonder-id')]);
-                new component(element);
+				var wonderID = $(element).attr('data-wonder-id');
+				try {
+	                var component = eval(Wonder[wonderID]);
+	                new component(element);
+				} catch(err) {
+					Wonder.error("Unable to initialize component with wonder id: " + wonderID);					
+				}
             });
         },
 
@@ -106,9 +140,15 @@ var Wonder = Wonder || {};
         },
 
         getComponent: function(element) {
-            if(typeof element === 'string') element = $("#" + element);
-            return element.data()['component'];
-        }
+        		var obj = null;
+			if(typeof element === 'string') element = $("#" + element);
+			try {
+				var obj = element.data()['component'];
+			} catch(err) {
+				Wonder.log("Object does not exist: " + element.attr('data-wonder-id'));
+			}
+            return obj;
+		}
 
     };
 
@@ -116,15 +156,19 @@ var Wonder = Wonder || {};
 
         options: null,
         init: function(element) {
-            Wonder.log("Initializing " + element.attr('data-wonder-id'));
             this.options = $.parseJSON(element.attr('data-wonder-options'));
-            // Lame hack to return strings to booleans
             var options = this.options;
+            // Lame hack to return strings to booleans
             $.each(this.options, function(key, value) {
-				if(value == "true" || value == "false") {
+				if(value === "true" || value === "false") {
 					options[key] = value == "true";
                 }
 			});
+        },
+
+		// override me if you need to do something
+		// with the component when removing from the DOM.        
+        destroy: function() {
         }
 
     });
@@ -138,7 +182,7 @@ var Wonder = Wonder || {};
         init: function(element) {
             this._super(element);
             if(this.options.delegate) {
-                this.delegate = Wonder.delegates[eval(this.options.delegate)];
+                this.delegate = Wonder.delegates[this.options.delegate];
             }
         },
 
@@ -149,50 +193,80 @@ var Wonder = Wonder || {};
         },
 
         willUpdate: function(target, caller) {
-			Wonder.log(this.currentDelegate);
             if(this.currentDelegate) {
                 return this.currentDelegate.willUpdate(target, caller);
             }
         },
 
         processUpdate: function(target, caller, remoteData, callback) {
+
             var self = this;
-            $.when(self.willUpdate(target, caller)).done(function() {
-                self._updateTarget(target, remoteData);
-                $.when(self.didUpdate(target, caller)).done(function() {
-                    $.when(self.handleFinish(target)).done(function() {
-                        if(callback) {
-                        	if(typeof callback == 'function') {
-	                        	callback.call();
-                        	} else {
-								eval("var fn = (" + callback + ")");
-								fn(target, caller);
-                        	}
-                        }
-                    })
-                });
-            });
+			$.when(self.mightUpdate(target,caller)).then(function() {
+	            $.when(self.willUpdate(target, caller)).then(function() {
+	                $.when(self.loadResponse(target, remoteData)).then(function() {
+		                $.when(self.didUpdate(target, caller)).then(function() {
+		                    $.when(self.handleFinish(target)).done(function() {
+		                        if(callback) {
+								if(typeof callback == 'function') {
+									callback.call();
+								} else {
+									eval("var fn = (" + callback + ")");
+									fn(target, caller);
+								}
+		                        }
+		                    });
+		                });
+		       		});	
+	            });
+			});
+
         },
 
         _updateTarget: function(target, remoteData) {
-            target.html(remoteData);
+			target.find('[data-wonder-id]').each(function(index, element) {
+				var obj = Wonder.Page.getComponent($(element));
+				if(obj) {
+					obj.destroy();
+				}
+			}); 
+             return target.html(remoteData);
         },
 
         didUpdate: function(target, caller) {
             if(this.currentDelegate) {
-                return this.currentDelegate.didUpdate(target, caller);
+               return this.currentDelegate.didUpdate(target, caller);
             }
-            return true;
         },
+
+		loadResponse: function(target, remoteData) {
+		    this._updateTarget(target, remoteData);
+			var scripts = target.children("script[type='text/wonder']");
+			return this._loadScripts(scripts, 0);
+		},
+		
+		_loadScripts: function(scripts, index) {
+			var self = this;
+			var nextInsert = scripts[index];
+			if(nextInsert != undefined) {
+				var script = $(nextInsert).attr('src');
+				return $.ajax({
+					url:script, async: false, dataType: 'script',
+					success: function() {
+						index++;
+						self._loadScripts(scripts, index);
+					}
+				});
+			}
+		},
 
         updateFailed: function(target, caller, callback) {
             if(this.currentDelegate) {
-                this.currentDelegate.updateFailed(target, caller);
+                return this.currentDelegate.updateFailed(target, caller);
             }
         },
 
         handleFinish: function(target) {
-            return Wonder.Page.initialize(target);
+            Wonder.Page.initialize(target);
         }
 
     });
@@ -215,10 +289,12 @@ var Wonder = Wonder || {};
             this.url = this.options['updateUrl'];
 
             if(this.options['minTimeout']) {
+
                 this.registerPeriodic(
                     this.options['canStop'] ? this.options['canStop'] : null,
                     this.options['stopped'] ? this.options['stopped'] : null
                 );
+
             } else {
                 Wonder.Page.addComponent(this.element, this);
                 if(this.options['observeFields']) {
@@ -323,25 +399,29 @@ var Wonder = Wonder || {};
 
             $.ajax(updateUrl, options);
 
-        },
-
-        _update: function(id, options) {
-            var updateElement = $("#" + id);
-            if(updateElement == null) {
-                alert('There is no element on this page with the id "' + id + '".');
-            }
-            var actionUrl = updateElement.attr('data-updateUrl');
-            if(options && options['_r']) {
-                actionUrl = actionUrl.addQueryParameters('_r='+ id);
-            }
-            else {
-                actionUrl = actionUrl.addQueryParameters('_u=' + id);
-            }
-            actionUrl = actionUrl.addQueryParameters(new Date().getTime());
-            $.get(actionUrl, $.extend(AjaxOptions.defaultOptions(options), {
-
-            }));
         }
+        
+        /* 
+
+	        _update: function(id, options) {
+	            var updateElement = $("#" + id);
+	            if(updateElement == null) {
+	                alert('There is no element on this page with the id "' + id + '".');
+	            }
+	            var actionUrl = updateElement.attr('data-updateUrl');
+	            if(options && options['_r']) {
+	                actionUrl = actionUrl.addQueryParameters('_r='+ id);
+	            }
+	            else {
+	                actionUrl = actionUrl.addQueryParameters('_u=' + id);
+	            }
+	            actionUrl = actionUrl.addQueryParameters(new Date().getTime());
+	            $.get(actionUrl, $.extend(AjaxOptions.defaultOptions(options), {
+	
+	            }));
+	        }
+        
+        */
 
     });
 
@@ -397,6 +477,32 @@ var Wonder = Wonder || {};
 		
 	});
 
+	/* 
+
+	TODO: WIll revisit this later.  More appropriate if you want the whole profile vs. just the image.
+
+	Wonder.Gravatar = Wonder.AjaxElement.extend({
+	
+		init: function(element) {
+			var element = $(element);
+			this._super(element);
+			$.gravatar($.extend(this.options,
+				{
+					success: function(profile) {
+						element.attr('src', profile.thumbnailUrl);
+					},
+					error: function() {
+						alert('hi');
+						element.attr('src', "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y");
+					}
+				}
+			));
+		}
+	
+	});
+
+	 */
+
     Wonder.AjaxSubmitButton = Wonder.AjaxElement.extend({
 
         PartialFormSenderIDKey: '_partialSenderID',
@@ -425,8 +531,11 @@ var Wonder = Wonder || {};
             if(target == null) {
                 alert("There is no element on this page with the id " + targetId);
             } else {
-
-                var form = options['formName'] ? document[options.formName] : caller[0].form;
+			
+                var form = options['formName'] ? document.getElementsByName(options['formName'])[0] : caller[0].form;
+                if(! form) {
+					form = caller.closest("form").get(0);
+                }
                 var actionUrl = Wonder.ASB.prototype.generateActionUrl(targetId, form, options);
                 var settings = Wonder.ASB.prototype.defaultOptions(options);
                 var data = Wonder.ASB.prototype.processOptions(form, {
@@ -468,9 +577,7 @@ var Wonder = Wonder || {};
         },
 
         generateActionUrl: function(id, form, options) {
-
             var actionUrl = form.action;
-
             actionUrl = actionUrl.replace(/\/wo\//, '/ajax/');
 
             if(id != null) {
@@ -511,9 +618,23 @@ var Wonder = Wonder || {};
             this._super(element);
 			element.selectBox(this.options);
 			Wonder.Page.addComponent(element, element.data('selectBox'));	
-			Wonder.log(Wonder.Page.getComponent(element));
 		}
 
+	});
+
+	Wonder.Select2 = Wonder.AjaxElement.extend({
+
+		init: function(element) {
+			var element = $(element);
+			this._super(element);
+			element.select2(this.options);
+			Wonder.Page.addComponent(element, element.data('select2'));
+		},
+		
+		destroy: function() {
+			this.element.select2("destroy");
+		}
+		
 	});
 
     /*
@@ -577,6 +698,12 @@ var Wonder = Wonder || {};
     Wonder.delegates.slide.didUpdate = function(target, caller) {
         return $(target).slideDown();
     };
+    
+	Wonder.delegates.asb = new Wonder.delegates.debug();
+	Wonder.delegates.asb.mightUpdate = function(target, caller) {
+		return Wonder.Page.getComponent(caller.parents("form:first")).form();
+	};
+    
 
     $(window).load(function() {
         Wonder.Page.initialize(document);

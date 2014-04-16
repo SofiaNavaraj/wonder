@@ -91,7 +91,6 @@ RepetitionUpdateContainer : AjaxUpdateContainer {
 	id = d2wContext.idForRepetitionContainer;
 }
 
-
 ShowBottomActionBlock : WOConditional {
 	condition = d2wContext.showBottomActionBlock;
 }

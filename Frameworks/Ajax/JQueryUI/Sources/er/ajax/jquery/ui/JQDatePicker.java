@@ -2,19 +2,24 @@ package er.ajax.jquery.ui;
 
 import java.text.Format;
 
+import org.apache.commons.lang.StringEscapeUtils;
+
 import com.ibm.icu.text.SimpleDateFormat;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
+import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableArray;
 import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation.NSTimestampFormatter;
 
 import er.ajax.AjaxOption;
+import er.ajax.JQAjaxOption;
 import er.ajax.jquery.JQAjaxUtils;
 import er.ajax.jquery.utils.JQueryUtils;
 import er.extensions.components.ERXComponent;
 import er.extensions.formatters.ERXJodaFormat;
+import er.extensions.foundation.ERXPropertyListSerialization;
 
 public class JQDatePicker extends ERXComponent {
 
@@ -76,20 +81,41 @@ public class JQDatePicker extends ERXComponent {
 	
 	@Override
 	public void reset() {
+		super.reset();
 		_formatter = null;
 		_format = null;
-		super.reset();
 	}
 	
 	public String options() {
 
 		NSMutableArray<AjaxOption> ajaxOptionsArray = new NSMutableArray<AjaxOption>();
-		ajaxOptionsArray.addObject(new AjaxOption("showOtherMonths", AjaxOption.BOOLEAN));
-		ajaxOptionsArray.addObject(new AjaxOption("selectOtherMonths", AjaxOption.BOOLEAN));
-		
-		NSMutableDictionary<String, Object> options = new NSMutableDictionary<String, Object>();
+		ajaxOptionsArray.addObject(new JQAjaxOption("altField", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("altFormat", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("appendText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("autoSize", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("beforeShow", AjaxOption.FUNCTION_2));
+		ajaxOptionsArray.addObject(new JQAjaxOption("beforeShowDay", AjaxOption.FUNCTION_1));
+		ajaxOptionsArray.addObject(new JQAjaxOption("buttonImage", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("buttonImageOnly", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("buttonText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("calculateWeek", AjaxOption.FUNCTION));
+		ajaxOptionsArray.addObject(new JQAjaxOption("changeMonth", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("changeYear", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("closeText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("constrainInput", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("currentText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("dayName", AjaxOption.ARRAY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("dayNamesMin", AjaxOption.ARRAY));
+		ajaxOptionsArray.addObject(new JQAjaxOption("nextText", AjaxOption.STRING));
+		ajaxOptionsArray.addObject(new JQAjaxOption("prevText", AjaxOption.STRING));
+
+		ajaxOptionsArray.addObject(new JQAjaxOption("showOtherMonths", AjaxOption.BOOLEAN));
+		ajaxOptionsArray.addObject(new JQAjaxOption("selectOtherMonths", AjaxOption.BOOLEAN));
+
+		NSMutableDictionary options = JQAjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, context().component());
 		options.takeValueForKey(altFormat(format()), "dateFormat");
-		return JQueryUtils.simpleSerialize(options, true);
+		return  StringEscapeUtils.escapeHtml(ERXPropertyListSerialization.jsonStringFromPropertyList(options));
+
 	}
 
 	public boolean isStateless() {

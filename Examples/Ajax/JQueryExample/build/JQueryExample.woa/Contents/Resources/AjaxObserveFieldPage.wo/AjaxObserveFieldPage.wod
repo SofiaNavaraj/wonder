@@ -1,4 +1,4 @@
-ColorSelector : JQBSelectPicker {
+ColorSelector : WOPopUpButton {
 	id = "ColorSelector";
 	list = colors;
 	noSelectionString = "Please pick a color.";
@@ -6,7 +6,11 @@ ColorSelector : JQBSelectPicker {
 }
 
 Form : WOForm {
-	
+	class="smart-form";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 PageWrapper : PageWrapper {
@@ -24,7 +28,7 @@ SelectedSize : WOTextField {
 	value = selectedSize;
 }
 
-SizeSelector : JQBSelectPicker {
+SizeSelector : WOPopUpButton {
 	id = "SizeSelector";
 	noSelectionString = "Please select a size.";
 	list = sizes;
@@ -32,5 +36,6 @@ SizeSelector : JQBSelectPicker {
 }
 
 UpdateContainer : JQAjaxUpdateContainer {
+	class = "row";
 	observeFields = "ColorSelector, SizeSelector";
 }

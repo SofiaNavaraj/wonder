@@ -1,17 +1,21 @@
 DatePicker : JQDatePicker {
-	class = "form-control";
 	format = "%m/%d/%Y";
 	includeUIStylesheet = false;
 	value = date;
 }
 
-DatePickerDisplay : WOTextField {
-	disabled = true;
+DatePickerDisplay : WOString {
+	dateformat = "%m/%d/%y";
+	includeUIStylesheet = false;
 	value = date;
 }
 
 Form : WOForm {
-	
+	class = "smart-form";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
 }
 
 PageWrapper : PageWrapper {
@@ -21,4 +25,9 @@ PageWrapper : PageWrapper {
 
 SubmitButton : WOSubmitButton {
 	action = selectDate;
+	class = "btn btn-primary";
+}
+
+Widget : JQWidget {
+	
 }
