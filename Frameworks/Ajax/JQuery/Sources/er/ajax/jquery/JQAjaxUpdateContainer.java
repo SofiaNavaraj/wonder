@@ -251,17 +251,23 @@ public class JQAjaxUpdateContainer extends AjaxDynamicElement {
 			appendChildrenToResponse(response, context);
 		}
 		
-		String onRefreshComplete = (String) valueForBinding("onRefreshComplete", component);
-		if(onRefreshComplete != null) {
-			AjaxUtils.appendScriptHeader(response);
-			response.appendContentString(onRefreshComplete);
-			AjaxUtils.appendScriptFooter(response);
-		}
+		//TODO
+			/*
+			String onRefreshComplete = (String) valueForBinding("onRefreshComplete", component);
+			if(onRefreshComplete != null) {
+				AjaxUtils.appendScriptHeader(response);
+				response.appendContentString(onRefreshComplete);
+				AjaxUtils.appendScriptFooter(response);
+			}
+			 */
 		
+		//TODO
 		if(AjaxModalDialog.isInDialog(context)) {
-			AjaxUtils.appendScriptHeader(response);
-			response.appendContentString("AMD.contentUpdated();");
-			AjaxUtils.appendScriptFooter(response);
+			/*
+				AjaxUtils.appendScriptHeader(response);
+				response.appendContentString("AMD.contentUpdated();");
+				AjaxUtils.appendScriptFooter(response);
+			*/
 		}
 		
 		return null;

@@ -51,8 +51,7 @@ public class JQBPopOver extends AjaxDynamicElement {
 	}
 
 	protected void addRequiredWebResources(WOResponse aResponse, WOContext aContext) {
-		JQAjaxUtils.addStylesheetResourceInHead(aContext, aResponse, "JQueryBootstrap", "javascript/plugins/selectpicker/bootstrap-select.css");
-		JQAjaxUtils.addStylesheetResourceInHead(aContext, aResponse, "JQueryBootstrap", "javascript/core/bootstrap.min.css");
+		JQAjaxUtils.addStylesheetResourceInHead(aContext, aResponse, "JQueryBootstrap", "css/bootstrap.min.css");
 		JQAjaxUtils.addScriptResourceInHead(aContext, aResponse, "JQueryBootstrap", "javascript/core/bootstrap.min.js");
 		JQAjaxUtils.addScriptResourceInHead(aContext, aResponse, "JQuery", JQAjaxUtils.JQUERY_WONDER_JS);
 		JQAjaxUtils.addScriptResourceInHead(aContext, aResponse, "JQueryBootstrap", "javascript/core/bootstrap.wonder.js");

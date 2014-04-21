@@ -11,7 +11,7 @@ HomePageLink : WOHyperlink {
 }
 
 PageWrapper : PageWrapper {
-	index = 12;
+	index = 13;
 	pageTitle = "Bootstrap Select Picker";
 }
 
@@ -20,13 +20,23 @@ SelectedFruit : WOString {
 }
 
 StandardPopupButton : JQBSelectBox {
+	id = "PopUp";
 	item = item;
 	list = list;
 	noSelectionString = "Fruit List";
 	selection = selectedItem;
+	style = "btn-primary";
+	width = "100%";
 }
 
-SubmitButton : WOSubmitButton {
+SubmitButton : JQAjaxSubmitButton {
 	action = selectFruit;
 	class = "btn btn-primary";
+	updateContainerID = "UpdateContainer";
+	value = "Submit";
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	id = "UpdateContainer";
+	observeFields = "PopUp";
 }
