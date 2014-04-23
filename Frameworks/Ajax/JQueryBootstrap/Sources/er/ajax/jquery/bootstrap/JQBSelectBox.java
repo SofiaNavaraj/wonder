@@ -64,7 +64,6 @@ public class JQBSelectBox extends ERXStatelessComponent {
 		ajaxOptionsArray.addObject(new JQAjaxOption("title", JQAjaxOption.STRING));
 		ajaxOptionsArray.addObject(new JQAjaxOption("width",  JQAjaxOption.STRING));
 		ajaxOptionsArray.addObject(new JQAjaxOption("countSelectedText", JQAjaxOption.STRING));
-		ajaxOptionsArray.addObject(new JQAjaxOption("countSelectedText", JQAjaxOption.STRING));
 
 		NSMutableDictionary options = AjaxOption.createAjaxOptionsDictionary(ajaxOptionsArray, this);
 		return options;		
