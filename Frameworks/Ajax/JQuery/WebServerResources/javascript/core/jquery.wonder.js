@@ -477,6 +477,16 @@ var AOD;
 		
 	});
 
+	Wonder.MaskedInput = Wonder.AjaxElement.extend({
+		
+		init: function(element) {
+			var element = $(element);
+			this._super(element);
+			element.mask(this.options['mask']);
+		}
+		
+	});
+
 	/* 
 
 	TODO: WIll revisit this later.  More appropriate if you want the whole profile vs. just the image.

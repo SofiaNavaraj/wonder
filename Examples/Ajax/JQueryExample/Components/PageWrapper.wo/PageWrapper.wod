@@ -68,6 +68,10 @@ Main : SAMainContent {
 	elementName = "div";
 }
 
+MaskedInputLink : WOHyperlink {
+	directActionName = "PageAction/MaskedInputExamplePage";
+}
+
 MetaDescription : WOGenericElement {
 	content = ^content;
 	elementName = "meta";
