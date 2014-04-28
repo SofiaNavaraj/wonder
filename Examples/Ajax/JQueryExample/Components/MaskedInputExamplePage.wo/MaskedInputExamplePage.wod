@@ -1,0 +1,62 @@
+DateInput : JQMaskedInput {
+	class = "form-control";
+	dateformat = "%m/%d/%y";
+	mask = "99/99/9999";
+	value = date;
+}
+
+DateSubmitButton : JQAjaxSubmitButton {
+	action = submit;
+	class = "btn btn-primary";
+	updateContainerID = "DUC";
+	value = "Submit";
+}
+
+DateValueDisplay : WOString {
+	dateformat = "%b %d, %Y";
+	value = date;
+}
+
+DateUpdateContainer : JQAjaxUpdateContainer {
+	elementName = "span";
+	id = "DUC";
+}
+
+Form : JQValidateForm {
+	class = "smart-form";
+}
+
+HomePageLink : WOHyperlink {
+	pageName = "HomePage";
+}
+
+PageWrapper : PageWrapper {
+	index = 8;
+	pageTitle = "Masked Input";	
+}
+
+SImpleInput : JQMaskedInput {
+	class = "form-control";
+	mask = "(999) 999-9999";
+	value = simpleValue;
+}
+
+SimpleValueDisplay : WOString {
+	value = simpleValue;
+}
+
+SubmitButton : JQAjaxSubmitButton {
+	action = submit;
+	class = "btn btn-primary";
+	updateContainerID = "SimpleValueContainer";
+	value = "Submit"
+}
+
+UpdateContainer : JQAjaxUpdateContainer {
+	elementName = "span";
+	id = "SimpleValueContainer";
+}
+
+Widget : JQWidget {
+	
+}

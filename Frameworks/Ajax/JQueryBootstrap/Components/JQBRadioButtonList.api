@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="JQBRadioButtonList" wocomponentcontent="false">    <binding name="displayString"/>
+        <validation message="'newBinding' is a required binding.">
+            <unbound name="displayString"/>
+        </validation>
+    <binding name="index"/>
+        <binding name="item"/>
+        <validation message="'item' is a required binding.">
+            <unbound name="item"/>
+        </validation>
+        <binding name="list"/>
+        <validation message="'list' is a required binding.">
+            <unbound name="list"/>
+        </validation>
+        <binding name="name"/>
+        <binding name="prefix"/>
+        <binding name="selection"/>
+        <validation message="'selection' is a required binding.">
+            <unbound name="selection"/>
+        </validation>
+        <binding name="suffix"/>
+    </wo>
+</wodefinitions>

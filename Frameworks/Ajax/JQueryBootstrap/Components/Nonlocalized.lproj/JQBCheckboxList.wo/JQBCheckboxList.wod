@@ -1,0 +1,32 @@
+Checkbox : WOCheckBox {
+	class = ^class;
+	id = id;
+	name = elementName;
+	selection = selection;
+	disabled = ^disabled;
+	value = ^item;
+}
+
+CheckboxWrapper : WOGenericContainer {
+	class = containerClassName;
+	elementName = "div";
+}
+
+DisplayString : WOString {
+	value = ^displayString;
+}
+
+HasItems : ERXNonZeroConditional {
+	condition = ^list.count;
+}
+
+Label : WOGenericContainer {
+	elementName = "label";
+	for = id;
+}
+
+Repetition : WORepetition {
+	index = index;
+	item = ^item;
+	list = ^list;
+}

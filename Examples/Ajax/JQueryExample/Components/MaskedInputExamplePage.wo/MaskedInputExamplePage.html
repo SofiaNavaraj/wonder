@@ -1,0 +1,88 @@
+<webobject name = "PageWrapper">
+	<div id="ribbon">
+		<ol class = "breadcrumb">
+			<li><webobject name = "HomePageLink">Home</webobject></li>
+			<li>Masked Input</li>
+		</ol>
+	</div>
+	<div id="content">
+		<div class = "row">
+			<article class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class = "well">
+					<div class = "widget-body no-padding">
+						<h1>
+							Masked Input<br>
+							<small>Various the masked input plugin.</small>						
+						</h1>
+					</div>
+				</div>
+				<webobject name = "Widget">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Basic Example</h2>				
+					</header>	
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">Enter your phone number</label>
+										<label class = "input">
+											<webobject name = "SImpleInput"></webobject>
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "SubmitButton"></webobject>
+								</footer>
+							</webobject>		
+						</div>
+					</div>
+				</webobject>
+				<div class = "well">
+					<div class = "widget-body">
+						<h1>
+							Simple Value: 
+							<webobject name = "UpdateContainer">
+								<webobject name = "SimpleValueDisplay" />
+							</webobject>					
+						</h1>
+					</div>
+				</div>
+				<webobject name = "Widget">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+						<h2>Basic Example</h2>				
+					</header>	
+					<div>
+						<div class = "widget-body no-padding">
+							<webobject name = "Form">
+								<fieldset>
+									<section>
+										<label class = "label">Enter your phone number</label>
+										<label class = "input">
+											<webobject name = "DateInput"></webobject>
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<webobject name = "DateSubmitButton"></webobject>
+								</footer>
+							</webobject>		
+						</div>
+					</div>
+				</webobject>
+				<div class = "well">
+					<div class = "widget-body">
+						<h1>
+							Date Value: 
+							<webobject name = "DateUpdateContainer">
+								<webobject name = "DateValueDisplay" />
+							</webobject>					
+						</h1>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</webobject>

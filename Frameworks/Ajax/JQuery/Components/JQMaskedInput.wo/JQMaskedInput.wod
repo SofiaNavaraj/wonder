@@ -1,0 +1,68 @@
+DateFormatBound : ERXNonNullConditional {
+	condition = ^dateformat;
+}
+
+DateFormatInput : WOTextField {
+	class = ^class;
+	data-wonder-id = "MaskedInput";
+	data-wonder-options = options;
+	dateformat = ^dateformat;
+	disabled = ^disabled;
+	id = ^id;
+	name = ^name;
+	otherTagString = ^otherTagString;
+	style = ^style;
+	value = ^value;
+}
+
+FormatterInput : WOTextField {
+	class = ^class;
+	data-wonder-id = "MaskedInput";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	formatter = ^formatter;
+	id = ^id;
+	name = ^name;
+	otherTagString = ^otherTagString;
+	style = ^style;
+	value = ^value;
+}
+
+FormatterBound : ERXNonNullConditional {
+	condition = ^formatter;
+}
+
+NumberFormatBound : ERXNonNullConditional {
+	condition = ^numberformat;
+}
+
+NumberFormatInput : WOTextField {
+	class = ^class;
+	data-wonder-id = "MaskedInput";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	id = ^id;
+	name = ^name;
+	numberformat = ^numberformat;
+	otherTagString = ^otherTagString;
+	style = ^style;
+	value = ^value;
+}
+
+NoFormatterBound : WOConditional {
+	condition = noFormatBound;
+}
+
+SimpleInput : WOTextField {
+	class = ^class;
+	data-wonder-id = "MaskedInput";
+	data-wonder-options = options;
+	disabled = ^disabled;
+	id = ^id;
+	name = ^name;
+	otherTagString = ^otherTagString;
+	style = ^style;
+	value = ^value;
+}
+
+

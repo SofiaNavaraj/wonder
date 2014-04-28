@@ -1,0 +1,23 @@
+CheckboxContainer : WOGenericContainer {
+	class = containerClassName;
+	elementName = "div";
+}
+
+DisplayString : WOString {
+	value = ^displayString;
+}
+
+Radio: WORadioButton {
+	class = ^class;
+	id = id;
+	name = elementName;
+	value = ^item;
+	disabled = ^disabled;
+	selection = selection;
+}
+
+Repetition : WORepetition {
+	list = ^list;
+	item = ^item;
+	index = index;
+}
