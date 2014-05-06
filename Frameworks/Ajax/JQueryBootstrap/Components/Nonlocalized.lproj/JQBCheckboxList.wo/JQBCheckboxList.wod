@@ -1,4 +1,4 @@
-Checkbox : WOCheckBox {
+Checkbox: WOCheckBox {
 	class = ^class;
 	id = id;
 	name = elementName;

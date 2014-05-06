@@ -37,9 +37,6 @@ public class JQAjaxUtils extends AjaxUtils {
 			fileName = ERXProperties.stringForKey("er.ajax.jquery-ui.theme.fileName");
 		}
 		
-		System.out.println(framework);
-		System.out.println(fileName);
-		
 		ERXResponseRewriter.addStylesheetResourceInHead(aResponse, aContext, framework, fileName);
 
 	}
