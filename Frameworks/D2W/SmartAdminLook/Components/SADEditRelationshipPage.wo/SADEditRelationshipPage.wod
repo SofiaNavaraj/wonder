@@ -11,6 +11,10 @@ EmptyMessageComponent : WOSwitchComponent {
 	d2wContext = d2wContext;
 }
 
+HasMultipleBatches : WOConditional {
+	condition = relationshipDisplayGroup.hasMultipleBatches;
+}
+
 IsToMany: WOConditional {
 	condition = isRelationshipToMany;
 }

@@ -1,0 +1,28 @@
+EditForm : JQOptionalForm {
+	class = "form-horizontal";
+	enctype = d2wContext.formEncoding;
+	hasForm = d2wContext.hasForm;
+	multipleSubmit = true;
+	name = "EditForm";
+}
+
+ErrorBlock : SADAlertBlock {
+	alertClass = "alert alert-danger fade in";
+	messages = errorMessages;
+	message = errorMessage;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = d2wContext.pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+RequiredWrapper : SADRequiredWrapper {
+	d2wContext = d2wContext;
+}
+
+Widget : JQWidget {
+	widgetClass = "jarviswidget";
+
+}

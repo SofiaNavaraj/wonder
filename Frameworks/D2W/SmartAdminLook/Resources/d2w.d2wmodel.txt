@@ -20,6 +20,7 @@
     10 : look = 'SmartAdminLook' => createEmbeddedConfigurationName = "<SADDefaultConfigurationNameAssignment>" [sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment],
     10 : look = 'SmartAdminLook' => selectEmbeddedConfigurationName = "<SADDefaultConfigurationNameAssignment>" [sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment],
     10 : look = 'SmartAdminLook' => editRelationshipEmbeddedConfigurationName = "<SADDefaultConfigurationNameAssignment>" [sa.directtoweb.assignments.SADDefaultConfigurationNameAssignment],
+    10 : (look = 'SmartAdminLook' and (task = 'list' or task = 'select' or task = 'editRelationship')) => displayPropertyKeys = "defaultPropertyKeysFromEntityWithoutRelationships" [com.webobjects.directtoweb.DefaultAssignment],
     15 : (look = 'SmartAdminLook' and (task = 'edit' or task = 'inspect' or task = 'select')) => shouldShowCancelButton = "true" [com.webobjects.directtoweb.BooleanAssignment],
     20 : look = 'SmartAdminLook' => headerElementName = "h2" [com.webobjects.directtoweb.Assignment],
     20 : *true* => templateNameForConfirmPage = "SAD2WConfirmPage" [com.webobjects.directtoweb.Assignment],
