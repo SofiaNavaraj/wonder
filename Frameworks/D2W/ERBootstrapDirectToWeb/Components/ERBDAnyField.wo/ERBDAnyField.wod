@@ -1,0 +1,27 @@
+KeyPopup: WOPopUpButton {
+	class = "form-control";
+	item = selectedKeyItem;
+	list = ^keyList;
+	selection = selectedKey;
+	displayString = ^displayKey;
+}
+
+Is: ERXLocalizedString {
+	value = "ERD2WQueryToManyField.is";
+}
+
+OperatorPopup : WOPopUpButton {
+	class = "form-control";
+	item = selectedOperatorItem;
+	list = displayGroup.relationalQualifierOperators;
+	selection = selectedOperator;
+}
+
+TextField: WOTextField {
+	class = "form-control";
+	value = textFieldValue;
+}
+
+Where: ERXLocalizedString {
+	value = "ERD2WQueryToManyField.where";
+}

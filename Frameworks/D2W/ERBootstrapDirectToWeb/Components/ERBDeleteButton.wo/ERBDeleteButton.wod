@@ -1,0 +1,74 @@
+ButtonUpdateContainer : JQAjaxUpdateContainer {
+  id = localUpdateContainer;
+  elementName = "span";
+}
+
+CancelButton : JQAjaxUpdateLink {
+	action = cancelAction;
+	class = cancelButtonClass;
+	updateContainerID = localUpdateContainer;
+}
+
+CancelButtonLabel : WOString {
+  value = cancelButtonLabel;
+}
+
+CanDelete : WOConditional {
+	condition = canDelete;
+}
+
+DeleteButton : JQAjaxUpdateLink {
+	action = deleteAction;
+	class = deleteButtonClass;
+	updateContainerID = updateContainer;
+}
+
+DeleteButtonLabel : WOString {
+	escapeHTML = false;
+	value = buttonLabel;
+}
+
+DisabledLink : WOHyperlink {
+	class = buttonClass;
+	href = "#";
+}
+
+DialogMessage : WOString {
+	escapeHTML = false;
+	value = dialogMessage;
+}
+
+NoCanDelete : WOConditional {
+	condition = canDelete;
+	negate = true;
+}
+
+NotShowDialog : WOConditional {
+  condition = showDialog;
+  negate = true;
+}
+
+NotUseAjax : WOConditional {
+	condition = useAjax;
+	negate = true;
+}
+
+ShowDialogButton : JQAjaxUpdateLink {
+  action = buttonAction;
+  updateContainerID = localUpdateContainer;
+  class = buttonClass;
+}
+
+ShowDialog : WOConditional {
+	condition = showDialog;
+}
+
+StandardDeleteButton : WOHyperlink {
+	action = buttonAction;
+	class = buttonClass;
+	title = ^displayNameForConfirmDeleteConfiguration;
+}
+
+UseAjax : WOConditional {
+	condition = useAjax;
+}

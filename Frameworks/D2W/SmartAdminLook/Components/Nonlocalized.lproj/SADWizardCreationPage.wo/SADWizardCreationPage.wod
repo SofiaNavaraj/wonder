@@ -12,17 +12,67 @@ ErrorBlock : SADAlertBlock {
 	message = errorMessage;
 }
 
+InspectPageRepetition: WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	displayPropertyKeys = currentTab.keys;
+	d2wContext = localContext;
+	object = object;
+}
+
+NextButton : WOSubmitButton {
+	action = nextStep;
+	alt = "Next Step";
+	class = "btn btn-primary";
+	value = d2wContext.nextButtonLabel;
+}
+
 PageWrapper: WOSwitchComponent {
 	WOComponentName = d2wContext.pageWrapperName;
 	_componentUnroll = true;
 	_unroll = true;
 }
 
+PreviousButton : WOHyperlink {
+	action = previousStep;
+	alt = "Previous Step";
+	class = "btn btn-default";
+}
+
+PreviousButtonLabel : ERXLocalizedString {
+	value = d2wContext.previousButtonLabel;
+}
+
 RequiredWrapper : SADRequiredWrapper {
 	d2wContext = d2wContext;
 }
 
+SaveButton : WOSubmitButton {
+	action = submitAction;
+	alt = "Save your changes";
+	class = "btn btn-primary";
+	value = d2wContext.saveButtonLabel;
+}
+
+ShowNext : WOConditional {
+	condition = showNext;
+}
+
+ShowPrevious : WOConditional {
+	condition = showPrevious;
+}
+
+ShowSave : WOConditional {
+	condition = showNext;
+	negate = true;
+}
+
 Widget : JQWidget {
 	widgetClass = "jarviswidget";
+}
 
+WizardSteps : WOSwitchComponent {
+	currentTab = currentTab;
+	currentStep = currentStep;
+	tabSectionsContents = tabSectionsContents;
+	WOComponentName = d2wContext.wizardBannerComponentName;
 }

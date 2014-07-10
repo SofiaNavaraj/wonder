@@ -1,0 +1,9 @@
+InspectLink : WOHyperlink {
+	action = inspectObjectAction;
+	class = d2wContext.inspectLinkClassNames;
+	title = ^displayNameForInspectConfiguration;
+}
+
+Label : ERXLocalizedString {
+	value = "inspect";
+}

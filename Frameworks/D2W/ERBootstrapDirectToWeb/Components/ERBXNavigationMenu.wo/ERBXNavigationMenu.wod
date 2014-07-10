@@ -1,0 +1,4 @@
+NavigationMenu : WOGenericContainer {
+	class = navigationMenuClassNames;
+	elementName = "nav";
+}

@@ -103,6 +103,7 @@ public class SADEditRelationshipPage extends ERD2WPage implements
 	@Override
 	public void awake() {
 		_dataSource = null;
+		System.out.println("Awake...");
     		NSNotificationCenter.defaultCenter().addObserver(this, new NSSelector<Void>("relatedObjectDidChange", ERXConstant.NotificationClassArray), SADActionButton.BUTTON_PERFORMED_DELETE_ACTION, null);
 		super.awake();
 	}

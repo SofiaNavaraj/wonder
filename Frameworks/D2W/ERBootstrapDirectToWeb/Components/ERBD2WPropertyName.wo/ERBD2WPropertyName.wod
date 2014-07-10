@@ -1,0 +1,24 @@
+DebuggingEnabled: WOConditional {
+	condition = d2wDebuggingEnabled;
+}
+
+DisplayRequiredMarker : WOConditional {
+	condition = displayRequiredMarker;
+}
+
+D2WKeyValues : JQBPopOver {
+	class = "btn btn-default btn-xs";
+	content = d2wInfo;	
+	html = true;
+	trigger = "hover";	
+	title = propertyKey;		
+}
+
+HasPropertyName: WOConditional {
+	condition = hasPropertyName;
+}
+
+PropertyName : WOString {
+	escapeHTML = false;
+	value = d2wContext.displayNameForProperty;
+}

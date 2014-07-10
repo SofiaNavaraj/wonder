@@ -1,0 +1,11 @@
+EditString : WOTextField {
+	class = d2wContext.class;
+	disabled = d2wContext.readOnly;
+	id = d2wContext.id;
+	maxlength = d2wContext.maxLength;
+	name = d2wContext.name;
+	otherTagString = d2wContext.otherTagString;
+	size = length;
+	title = d2wContext.title;
+	value = value;
+}

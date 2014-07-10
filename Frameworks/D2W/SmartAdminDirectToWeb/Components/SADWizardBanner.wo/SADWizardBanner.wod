@@ -1,0 +1,24 @@
+Badge : WOGenericContainer {
+	class = badgeClassName;
+	elementName = "span";
+}
+
+CurrentStep : WOString {
+	numberformat = "0";
+	value = stepNumber;
+}
+
+DisplayName : WOString {
+	value = tabItem.displayName;
+}
+
+Step : WOGenericContainer {
+	class = listItemClassName;
+	elementName = "li";
+}
+
+Steps : WORepetition {
+	index = index;
+	item = tabItem;
+	list = tabSectionsContents;
+}

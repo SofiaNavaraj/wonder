@@ -1,0 +1,21 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+Input : WOTextField {
+	class = "form-control";
+	name = d2wContext.name;
+	value = value;
+}
+
+OperatorPopUp: WOPopUpButton {
+	class = "form-control";
+	displayString = currentElement.value;
+	item = currentElement;
+	list = allQualifierOperators;
+	selection = selectedElement;
+}
+
+Where : ERXLocalizedString {
+	value = "Where";
+}

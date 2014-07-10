@@ -1,13 +1,30 @@
 <webobject name = "PageWrapper">
 	<!-- TODO Help -->
 	<webobject name = "RequiredWrapper">
-		<webobject name = "WizardSteps"></webobject>
 		<webobject name = "ErrorBlock" />
+		<webobject name = "WizardSteps" />
 		<webobject name = "Widget">
-			<header></header>
 			<div role = "content">
 				<div class = "widget-body">
 					<webobject name = "EditForm">
+						<webobject name = "InspectPageRepetition" />
+						<div class = "form-actions">
+							<div class = "row">
+								<div class = "col-md-12">
+									<webobject name = "ShowPrevious">
+										<webobject name = "PreviousButton">
+											<webobject name = "PreviousButtonLabel" />
+										</webobject>
+									</webobject>
+									<webobject name = "ShowNext">
+										<webobject name = "NextButton" />
+									</webobject>
+									<webobject name = "ShowSave">
+										<webobject name = "SaveButton" />
+									</webobject>
+								</div>
+							</div>
+						</div>
 					</webobject>
 				</div>
 			</div>

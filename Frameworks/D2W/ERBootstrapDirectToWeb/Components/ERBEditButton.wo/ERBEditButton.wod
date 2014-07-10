@@ -1,0 +1,24 @@
+DisabledLink : WOHyperlink {
+	class = d2wContext.editLinkClassNames;
+	disabled = true;
+	href = "#";
+}
+
+EditLink : WOHyperlink {
+	action = editObjectAction;
+	class = d2wContext.editLinkClassNames;
+	title = ^displayNameForEditConfiguration;
+}
+
+IsEditable : WOConditional {
+	condition = isEditable;
+}
+
+Label : ERXLocalizedString {
+	value = "edit";
+}
+
+NotEditable : WOConditional {
+	condition = isEditable;
+	negate = true;
+}

@@ -1,0 +1,47 @@
+IsNotPrinterFriendly : ERXEqualConditional {
+	value1 = d2wContext.forcedSubTask;
+	value2 = "printerFriendly";
+	negate = true;
+}
+
+IsPrinterFriendly : ERXEqualConditional {
+	value1 = d2wContext.forcedSubTask;
+	value2 = "printerFriendly";
+}
+
+Label : ERXLocalizedString {
+	value = "print";
+}
+
+NotUseSubmitbutton: WOConditional {
+	condition = ^useSubmitButton;
+	negate = true;
+}
+
+PrintButton: ERXSingleButton {
+	action = printerFriendlyVersion;
+	class = ^class;
+	doNotUseForm = ^doNotUseForm;
+	target = "PrinterFriendly";
+	value = "Printer Friendly View";
+}
+
+
+PrinterFriendlyLink : ERXJSOpenWindowHyperlink {
+	action = printerFriendlyVersion;
+	height = ^height;
+	linkClass = ^class;
+	menubar = ^menubar;
+	scrollbars = ^scrollbars;
+	target = "PrinterFriendly";
+	width = ^width;
+}
+
+
+Show : WOConditional {
+  condition = show;
+}
+
+UseSubmitButton: WOConditional {
+	condition = ^useSubmitButton;
+}

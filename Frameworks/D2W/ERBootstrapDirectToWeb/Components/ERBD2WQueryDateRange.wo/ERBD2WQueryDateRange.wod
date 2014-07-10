@@ -1,0 +1,33 @@
+ComponentContent : WOComponentContent {
+	
+}
+
+DateMaxField : JQDatePicker {
+	changeMonth = d2wContext.changeMonth;
+	changeYear = d2wContext.changeYear;
+	class = "form-control";
+	dateformat = formatter;
+	includeUIStylesheet = false;
+	nextText = "&gt;";
+	prevText = "&lt;";
+	value = maxValue;
+}
+
+DateMinField : JQDatePicker {
+	changeMonth = d2wContext.changeMonth;
+	changeYear = d2wContext.changeYear;
+	class = "form-control";
+	dateformat = formatter;
+	includeUIStylesheet = false;
+	nextText = "&gt;";
+	prevText = "&lt;";
+	value = minValue;
+}
+
+From : ERXLocalizedString {
+	value = "ERD2WQueryDateRange.from";
+}
+
+To : ERXLocalizedString {
+	value = "ERD2WQueryDateRange.to";
+}

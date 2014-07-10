@@ -1,0 +1,17 @@
+EditToManyRelationship : ERBToManyRelationship {
+	destinationDisplayKey = keyWhenRelationship;
+	destinationEntityName = d2wContext.destinationEntityName;
+	destinationSortKey = d2wContext.sortKey;
+	id = d2wContext.id;
+	// isMandatory = d2wContext.relationship.isMandatory;
+	localizeDisplayKeys = d2wContext.localizeDisplayKeys;
+	name = d2wContext.name;	
+	possibleChoices = restrictedChoiceList;
+	relationshipKey = d2wContext.propertyKey;
+	shouldShowSelectAllButtons = shouldShowSelectAllButtons;
+	sortCaseInsensitive = d2wContext.sortCaseInsensitive;
+	sourceEntityName = d2wContext.entity.name;
+	sourceObject = object;
+	title = d2wContext.title;
+	uiStyle = d2wContext.toManyUIStyle;
+}

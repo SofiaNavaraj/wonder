@@ -657,6 +657,21 @@
       }; 
       "rhs" = {
         "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "wizardBannerComponentName"; 
+        "value" = "SADWizardBanner"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
         "keyPath" = "emptyListComponentName"; 
         "value" = "SADEmptyListMessage"; 
       }; 
@@ -749,6 +764,21 @@
         "class" = "com.webobjects.directtoweb.Assignment"; 
         "keyPath" = "inspectLinkClassNames"; 
         "value" = "btn btn-info btn-xs"; 
+      }; 
+    }, 
+    {
+      "author" = "20"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+        "key" = "look"; 
+        "selectorName" = "isEqualTo"; 
+        "value" = "SmartAdminLook"; 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "templateNameForWizardCreationPage"; 
+        "value" = "SADWizardCreationPage"; 
       }; 
     }, 
     {

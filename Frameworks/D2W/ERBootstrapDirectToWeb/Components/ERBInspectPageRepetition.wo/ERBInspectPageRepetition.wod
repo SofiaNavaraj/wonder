@@ -1,0 +1,68 @@
+AttributeRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+AttributeValue : WOSwitchComponent {
+	WOComponentName = d2wContext.componentName;
+	localContext = d2wContext;
+	object = object;
+}
+
+HasIcon : ERXNonZeroConditional {
+	condition = d2wContext.iconClassName.length;
+}
+
+HasNote : ERXNonZeroConditional {
+	condition = d2wContext.note.length;
+}
+
+HasSectionName : ERXNonZeroConditional {
+	condition = currentSection.name.length;
+}
+
+Icon : WOGenericContainer {
+	class = d2wContext.iconClassName;
+	elementName = "i";
+}
+
+NoIcon : ERXNonZeroConditional {
+	condition = d2wContext.iconClassName.length;
+	negate = true;
+}
+
+Note : ERXLocalizedString {
+	value = d2wContext.note;
+}
+
+PropertyName: WOSwitchComponent {
+	WOComponentName = d2wContext.propertyNameComponentName;
+	localContext = d2wContext;
+}
+
+Section : WOString {
+	value = currentSection.name;
+}
+
+Sections : WORepetition {
+	item = currentSection;
+	list = sectionsContents;
+}
+
+UseStandardLayout : WOConditional {
+	condition = d2wContext.useStandardLayout;
+}
+
+UseTableLayout : WOConditional {
+	condition = d2wContext.useTableLayout;
+}
+
+UseNormalLayout : WOConditional {
+	condition = d2wContext.useWideLayout;
+	negate = true;
+}
+
+UseWideLayout : WOConditional {
+	condition = d2wContext.useWideLayout;
+}

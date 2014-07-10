@@ -1,0 +1,46 @@
+BrowserList: WOBrowser {
+	class = ^class;
+	displayString = theCurrentValue;
+	item = theCurrentItem;
+	list = theList;
+	multiple = true;
+	selections = selections;
+	size = ^size;
+}
+
+IsBrowserConditional: WOConditional {
+	condition = isBrowser;
+}
+
+CheckboxLabelString : WOString {
+	value = theCurrentValue;
+}
+
+CheckboxMatrix : ERBCheckboxMatrix {
+	displayString = theCurrentValue;
+	item = theCurrentItem;
+	list = theList;
+	selections = selections;
+	shouldShowSelectAllButtons = ^shouldShowSelectAllButtons;
+	id = ^id;
+}
+
+IsCheckboxConditional: WOConditional {
+	condition = isCheckBox;
+}
+
+IsJSEditorConditional: WOConditional {
+	condition = isJSEditor;
+}
+
+JSEditor : JQSelect2 {
+	class = ^class;
+	disabled = ^disabled;
+	displayString = theCurrentValue;
+	includeStylesheet = false;
+	item = theCurrentItem;
+	list = theList;
+	selections = selections;
+	size = ^size;
+	style = "width: 100%";
+}

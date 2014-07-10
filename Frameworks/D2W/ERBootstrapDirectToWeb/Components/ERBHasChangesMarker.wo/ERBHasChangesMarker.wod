@@ -1,0 +1,3 @@
+HasChanges : WOConditional {
+	condition = hasChanges;
+}

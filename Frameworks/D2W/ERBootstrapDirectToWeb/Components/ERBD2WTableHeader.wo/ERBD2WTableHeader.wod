@@ -1,0 +1,39 @@
+InFormConditional : WOConditional {
+	condition = context.isInForm;
+}
+
+PropertyIsSortable : WOConditional {
+	_unroll = true;
+	condition = d2wContext.propertyIsSortable;
+}
+
+PropertyIsNotSortable : WOConditional {
+	_unroll = true;
+	condition = d2wContext.propertyIsSortable;
+	negate = true;
+}
+
+NotInFormConditional : WOConditional {
+	condition = context.isInForm;
+	negate = true;
+}
+
+PropertyName: ERXSwitchComponent {
+	WOComponentName = d2wContext.propertyNameComponentName;
+	localContext = d2wContext;
+}
+
+ToggleLink : JQAjaxUpdateLink {
+	action = toggleClicked;
+	class = toggleLinkClassName;
+	elementName = "th";
+	updateContainerID = updateContainerID;
+}
+
+ToggleSubmit : JQAjaxSubmitButton {
+	action = toggleClicked;
+	button = false;
+	class = toggleLinkClassName;
+	elementName = "th";
+	updateContainerID = updateContainerID;
+}

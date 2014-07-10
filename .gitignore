@@ -6,3 +6,4 @@ ant.*
 dist
 build
 .idea
+.version

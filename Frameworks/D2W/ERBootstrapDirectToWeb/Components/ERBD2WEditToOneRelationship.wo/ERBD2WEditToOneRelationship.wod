@@ -1,0 +1,22 @@
+EditToOneRelationship: ERBToOneRelationship {
+	class = d2wContext.toOneUIClass;
+	destinationDisplayKey = keyWhenRelationship;
+	destinationEntityName = d2wContext.destinationEntityName;
+	destinationSortKey = d2wContext.sortKey;
+	goingVertically = d2wContext.goingVertically;
+	id = d2wContext.id;
+	// isMandatory = d2wContext.isMandatory;
+	localizeDisplayKeys = d2wContext.localizeDisplayKeys;
+	maxColumns = d2wContext.numCols;
+	noSelectionString = d2wContext.noSelectionString;
+	popupName = d2wContext.popupName;
+	possibleChoices = restrictedChoiceList;
+	relationshipKey = d2wContext.propertyKey;
+	size = d2wContext.size;
+	sortCaseInsensitive = d2wContext.sortCaseInsensitive;
+	sourceEntityName = object.entityName;
+	sourceObject = object;
+	title = d2wContext.title;
+	uiStyle = d2wContext.toOneUIStyle;
+	uniqueID = d2wContext.uniqueID;
+}

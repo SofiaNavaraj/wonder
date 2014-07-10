@@ -5,6 +5,11 @@ import er.directtoweb.components.repetitions.ERDListPageRepetition;
 
 public class SADListPageRepetition extends ERDListPageRepetition {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public SADListPageRepetition(WOContext context) {
         super(context);
     }

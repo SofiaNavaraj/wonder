@@ -1,0 +1,93 @@
+ButtonUpdateContainer : JQAjaxUpdateContainer {
+	id = localUpdateContainer;
+}
+
+CancelButton : JQAjaxUpdateLink {
+ 	action = cancelAction;
+ 	updateContainerID = localUpdateContainer;
+ 	class = cancelButtonClass;
+}
+
+CancelButtonLabel : WOString {
+ 	escapeHTML = false;
+ 	value = cancelButtonLabel;
+}
+
+DeleteButton : JQAjaxUpdateLink {
+  action = deleteAction;
+  updateContainerID = updateContainer;
+  class = deleteButtonClass;
+}
+
+DeleteButtonLabel : WOString {
+    value = deleteButtonLabel;
+    escapeHTML = false;
+}
+
+DialogMessage : WOString {
+	escapeHTML = false;
+ 	value = dialogMessage;
+}
+
+DisabledRemoveButton : WOGenericContainer {
+	class = buttonClass;
+	elementName = "span";
+}
+
+HasAnyAction : WOConditional {
+	condition = hasAnyAction;
+}
+
+NotHasAnyAction : WOConditional {
+	condition = hasAnyAction;
+	negate = true;
+}
+
+NotShowDialog : WOConditional {
+  condition = showDialog;
+  negate = true;
+}
+
+NotUseAjax : WOConditional {
+	condition = useAjax;
+	negate = true;
+}
+
+RemoveButton : JQAjaxUpdateLink {
+	action = removeAction;
+	class = removeButtonClass;
+	updateContainerID = updateContainer;
+}
+
+RemoveButtonLabel : WOString {
+	escapeHTML = false;
+	value = removeButtonLabel;
+}
+
+ShowDeleteButton : WOConditional {
+  condition = showDeleteButton;
+}
+
+ShowDialog : WOConditional {
+  condition = showDialog;
+}
+
+ShowDialogButton : JQAjaxUpdateLink {
+	action = buttonAction;
+	class = buttonClass;
+	updateContainerID = localUpdateContainer;
+}
+
+ShowRemoveButton : WOConditional {
+  condition = showRemoveButton;
+}
+
+StandardRemoveButton : WOHyperlink {
+	action = buttonAction;
+	class = buttonClass;
+	title = ^displayNameForConfirmDeleteConfiguration;
+}
+
+UseAjax : WOConditional {
+	condition = useAjax;
+}
